@@ -1,0 +1,53 @@
+<!--内容发布页面-->
+<form bindsubmit="tijiao">
+  <view class="post1">
+    <view class="post1-1">
+      
+        <view class="post-shezhi-fenlei-1">板块：</view>
+        <picker name="bankuai" bindchange="bankuaiPickerChange" value="{{index}}" range="{{range}}" style='border-bottom:1px solid #FD7B21;height:52rpx'>
+          <view class="picker">
+            {{range[index]}}
+          </view>
+        </picker>
+      
+        <view class="post-shezhi-fenlei-2" style="margin-left:40rpx">子类：</view>
+        <picker name="zilei" bindchange="zileiPickerChange" value="{{index2}}" range="{{zilei[index]}}" style='border-bottom:1px solid #FD7B21;height:52rpx'>
+          <view class="picker">
+            {{zilei[index][index2]}}
+          </view>
+        </picker>
+      </view>  
+
+    <view class="post1-2">
+      <view class="nimingshezhi">匿名：</view>
+      <switch bindchange="switchChange" name="niming-yn" style='zoom:.7'/>
+      <input wx:if="{{niming}}" style='margin-left:20rpx;border:1px solid #175167;'  name="niming-nr"  maxlength="10" placeholder="填写匿名（最长10位）" />
+    </view>
+  </view>
+
+  <view class="post2">
+    <textarea class="wb" name="wbnr" placeholder="在此处编辑内容（最大允许长度为400字）" style="width:680rpx;color:#080100;" maxlength="400"  />
+  </view>
+
+  <view class="post-img">
+    <view class="post-img-1">
+      <view class='pic' wx:for="{{imgs}}" wx:for-item="item" wx:key="*this">
+        <!-- 下面是图片框 --> 
+        <image class='img' src="{{item}}" data-index="{{index}}" 
+        mode="aspectFill" bindtap="previewImg" /> 
+        <!-- 下面是删除按钮 --> 
+        <text class="iconfont iconshanchu" data-index="{{index}}" bindtap="deleteImg" style="color:#FD2104;font-size: 100%;margin-left: -36rpx; margin-top: 4rpx;" />   
+      </view>
+      <!-- 下面是添加图片的tap --> 
+      <view class="add" bindtap="chooseImg">
+        <text class="iconfont icontianjia2" style="height:96rpx;font-size:300%;color:#BABD8D" />
+      </view>
+
+    </view>
+  </view>
+  <!-- 下面是立即发布的tap --> 
+  <view class="btn">
+    <button class="fb_an" form-type="submit" type='primary' >立即发布</button>
+  </view>
+
+</form>

@@ -1,0 +1,58 @@
+<view class="zhuye" >
+<view class="guanggao" >
+  <swiper class="guanggao1" indicator-dots="true" autoplay="true" interval="2000" circular="true">
+    <swiper-item wx:for="{{guanggaotu}}"  wx:key="index">
+      <navigator >
+        <image src="{{item}}"></image>
+      </navigator>
+    </swiper-item>
+  </swiper>
+</view>
+
+<view class="gonggao">
+  <view class="bt">
+    <view class="btnr">公告</view>
+    <text class="iconfont iconicon-test" style='margin-top:10rpx;color:#FD7B21;'></text>
+  </view>
+  
+  <swiper class="ggnr" autoplay="true" vertical="true" interval="1000" circular="true" >
+   <block wx:for="{{gonggaonr}}" wx:key="index">
+     <swiper-item>
+      <view>{{item}}</view>
+     </swiper-item>
+   </block>
+  </swiper>
+
+  <view bindtap="showgonggaoxiangqing" class="xq">详情</view>
+</view>
+
+<view class="bankuai">
+  <view bindtap="tiaozhuan" class="bankuainr">
+    <text class="iconfont icontrust" style='color:#FD215D;margin: -60rpx;font-size: 360%;'></text>
+    <text>交友</text>
+  </view>
+  <view class="bankuainr">
+    <text class="iconfont icontool" style='color:#12403B;margin: -60rpx;font-size: 360%;'></text>
+    <text>兼职</text>
+  </view>
+  <view class="bankuainr">
+    <text class="iconfont iconCustomermanagement" style='color:#FD7B21;margin: -60rpx;font-size: 360%;'></text>
+    <text>互助</text>
+  </view>
+
+  <view class="bankuainr">
+    <text class="iconfont iconconsumption" style='color:#FDE921;margin: -60rpx;font-size: 360%;'></text>
+    <text>交易</text>
+  </view>
+
+  <view class="bankuainr">
+    <text class="iconfont iconatm-away" style='color:#BD53E0;margin: -60rpx;font-size: 360%;'></text>
+    <text>闲谈</text>
+  </view>
+
+  <view class="bankuainr">
+    <text class="iconfont iconlisting-content-fill" style='color:#2194FD;margin: -60rpx;font-size: 360%;'></text>
+    <text>游戏</text>
+  </view>
+</view>
+</view>

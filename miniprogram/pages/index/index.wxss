@@ -1,0 +1,31 @@
+/* miniprogram/pages/index/index.wxss */
+
+.guanggao1{margin: 15rpx;height: 250rpx;border-radius: 10rpx;overflow: hidden;}/*广告的样式*/
+.guanggao1 image{width:100%;border-radius: 10rpx;overflow: hidden;}/*广告的样式*/
+
+.gonggao{display: flex;justify-content: space-between;}/*公告的样式*/
+.gonggao view{background-color:var(--qianhui);height: 20px;}/*公告的样式*/
+.bt{display: flex; flex-direction: row; margin:0px 5px 0px 15rpx;width:115rpx; border-radius: 10rpx;overflow: hidden;}/*公告的样式*/
+.gonggao view.xq{margin:0px 15rpx 0px 5px;width:80rpx ;border-radius: 10rpx;overflow: hidden;}/*公告的样式*/
+.ggnr{width: 520rpx;height: 20px;}/*公告的样式*/
+
+.bankuai{/*整个板块的样式*/
+  display:flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  margin: 30rpx 0rpx;
+}
+.bankuainr{/*单个板块的样式*/
+  display:flex;
+  flex-direction:column;
+  align-items: center;
+  justify-content: space-between;
+  width:280rpx;
+  height: 150rpx;
+  background-color:var(--qianhui);
+  border-radius: 10rpx;
+  overflow: hidden;
+  margin: 40rpx;
+  font-size: 105%;
+  overflow: visible;
+}
