@@ -1,0 +1,4 @@
+<!--pages/demo/demo2.wxml-->
+<view>DEMO2</view>
+<view>you have selected {{id}},its name is {{name}}</view>
+<button bindtap="goback">返回主页</button>

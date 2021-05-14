@@ -1,0 +1,21 @@
+page{color:goldenrod;}
+.content{
+  color:goldenrod
+}
+
+.testblock{
+  width: 300rpx;
+  height:100rpx;
+  background:purple;
+}
+
+.Hovertest{
+  color:green;
+  background: gray;
+}
+
+.logo1{
+  background:whitesmoke;
+  width: 600rpx;
+  height: 600rpx;
+}

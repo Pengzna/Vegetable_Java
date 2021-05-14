@@ -1,0 +1,40 @@
+<view class='content'>TEST</view> 
+<view hover-class="Hovertest">{{message}}</view>
+<button bindtap="onclick">
+  更新
+</button>
+<button bindtap="todemo" style="margin-top:26rpx" data-course="{{course}}" wx:for="{{course}}" wx:for-item="course">
+  {{course.name}}
+</button>
+
+<switch checked="{{check}}" bindchange="changeswitch">
+
+</switch>
+{{check}}
+
+<view hover-class="Hovertest" wx:for="{{course}}" wx:key="id">
+  {{index}}:{{item.name}}
+</view>
+
+<view wx:if="{{check}}">
+{{message}}
+</view>
+
+<view class="testblock" hover-class="Hovertest" hover-start-time="500" hover-stay-time="225">
+  hello world!
+</view>
+
+
+<template is="staffName" data="{{...staffA}}"></template>
+<template is="staffName" data="{{...staffB}}"></template>
+<template is="staffName" data="{{...staffC}}"></template>
+
+<template name="staffName">
+  <view>
+    FirstName: {{firstName}}, LastName: {{lastName}}
+  </view>
+</template>
+
+<image src="/images/logo1.gif"  class="logo1"></image>
+
+<image src="/images/unknown.gif" class="logo1" mode="aspectfit"></image>
