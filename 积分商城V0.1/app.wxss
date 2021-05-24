@@ -1,0 +1,20 @@
+/**app.wxss**/
+.container {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  padding: 200rpx 0;
+  box-sizing: border-box;
+} 
+@import "./styles/icon.wxss";
+page{
+  --themecolor:#14ca6c;
+  font-size:"70rpx";
+}
+page,view,text,swiper,image,navigator{
+  padding: 0;
+  margin:0;
+  box-sizing: 0;
+}

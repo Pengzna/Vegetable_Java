@@ -1,0 +1,42 @@
+{
+  "pages":[
+    "pages/index/index",
+    "pages/goodslist/index", 
+    "pages/goods_detail/index", 
+    "pages/user/index",
+    "pages/login/index"
+  ],
+  "window":{
+    "backgroundTextStyle":"light",
+    "navigationBarBackgroundColor": "#14ca6c",
+    "navigationBarTitleText": "积分商城",
+    "navigationBarTextStyle":"white"
+  },
+  "tabBar": {
+    "position": "bottom",
+    "selectedColor": "red",
+    "list": [
+      {
+        "pagePath": "pages/index/index",
+        "iconPath": "./icons/home.png",
+        "selectedIconPath": "/icons/home-o.png",
+        "text": "首页"
+      },
+      {
+        "pagePath": "pages/goodslist/index",
+        "iconPath": "./icons/category.png",
+        "selectedIconPath": "/icons/category-o.png",
+        "text": "商品详情"
+      },
+ 
+      {
+        "pagePath": "pages/user/index",
+        "iconPath": "./icons/my.png",
+        "selectedIconPath": "/icons/my-o.png",
+        "text": "我的"
+      }
+    ]
+  },
+  "style": "v2",
+  "sitemapLocation": "sitemap.json"
+}
