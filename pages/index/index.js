@@ -9,8 +9,8 @@ Page({
   data: {
     imgSources: [
       '/images/SwiperXi.png',
-      '/images/SwiperForest.jpg',
-      '/images/Swiper2.jpg'
+      '/images/Swiper3().jpg',
+      '/images/SwiperRun().jpg'
     ],
     indicatorDots: true,  //是否显示面板指示点
     autoplay: true,      //是否自动切换

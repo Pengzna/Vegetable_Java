@@ -5,6 +5,7 @@ Page({
   /**
    * 页面的初始数据
    */
+
   data: {
       userCredict : App.globalData.userCredict,
       icon:[
@@ -12,6 +13,7 @@ Page({
         "/images/myTree2.png",
         "/images/myTree3.png"
       ],  
+      // check:false
   },
   onClick: function(){
     console.log("activate!")

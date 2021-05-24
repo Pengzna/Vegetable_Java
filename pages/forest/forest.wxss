@@ -4,18 +4,248 @@
   align-items: center;
 }
 
-.imagesize{
+.position{
+  position: relative;
   display:flex;                    
   justify-content: center;
       /* 水平轴线居中 flex布局      */
+  
  }
- .imagesize #background { 
-   width:700rpx;
-   height:500rpx;
-  }
-
+ .position #background { 
+   z-index: 1;
+  position: absolute;
+  width:700rpx;
+  height:500rpx;
+}
+.position #myTree1{
+  position: absolute;
+  height: 100rpx;
+  width: 90rpx;
+  z-index: 2;
+  margin-top: 5rpx;
+}
+.position #myTree2{
+  position: absolute;
+  height: 100rpx;
+  width: 90rpx;
+  z-index: 2;
+  margin-top: 36rpx;
+  margin-left: -140rpx;
+}
+.position #myTree3{
+  position: absolute;
+  height: 100rpx;
+  width: 90rpx;
+  z-index: 2;
+  margin-top: 80rpx;
+  /* margin-left: -140rpx*/
+}
+.position #myTree4{
+  position: absolute;
+  height: 100rpx;
+  width: 90rpx;
+  z-index: 2;
+  margin-top: 150rpx;
+  /* margin-left: -140rpx*/
+}
+.position #myTree5{
+  position: absolute;
+  height: 100rpx;
+  width: 90rpx;
+  z-index: 2;
+  margin-top: 110rpx;
+  margin-left: -420rpx
+}
+.position #myTree6{
+  position: absolute;
+  height: 100rpx;
+  width: 90rpx;
+  z-index: 2;
+  margin-top: 230rpx;
+  /* margin-left: -140rpx*/
+}
+.position #myTree7{
+  position: absolute;
+  height: 100rpx;
+  width: 90rpx;
+  z-index: 2;
+  margin-top: 145rpx;
+  margin-left: -560rpx
+}
+.position #myTree8{
+  position: absolute;
+  height: 100rpx;
+  width: 90rpx;
+  z-index: 2;
+  margin-top: 190rpx;
+  margin-left: -420rpx
+}
+.position #myTree9{
+  position: absolute;
+  height: 100rpx;
+  width: 90rpx;
+  z-index: 2;
+  margin-top: 36rpx;
+  margin-left: 140rpx;
+}
+.position #myTree10{
+  position: absolute;
+  height: 100rpx;
+  width: 90rpx;
+  z-index: 2;
+  margin-top: 80rpx;
+  margin-left: 280rpx;
+}
+.position #myTree11{
+  position: absolute;
+  height: 100rpx;
+  width: 90rpx;
+  z-index: 2;
+  margin-top: 115rpx;
+  margin-left: 140rpx;
+}
+.position #myTree12{
+  position: absolute;
+  height: 100rpx;
+  width: 90rpx;
+  z-index: 2;
+  margin-top: 115rpx;
+  margin-left: -140rpx;
+}
+.position #myTree13{
+  position: absolute;
+  height: 100rpx;
+  width: 90rpx;
+  z-index: 2;
+  margin-top: 190rpx;
+  margin-left: 140rpx;
+}
+.position #myTree14{
+  position: absolute;
+  height: 100rpx;
+  width: 90rpx;
+  z-index: 2;
+  margin-top: 150rpx;
+  margin-left: 280rpx;
+}
+.position #myTree15{
+  position: absolute;
+  height: 100rpx;
+  width: 90rpx;
+  z-index: 2;
+  margin-top: 190rpx;
+  margin-left: -140rpx;
+}
+.position #myTree16{
+  position: absolute;
+  height: 100rpx;
+  width: 90rpx;
+  z-index: 2;
+  margin-top: 260rpx;
+  margin-left: -140rpx;
+}
+.position #myTree17{
+  position: absolute;
+  height: 100rpx;
+  width: 90rpx;
+  z-index: 2;
+  margin-top: 300rpx;
+  /* margin-left: -140rpx; */
+}
+.position #myTree18{
+  position: absolute;
+  height: 100rpx;
+  width: 90rpx;
+  z-index: 2;
+  margin-top: 260rpx;
+  margin-left: 140rpx;
+}
+.position #myTree19{
+  position: absolute;
+  height: 100rpx;
+  width: 90rpx;
+  z-index: 2;
+  margin-top: 230rpx;
+  margin-left: 280rpx;
+}
+.position #myTree22{
+  position: absolute;
+  height: 100rpx;
+  width: 90rpx;
+  z-index: 2;
+  margin-top: 115rpx;
+  margin-left: 420rpx;
+}
+.position #myTree20{
+  position: absolute;
+  height: 100rpx;
+  width: 90rpx;
+  z-index: 2;
+  margin-top: 190rpx;
+  margin-left: 420rpx;
+}
+.position #myTree21{
+  position: absolute;
+  height: 100rpx;
+  width: 90rpx;
+  z-index: 2;
+  margin-top: 150rpx;
+  margin-left: 560rpx;
+}
+.nevigator{
+  z-index: 1;
+  top: 500rpx;
+  position: relative;
+  display: inline-flex;
+  margin-top: 10rpx;
+  width: 96%;
+  margin-left: 2%;
+  height: 200rpx;
+  background-color: #FFFFFF;
+  border-radius: 10rpx;
+  box-shadow: 2px 2px 2px #cdcfcf;
+  justify-content: space-around;
+ }
+ .box1{
+  display:flex;
+  flex-direction:column;
+  justify-content: center;
+  align-items: center;
+   /* display: inline-flex;
+   margin-top: 5%;
+   height: 100%;
+   width: 16%;
+   flex-wrap: wrap; */
+ }
+ .socialClub{
+   /* margin-top: 5%; */
+   height: 37%;
+   width: 60%;
+ }
+ .shop{
+  height: 37%;
+  width: 60%;
+ }
+ .forest{
+  height: 37%;
+  width: 60%;
+ }
+ .contest{
+  height: 37%;
+  width: 60%;
+ }
+text{
+  margin-top: 20rpx;
+  font-weight:500;
+  color:dimgray;
+  font-family:"Arial","Microsoft YaHei","黑体","宋体",sans-serif;
+  font-size:small;
+}
 
 .button{
+  top: 510rpx;
+  position: relative;
   display:flex;                    
   justify-content: center;
+  z-index: 1;
 }
