@@ -4,7 +4,7 @@ Page({
     /**
      * 页面的初始数据
      */
-    data: {
+    data: {  
         questionDecArr:["QQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQ","QQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQ","QQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQ","QQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQ"],
         questionAnsArr:["A11","A12","A13","A14","A21","A22","A23","A24","A31","A32","A33","A34","A41","A42","A43","A44"],
         questionExpArr:["A11","A12","A13","A14","A21","A22","A23","A24","A31","A32","A33","A34","A41","A42","A43","A44"],
