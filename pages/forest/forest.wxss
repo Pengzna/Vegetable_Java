@@ -1,0 +1,21 @@
+/* pages/forest.wxss */
+.head{
+  display: flex;
+  align-items: center;
+}
+
+.imagesize{
+  display:flex;                    
+  justify-content: center;
+      /* 水平轴线居中 flex布局      */
+ }
+ .imagesize #background { 
+   width:700rpx;
+   height:500rpx;
+  }
+
+
+.button{
+  display:flex;                    
+  justify-content: center;
+}

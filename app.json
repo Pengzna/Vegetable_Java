@@ -1,0 +1,49 @@
+{
+  "pages": [
+    "pages/index/index",
+    "pages/logs/logs",
+    "pages/forest/forest"
+  ],
+  "window": {
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#54BB9E",
+    "navigationBarTitleText": "Vegetable_Java",
+    "navigationBarTextStyle": "white"
+  },
+  
+  "sitemapLocation": "sitemap.json",
+  "tabBar": {
+    "list": [
+      {
+        "pagePath": "pages/index/index",
+        "text": "首页",
+        "iconPath": "images/log.png",
+        "selectedIconPath": "images/logSelected.png",
+        "color": "#000000"
+      },
+      {
+      "pagePath": "pages/logs/logs",
+      "text": "日志",
+      "iconPath": "images/log.png",
+      "selectedIconPath": "images/logSelected.png",
+      "color": "#000000"
+    },
+    {
+      "pagePath": "pages/forest/forest",
+      "text": "森林",
+      "iconPath": "images/forest.png",
+      "selectedIconPath": "images/forestSelected.png",
+      "color": "#000000"
+    }
+  ],
+    "backgroundColor": "#54BB9E"
+  },
+  "usingComponents": {
+    "van-button": "@vant/weapp/button/index",
+    "van-divider": "@vant/weapp/divider/index",
+    "van-grid": "@vant/weapp/grid/index",
+    "van-grid-item": "@vant/weapp/grid-item/index",
+    "van-tab": "@vant/weapp/tab/index",
+    "van-tabs": "@vant/weapp/tabs/index"
+  }
+}

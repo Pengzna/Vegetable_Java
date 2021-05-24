@@ -1,0 +1,93 @@
+/**index.wxss**/
+.Swiper {
+  margin-top: 1%;
+  background-color: #FFFFFF;
+}
+.swiper {
+  height: 390rpx;
+  width: 96%;
+  margin-left: 2%;
+}
+/* .swiper-image {
+  height: 100%;
+  width: 100%;
+} */
+.slide-image{
+  border-radius: 50rpx;
+   height: 85%;
+  width: 100%;
+}
+
+.nevigator{
+  display: inline-flex;
+  margin-top: 10rpx;
+  width: 96%;
+  margin-left: 2%;
+  height: 200rpx;
+  background-color: #FFFFFF;
+  border-radius: 10rpx;
+  box-shadow: 2px 2px 2px #cdcfcf;
+  justify-content: space-around;
+ }
+ .box1{
+  display:flex;
+  flex-direction:column;
+  justify-content: center;
+  align-items: center;
+   /* display: inline-flex;
+   margin-top: 5%;
+   height: 100%;
+   width: 16%;
+   flex-wrap: wrap; */
+ }
+ .socialClub{
+   /* margin-top: 5%; */
+   height: 37%;
+   width: 70%;
+ }
+ .shop{
+  height: 37%;
+  width: 70%;
+ }
+ .forest{
+  height: 37%;
+  width: 70%;
+ }
+ .contest{
+  height: 37%;
+  width: 70%;
+ }
+text{
+  margin-top: 20rpx;
+  font-weight:500;
+  color:dimgray;
+  font-family:"Arial","Microsoft YaHei","黑体","宋体",sans-serif;
+  font-size:small;
+}
+.tag{
+  margin-top: 10rpx;
+}
+
+
+
+
+
+
+/* .userinfo {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  color: #aaa;
+}
+
+.userinfo-avatar {
+  overflow: hidden;
+  width: 128rpx;
+  height: 128rpx;
+  margin: 20rpx;
+  border-radius: 50%;
+}
+
+.usermotto {
+  margin-top: 200px;
+} */

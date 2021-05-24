@@ -1,0 +1,42 @@
+<!--pages/forest.wxml-->
+<view class="head">There should be a slogan or a picture, may be swiper, I don't know.</view>
+
+<van-divider />
+
+<view class="imagesize">
+<!-- <image class="myTree" id="myTree1" src="/images/myTree1.png"></image> -->
+<!-- <image class="myTree" id="myTree2" src="/images"></image>
+<image class="myTree" id="myTree3" src="/images"></image>
+<image class="myTree" id="myTree4" src="/images"></image>
+<image class="myTree" id="myTree5" src="/images"></image>
+<image class="myTree" id="myTree6" src="/images"></image>
+<image class="myTree" id="myTree7" src="/images"></image>
+<image class="myTree" id="myTree8" src="/images"></image>
+<image class="myTree" id="myTree9" src="/images"></image>
+<image class="myTree" id="myTree10" src="/images"></image>
+<image class="myTree" id="myTree11" src="/images"></image>
+<image class="myTree" id="myTree12" src="/images"></image>
+<image class="myTree" id="myTree13" src="/images"></image>
+<image class="myTree" id="myTree14" src="/images"></image>
+<image class="myTree" id="myTree15" src="/images"></image>
+<image class="myTree" id="myTree16" src="/images"></image>
+<image class="myTree" id="myTree18" src="/images"></image>
+<image class="myTree" id="myTree17" src="/images"></image> -->
+<image id="background" src="/images/myForest.jpg"></image>
+</view>
+
+<!-- 下面要对按钮进行布局 -->
+
+<!-- 格子 -->
+<van-grid column-num="3" border="{{ false }}" >
+  <van-grid-item use-slot wx:for="{{ icon }}">
+    <image
+      style="width: 50%; height: 50px;"
+      src="{{item}}"
+      bind:click="onClick"
+    />
+  </van-grid-item>
+</van-grid>
+<view class="button" bindtap="onClick">
+<van-button icon="https://th.bing.com/th/id/R5f3d4a8e7d3823e202fd98a74f98d77e?rik=q9qOSl20APZxVQ&riu=http%3a%2f%2fdemo.sc.chinaz.com%2fFiles%2fpic%2ficons%2f6765%2ff14.png&ehk=SvTzHq67mSXWFMOsngP5edkRDsrgz91d%2feB%2fTTJQJNE%3d&risl=&pid=ImgRaw" round type="primary">种下一颗树吧!</van-button>
+</view>
