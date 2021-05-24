@@ -1,0 +1,87 @@
+
+.head{
+    width: 321px;
+}
+.head text{
+    position: relative;
+    top: 10rpx;
+    left: 30rpx;
+    display: inline;
+    font-size: small;
+}
+.head image{
+    width: 17.33px;
+    position: relative;
+    right: -507rpx;
+    top: 19rpx;
+}
+.head navigator{
+    display: inline;
+    position: relative;
+    right: -503rpx;
+    top: 10rpx;
+    font-size: small;
+}
+.head progress{
+    border-radius: 20%;
+}
+
+
+.description{
+    background-color: aqua;
+    border-radius: 30rpx;
+    margin: 20rpx 20rpx 40rpx 20rpx;
+    padding: 10rpx 10rpx 10rpx 10rpx;
+    height: 200rpx;
+    word-wrap: break-word;
+    position: relative;
+    font-size: medium;
+    font-family: Arial, Helvetica, sans-serif,"楷体";
+
+}
+.answer{
+    height: fit-content;
+    font-size: small;
+}
+.answer>view{
+    border: grey solid 1rpx;
+    border-radius: 20rpx;
+    margin: 30rpx;
+    padding-left: 10rpx;
+    width: 650rpx;
+    text-align: left;
+    /* 这是相对于父级的answer进行定位 */
+    position: relative; 
+    top: 10rpx;
+}
+
+.selIcon{
+    display: inline-block;
+    color: lightblue;
+    border-radius: 50%;
+    text-align: center;
+    padding-right: 10rpx;
+
+}
+
+.right{
+    margin-top: 60rpx;
+    margin-bottom: 30rpx;
+    text-align: center;
+    height: fit-content;
+    color: deepskyblue;
+}
+
+.wrong{
+    margin-top: 60rpx;
+    margin-left: 30rpx;
+    font-family: "楷体",Arial, Helvetica, sans-serif;
+}
+.wrong::first-line{
+    color: hotpink;
+}
+
+
+
+
+

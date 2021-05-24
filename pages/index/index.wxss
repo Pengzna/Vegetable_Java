@@ -17,3 +17,13 @@
 .usermotto {
   margin-top: 200px;
 }
+.box{
+  width: auto;
+}
+.box view{
+  /* width: 1000rpx; */
+  color:red;
+  text-align: center;
+  height: 1000rpx;
+  line-height: 500rpx;
+}

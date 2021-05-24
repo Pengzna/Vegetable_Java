@@ -14,6 +14,9 @@ App({
     })
   },
   globalData: {
-    userInfo: null
+    userInfo: null,
+    countOfQue:1,
+    credit : 0
+    
   }
 })

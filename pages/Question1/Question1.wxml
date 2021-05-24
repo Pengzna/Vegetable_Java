@@ -1,0 +1,89 @@
+<!--pages/page1/page1.wxml-->
+<!-- 问题的描述 -->
+
+<view class="head" >
+    <text>{{count}}</text><text style="color:gray ">/{{total}}</text>
+    <image src="../../image/传输_上传2.png" mode="widthFix"></image> 
+    <navigator url="../index/index">
+        立即交卷
+    </navigator>
+    <progress style="margin:30rpx 30rpx 40rpx 30rpx " percent="{{20 * count}}" activeColor="deepskyblue" ></progress>
+</view>
+
+<view class="description">
+    {{questionDecArr[numOfQuestion]}}
+</view>
+
+<!-- 4个答题模板 -->
+<view class="answer" wx:if="{{modelType == 1}}">
+    
+   
+    <view id="A" data-isTrue="1" bindtap="myTap">
+        <view class="selIcon"> A: </view> {{questionAnsArr[startOfAnswer+0]}}</view>
+        
+    <view id="B" data-isTrue="0" bindtap="myTap">
+        <view class="selIcon"> B: </view>{{questionAnsArr[startOfAnswer+1]}}</view>
+    
+    <view id="C" data-isTrue="0" bindtap="myTap">
+        <view class="selIcon"> C: </view>{{questionAnsArr[startOfAnswer+2]}}</view>
+    
+    <view id="D" data-isTrue="0" bindtap="myTap">
+        <view class="selIcon"> D: </view>{{questionAnsArr[startOfAnswer+3]}}</view>
+</view>
+<view class="answer" wx:elif="{{modelType == 2}}">
+    <view id="A" data-isTrue="0" bindtap="myTap">
+         <view class="selIcon"> A: </view>{{questionAnsArr[startOfAnswer+0]}}</view>
+    
+    <view id="B" data-isTrue="1" bindtap="myTap">
+        <view class="selIcon"> B: </view>{{questionAnsArr[startOfAnswer+1]}}</view>
+    
+    <view id="C" data-isTrue="0" bindtap="myTap">
+        <view class="selIcon"> C: </view>{{questionAnsArr[startOfAnswer+2]}}</view>
+    
+    <view id="D" data-isTrue="0" bindtap="myTap">
+        <view class="selIcon"> D: </view>{{questionAnsArr[startOfAnswer+3]}}</view>
+</view>
+<view class="answer" wx:elif="{{modelType == 3}}">
+    <view id="A" data-isTrue="0" bindtap="myTap">
+        <view class="selIcon"> A: </view>{{questionAnsArr[startOfAnswer+0]}}</view>
+    
+    <view id="B" data-isTrue="0" bindtap="myTap">
+        <view class="selIcon"> B: </view>{{questionAnsArr[startOfAnswer+1]}}</view>
+    
+    <view id="C" data-isTrue="1" bindtap="myTap">
+        <view class="selIcon"> C: </view>{{questionAnsArr[startOfAnswer+2]}}</view>
+    
+    <view id="D" data-isTrue="0" bindtap="myTap">
+        <view class="selIcon"> D: </view>{{questionAnsArr[startOfAnswer+3]}}</view>
+</view>
+<view class="answer" wx:elif="{{modelType == 4}}">
+    <view id="A" data-isTrue="0" bindtap="myTap">
+        <view class="selIcon"> A: </view>{{questionAnsArr[startOfAnswer+0]}}</view>
+    
+    <view id="B" data-isTrue="0" bindtap="myTap">
+        <view class="selIcon"> B: </view>{{questionAnsArr[startOfAnswer+1]}}</view>
+    
+    <view id="C" data-isTrue="0" bindtap="myTap">
+        <view class="selIcon"> C: </view>{{questionAnsArr[startOfAnswer+2]}}</view>
+    
+    <view id="D" data-isTrue="1" bindtap="myTap">
+        <view class="selIcon"> D: </view>{{questionAnsArr[startOfAnswer+3]}}</view>
+</view>
+
+<!-- 2个答题解析 -->
+<block wx:if="{{correctOfUserChoice == 1}}"> 
+    <view class="right" >
+        恭喜你答对啦！你可真是个小机灵鬼
+    </view>
+    <button id="next" bindtap="btnTap" type="primary"  plain="true" >{{textOfBtn}}</button>
+</block>
+
+<block wx:elif="{{correctOfUserChoice == 0}}">
+    <view class="wrong" >
+        这是错误答案噢 <text>\r\n</text>
+        解析：{{questionExpArr[4*numOfQuestion + numOfSelection]}}
+    </view>
+</block>
+
+
+
