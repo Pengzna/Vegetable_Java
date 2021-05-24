@@ -5,28 +5,28 @@
 <van-divider />
 
 <view class="position">
-<image  id="myTree1" src="/images/myTree3.png"></image>
-<image class="myTree" id="myTree2" src="/images/myTree2.png"></image>
-<image class="myTree" id="myTree3" src="/images/myTree1.png"></image>
-<image class="myTree" id="myTree4" src="/images/myTree2.png"></image>
-<image class="myTree" id="myTree5" src="/images/myTree3.png"></image>
-<image class="myTree" id="myTree6" src="/images/myTree1.png"></image>
-<image class="myTree" id="myTree7" src="/images/myTree2.png"></image>
-<image class="myTree" id="myTree8" src="/images/myTree1.png"></image>
-<image class="myTree" id="myTree9" src="/images/myTree3.png"></image>
-<image class="myTree" id="myTree10" src="/images/myTree2.png"></image>
-<image class="myTree" id="myTree11" src="/images/myTree1.png"></image>
-<image class="myTree" id="myTree12" src="/images/myTree3.png"></image>
-<image class="myTree" id="myTree13" src="/images/myTree3.png"></image>
-<image class="myTree" id="myTree14" src="/images/myTree2.png"></image>
-<image class="myTree" id="myTree15" src="/images/myTree3.png"></image>
-<image class="myTree" id="myTree16" src="/images/myTree2.png"></image>
-<image class="myTree" id="myTree17" src="/images/myTree3.png"></image>
-<image class="myTree" id="myTree18" src="/images/myTree2.png"></image>
-<image class="myTree" id="myTree19" src="/images/myTree1.png"></image>
-<image class="myTree" id="myTree20" src="/images/myTree3.png"></image>
-<image class="myTree" id="myTree21" src="/images/myTree2.png"></image>
-<image class="myTree" id="myTree22" src="/images/myTree1.png"></image>
+<image class="myTree" id="myTree1" src="/images/myTree3.png" wx:if="{{isShow[0]}}"></image>
+<image class="myTree" id="myTree2" src="/images/myTree2.png" wx:if="{{isShow[1]}}"></image>
+<image class="myTree" id="myTree3" src="/images/myTree1.png" wx:if="{{isShow[2]}}"></image>
+<image class="myTree" id="myTree4" src="/images/myTree2.png" wx:if="{{isShow[3]}}"></image>
+<image class="myTree" id="myTree5" src="/images/myTree3.png" wx:if="{{isShow[4]}}"></image>
+<image class="myTree" id="myTree6" src="/images/myTree1.png" wx:if="{{isShow[5]}}"></image>
+<image class="myTree" id="myTree7" src="/images/myTree2.png" wx:if="{{isShow[6]}}"></image>
+<image class="myTree" id="myTree8" src="/images/myTree1.png" wx:if="{{isShow[7]}}"></image>
+<image class="myTree" id="myTree9" src="/images/myTree3.png" wx:if="{{isShow[8]}}"></image>
+<image class="myTree" id="myTree10" src="/images/myTree2.png" wx:if="{{isShow[9]}}"></image>
+<image class="myTree" id="myTree11" src="/images/myTree1.png" wx:if="{{isShow[10]}}"></image>
+<image class="myTree" id="myTree12" src="/images/myTree3.png" wx:if="{{isShow[11]}}"></image>
+<image class="myTree" id="myTree13" src="/images/myTree3.png" wx:if="{{isShow[12]}}"></image>
+<image class="myTree" id="myTree14" src="/images/myTree2.png" wx:if="{{isShow[13]}}"></image>
+<image class="myTree" id="myTree15" src="/images/myTree3.png" wx:if="{{isShow[14]}}"></image>
+<image class="myTree" id="myTree16" src="/images/myTree2.png" wx:if="{{isShow[15]}}"></image>
+<image class="myTree" id="myTree17" src="/images/myTree3.png" wx:if="{{isShow[16]}}"></image>
+<image class="myTree" id="myTree18" src="/images/myTree2.png" wx:if="{{isShow[17]}}"></image>
+<image class="myTree" id="myTree19" src="/images/myTree1.png" wx:if="{{isShow[18]}}"></image>
+<image class="myTree" id="myTree20" src="/images/myTree3.png" wx:if="{{isShow[19]}}"></image>
+<image class="myTree" id="myTree21" src="/images/myTree2.png" wx:if="{{isShow[20]}}"></image>
+<image class="myTree" id="myTree22" src="/images/myTree1.png" wx:if="{{isShow[21]}}"></image>
 <image id="background" src="/images/myForest.png"></image>
 </view>
 
