@@ -43,11 +43,11 @@
         <view class="selIcon"> D: </view>{{questionAnsArr[startOfAnswer+3]}}</view>
 </view>
 <view class="answer" wx:elif="{{modelType == 2}}">
-    <view id="A" data-isTrue="0" bindtap="myTap">
-         <view class="selIcon"> A: </view>{{questionAnsArr[startOfAnswer+0]}}</view>
+    <view id="B" data-isTrue="0" bindtap="myTap">
+         <view class="selIcon"> A: </view>{{questionAnsArr[startOfAnswer+1]}}</view>
     
-    <view id="B" data-isTrue="1" bindtap="myTap">
-        <view class="selIcon"> B: </view>{{questionAnsArr[startOfAnswer+1]}}</view>
+    <view id="A" data-isTrue="1" bindtap="myTap">
+        <view class="selIcon"> B: </view>{{questionAnsArr[startOfAnswer+0]}}</view>
     
     <view id="C" data-isTrue="0" bindtap="myTap">
         <view class="selIcon"> C: </view>{{questionAnsArr[startOfAnswer+2]}}</view>
@@ -56,21 +56,21 @@
         <view class="selIcon"> D: </view>{{questionAnsArr[startOfAnswer+3]}}</view>
 </view>
 <view class="answer" wx:elif="{{modelType == 3}}">
-    <view id="A" data-isTrue="0" bindtap="myTap">
-        <view class="selIcon"> A: </view>{{questionAnsArr[startOfAnswer+0]}}</view>
+    <view id="C" data-isTrue="0" bindtap="myTap">
+        <view class="selIcon"> A: </view>{{questionAnsArr[startOfAnswer+2]}}</view>
     
     <view id="B" data-isTrue="0" bindtap="myTap">
         <view class="selIcon"> B: </view>{{questionAnsArr[startOfAnswer+1]}}</view>
     
-    <view id="C" data-isTrue="1" bindtap="myTap">
-        <view class="selIcon"> C: </view>{{questionAnsArr[startOfAnswer+2]}}</view>
+    <view id="A" data-isTrue="1" bindtap="myTap">
+        <view class="selIcon"> C: </view>{{questionAnsArr[startOfAnswer+0]}}</view>
     
     <view id="D" data-isTrue="0" bindtap="myTap">
         <view class="selIcon"> D: </view>{{questionAnsArr[startOfAnswer+3]}}</view>
 </view>
 <view class="answer" wx:elif="{{modelType == 4}}">
-    <view id="A" data-isTrue="0" bindtap="myTap">
-        <view class="selIcon"> A: </view>{{questionAnsArr[startOfAnswer+0]}}</view>
+    <view id="D" data-isTrue="0" bindtap="myTap">
+        <view class="selIcon"> A: </view>{{questionAnsArr[startOfAnswer+3]}}</view>
     
     <view id="B" data-isTrue="0" bindtap="myTap">
         <view class="selIcon"> B: </view>{{questionAnsArr[startOfAnswer+1]}}</view>
@@ -78,14 +78,14 @@
     <view id="C" data-isTrue="0" bindtap="myTap">
         <view class="selIcon"> C: </view>{{questionAnsArr[startOfAnswer+2]}}</view>
     
-    <view id="D" data-isTrue="1" bindtap="myTap">
-        <view class="selIcon"> D: </view>{{questionAnsArr[startOfAnswer+3]}}</view>
+    <view id="A" data-isTrue="1" bindtap="myTap">
+        <view class="selIcon"> D: </view>{{questionAnsArr[startOfAnswer+0]}}</view>
 </view>
 
 <!-- 2个答题解析 -->
 <block wx:if="{{correctOfUserChoice == 1}}"> 
     <view class="right" >
-        恭喜你答对啦！你可真是个小机灵鬼
+        {{questionExpArr[4*numOfQuestion + numOfSelection]}}
     </view>
     <button id="next" bindtap="btnTap" type="primary"  plain="true" >{{textOfBtn}}</button>
 </block>

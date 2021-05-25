@@ -5,9 +5,34 @@ Page({
      * 页面的初始数据
      */
     data: {  
-        questionDecArr:["QQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQ","QQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQ","QQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQ","QQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQQ"],
-        questionAnsArr:["A11","A12","A13","A14","A21","A22","A23","A24","A31","A32","A33","A34","A41","A42","A43","A44"],
-        questionExpArr:["A11","A12","A13","A14","A21","A22","A23","A24","A31","A32","A33","A34","A41","A42","A43","A44"],
+        questionDecArr:[
+            '欢迎来到概念题：特定区域（或组织）一年内所有二氧化碳排放量与清除量达到平衡"指的是',
+            "现实题扑面而来：截止2019年底地球二氧化碳浓度超过____",
+            "这是一道数学题噢，请听题：1ppm = ____",
+            "来权衡一下利弊吧：下列哪项是全球变暖带来的危害",
+            "比比大小：下列哪一个碳排放量最多"
+            ],
+        questionAnsArr:[
+            "碳中和","碳达峰","碳饱和","碳太多",
+            "400ppm","300ppm","200ppm","600ppm",
+            "百万分之一","十万分之一","万分之一","千万分之一",
+            "干旱地区更干旱，多雨地区更多雨","我找不到女朋友","没有女孩子喜欢我","呜呜呜",
+            "开车带女朋友兜风一小时","在英雄联盟和队友激烈对线一小时","爽爽地吹一小时的空调","用电视看一小时的玛卡巴卡"
+            
+        ],
+        questionExpArr:[
+            "好，这就是朴素无华的碳中和的概念噢","碳达峰指的是碳达峰指特定区域（或组织）年二氧化碳排放在一段时间内达到峰值，之后在一定范围内波动，然后进入平稳下降阶段","暂无解析","目前没有碳太多这个专有名词噢",
+            
+            "据说全中国知道这题答案的人不高于13亿人，你居然答对了，简直太厉害啦","正确答案是400ppm啦","正确答案是400ppm啦","正确答案是400ppm啦",
+            
+            "建议你看看其他三条答案会有惊喜噢","1pm = 1×10负十二次方。恭喜你找到了1条解析","1ppm 有两个p。恭喜你找到了第二条解析","所以可以理解成1ppm是1×10负六次方，即百万分之一啦。恭喜你找到了所有解析！",
+            
+            "呜呜呜选择这条答案的都是现充吗，不过还是恭喜你找到了正确答案","这是结果","这是起因","这是我的悲伤",
+
+            "开车耗碳高达22000克/小时，确实是正确答案，没有女朋友的孩子希望这个答案能够成为你将来的模样！","虽然一小时的英雄联盟才耗碳190克，和开车比起来就是个小弱鸡，但是我对线耗费的精气神需要耗碳高达13kg/kg的牛肉来补！","空调哥621克/小时","为什么我的玛卡巴卡只有96克/小时？这不合理！",
+            
+
+        ],
         correctOfUserChoice : 2,
         numOfSelection: "" ,
         count : 0,
@@ -21,12 +46,10 @@ Page({
         //根据用户的选择判断对错，错了弹出对应解析，直到对了才进入下一题。
         var isTrue = res.currentTarget.dataset.istrue
         var name = "A"
-        var numOfSelection = Number(res.currentTarget.id.charCodeAt()-65)//A是65，减去65后A是0
+        var numOfSelection = Number(res.currentTarget.id.charCodeAt()-65)//A是65，减去65后A是0，但是这样就代表第一个选项始终是第一个答案的解析，但是我们答案的设置是随机的，所以不一定第一个选项是第一个答案的解析，而应该是得要在数组索引加0的地方是原有
         this.setData({
             correctOfUserChoice:isTrue,
             numOfSelection:numOfSelection,
-            
-            
         })
         console.log(this.data.questionExpArr[0]);
         // console.log(res.currentTarget.dataset.istrue)
