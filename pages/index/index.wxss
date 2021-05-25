@@ -68,11 +68,82 @@ text{
   margin-top: 10rpx;
 }
 
-
-
-
-
-
+.talk{
+  display: flex;
+  margin-top: 10rpx;
+  width: 96%;
+  margin-left: 2%;
+  height: 320rpx;
+  background-color: #FFFFFF;
+  border-radius: 10rpx;
+  box-shadow: 2px 2px 2px #cdcfcf;
+  /* justify-content: space-around; */
+}
+.img{
+  margin-top: 30rpx;
+  margin-left: 40rpx;
+  width: 100rpx;
+  height: 100rpx;
+  border-radius: 50rpx;
+}
+.title{
+  position: relative;
+  left: -10rpx;
+  /* margin-top: 50rpx; */
+  margin-left: 40rpx;
+  float:right;
+  /* color: antiquewhite; */
+  font-size:medium;
+  font-weight: bold;
+}
+.body{
+  margin-left: 60rpx;
+  color: black;
+  font-weight:500;
+  position: relative;
+  left:-10rpx;
+  top: 20rpx;
+}
+.title2{
+  position: relative;
+  left: -10rpx;
+  /* margin-top: 50rpx; */
+  margin-left: 40rpx;
+  float:right;
+  /* color: antiquewhite; */
+  font-size:medium;
+  font-weight: bold;
+}
+.body2{
+  margin-left: 60rpx;
+  color: black;
+  font-weight:500;
+  position: relative;
+  /* left:-10rpx; */
+  top: 20rpx;
+}
+.go{
+  flex-direction:column;
+  display: flex;
+  margin-top: 10rpx;
+  width: 96%;
+  margin-left: 2%;
+  height: 600rpx;
+  background-color: #FFFFFF;
+  border-radius: 70rpx;
+  box-shadow: 2px 2px 2px #cdcfcf;
+}
+.header2{
+  display:flex;
+  justify-content: center;
+  font-weight: bold;
+  font-size: large;
+}
+.recycle{
+  width: 100%;
+  margin-top: 20rpx;
+  border-radius: 30rpx;
+}
 /* .userinfo {
   display: flex;
   flex-direction: column;

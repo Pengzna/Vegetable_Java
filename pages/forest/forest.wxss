@@ -1,7 +1,15 @@
 /* pages/forest.wxss */
 .head{
-  display: flex;
-  align-items: center;
+  top: 500rpx;
+  display: inline-flex;
+  width: 96%;
+  margin-left: 2%;
+  height: 200rpx;
+  background-color: #FFFFFF;
+  border-radius: 10rpx;
+  box-shadow: 2px 2px 2px #cdcfcf;
+  justify-content: center;
+ 
 }
 
 .position{
@@ -220,19 +228,19 @@
  .socialClub{
    /* margin-top: 5%; */
    height: 37%;
-   width: 60%;
+   width: 50%;
  }
  .shop{
   height: 37%;
-  width: 60%;
+  width: 55%;
  }
  .forest{
   height: 37%;
-  width: 60%;
+  width: 55%;
  }
  .contest{
   height: 37%;
-  width: 60%;
+  width: 55%;
  }
 text{
   margin-top: 20rpx;

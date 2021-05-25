@@ -1,10 +1,25 @@
 <!--pages/forest.wxml-->
 
-<view class="head">There should be a slogan or a picture, may be swiper, I don't know.</view>
+<view class="head"><van-image
+  class="header"
+  width="8rem"
+  height="5.3rem"
+  fit="contain"
+  round
+  src="https://img.yzcdn.cn/vant/cat.jpeg"
+/><van-image
+  class="header"
+  width="9rem"
+  height="5.3rem"
+  fit="contain"
+  round
+  src="https://th.bing.com/th/id/R2ca38265b07c6e8ee1909d7127ce3e16?rik=KWdrEzBbdHNVpg&riu=http%3a%2f%2fpic254.nipic.com%2ffile%2f20191121%2f10673188_172511422081_2.jpg&ehk=ugC8sJC2%2f5bwILfq8N1UwmQJDMxphj4AUiCveY4d9EI%3d&risl=&pid=ImgRaw"
+/>
+</view>
 
-<van-divider />
 
 <view class="position">
+
 <image class="myTree" id="myTree1" src="/images/myTree3.png" wx:if="{{isShow[0]}}"></image>
 <image class="myTree" id="myTree2" src="/images/myTree2.png" wx:if="{{isShow[1]}}"></image>
 <image class="myTree" id="myTree3" src="/images/myTree1.png" wx:if="{{isShow[2]}}"></image>
@@ -33,23 +48,23 @@
 <!-- 下面要对按钮进行布局 -->
 <view class="nevigator">
   <view class="box1">
-    <image class="socialClub" bindtap="onClickSociety" src="/images/forestSelected.png"></image> 
-    <text class="font1">森林!好耶!</text>
+    <image class="socialClub" bindtap="onClickSociety" src="/images/Credit.png"></image> 
+    <text class="font1">您的积分:{{userCredict}}</text>
   </view>
   
   <view class="box1">
     <image class="shop"  bindtap="onClickShop" src="/images/myTree1.png"></image> 
-    <text class="font2">九乡树~</text>
+    <text class="font2">九乡树(1')</text>
   </view>
  
   <view class="box1">
       <image class="forest" bindtap="onClickForest" src="/images/myTree2.png"></image>
-      <text class="font3">南雍树~</text>
+      <text class="font3">南雍树(1')</text>
   </view>
 
   <view class="box1">
       <image class="contest" bindtap="onClickContest" src="/images/myTree3.png"></image> 
-      <text class="font4">智慧树~</text>
+      <text class="font4">智慧树(1')</text>
   </view>
 </view> 
 
