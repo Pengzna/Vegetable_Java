@@ -24,9 +24,11 @@ Page({
         var numOfSelection = Number(res.currentTarget.id.charCodeAt()-65)//A是65，减去65后A是0
         this.setData({
             correctOfUserChoice:isTrue,
-            numOfSelection:numOfSelection
+            numOfSelection:numOfSelection,
+            
+            
         })
-        // console.log(res);
+        console.log(this.data.questionExpArr[0]);
         // console.log(res.currentTarget.dataset.istrue)
         // console.log(this.data.correctOfUserChoice)
         this.onLoad()

@@ -7,6 +7,12 @@ Page({
     
   },
 
+  toNextPage: function(){
+    wx.navigateTo({
+      url: '../Question1/Question1',
+    })
+  },
+
   /**
    * 生命周期函数--监听页面加载
    */
