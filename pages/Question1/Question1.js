@@ -77,7 +77,7 @@ Page({
         if(count<=5)
         {   
 
-            wx.navigateTo({
+            wx.redirectTo({
                 url: '../../pages/Question1/Question1',
               })
         }
@@ -87,13 +87,13 @@ Page({
             wx.showToast({
               title: '恭喜你完成了本次答题，希望你能继续学习碳中和相关知识，做一个环保战士哦',
             })
-            wx.navigateTo({
+            wx.redirectTo({
                 url: '../index/index',
               })
         }
         
     
-        console.log("this count is "+this.data.count)//问题在于你改变的count是前一个页面的，而后一个页面的count忍让是0？？？！！！！
+        console.log("this count is "+this.data.count)
         
     },
 

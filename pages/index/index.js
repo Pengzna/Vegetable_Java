@@ -8,7 +8,7 @@ Page({
   },
 
   toNextPage: function(){
-    wx.navigateTo({
+    wx.redirectTo({
       url: '../Question1/Question1',
     })
   },
@@ -31,7 +31,9 @@ Page({
    * 生命周期函数--监听页面显示
    */
   onShow: function () {
-    
+      //将全局变量countOfQue 设置成0 ，保证每一次答题都是重新开始
+      var getapp = getApp()
+      getapp.globalData.countOfQue = 0
   },
 
   /**
