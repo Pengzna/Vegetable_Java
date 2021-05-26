@@ -1,0 +1,57 @@
+<!-- 搜索框 -->
+<view class="search">
+  <input placeholder="请输入要搜索的商品" bindconfirm="search" confirm-type="done"></input>
+  <image src="cloud://cloud1-5gwueugxee955e70.636c-cloud1-5gwueugxee955e70-1305914954/img/tubiao/树叶.png" style="width:50rpx;height:50rpx"></image>
+</view>
+
+
+<!-- 搜索列表 -->
+<view class="list" wx:for="{{search}}" wx:key="_id">
+  <navigator class="list_1" url="../product_detail/product_detail?id={{item._id}}">
+    <image src="{{item.src[0]}}" style="width:100rpx;height:100rpx;margin-left: 10rpx;"></image>
+    <view>商品：{{item.name}}</view>
+    <view style="margin-right: 50rpx;">价格：{{item.price}}</view>
+  </navigator>
+  <view class="line"></view>
+</view>
+
+
+<!-- 轮播图 -->
+<view class="banner" >
+  <swiper class="banner_1" autoplay="true" circular="true" interval="5000" indicator-dots="true">
+    <swiper-item  wx:for="{{banner}}" wx:key="_id">
+      <image src="{{item.src}}" style="width:750rpx;height:400rpx"></image>
+    </swiper-item>
+  </swiper>
+</view>
+
+
+
+<!-- 分类模块 -->
+<view class="fenlei" >
+  <view class="fenlei_1" wx:for="{{fenlei}}" wx:key="_id">
+    <navigator url="../fenlei/fenlei?name={{item.name}}" class="fenlei_2">
+      <image src="{{item.src}}" style="width:100rpx;height:100rpx"></image>
+      <text>{{item.name}}</text>
+    </navigator>
+  </view>
+</view>
+
+
+
+<!-- 产品列表 -->
+<view class="product">
+<view class="line"></view>
+  <block wx:for="{{product}}" wx:key="_id">
+  <navigator class="product_1" url="../product_detail/product_detail?id={{item._id}}">
+    <image src="{{item.src[0]}}" class="img"></image>
+    <view class="product_2">
+      <text style="font-size:12px;">{{item.name}} 积分:{{item.price}}</text>
+      <text style="font-size:12px;font-weight: 200;">库存:{{item.num}}</text>
+    </view>
+  </navigator>
+  </block>
+</view>
+
+
+

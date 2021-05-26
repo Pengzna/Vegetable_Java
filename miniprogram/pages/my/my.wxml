@@ -1,0 +1,35 @@
+<!-- 如果只是展示用户头像昵称，可以使用 <open-data /> 组件 -->
+<view class="aa">
+  <view class="cc">
+    <open-data type="userAvatarUrl"></open-data>
+  </view> 
+  <!-- 用户信息 -->
+  <view>
+    <view class="ac">
+        <open-data type="userNickName" lang="zh_CN" ></open-data>
+    </view>
+    <view class="cv">
+      <open-data type="userCountry" lang="zh_CN" ></open-data>
+      <open-data type="userProvince" lang="zh_CN" ></open-data>
+      <open-data type="userCity" lang="zh_CN" ></open-data>
+    </view>
+  </view>
+</view>
+
+
+
+
+<!-- 收货地址 -->
+
+
+<view class="aq" bindtap="address">
+  <image src="cloud://cloud1-5gwueugxee955e70.636c-cloud1-5gwueugxee955e70-1305914954/img/tubiao/地址.png" style="width:60rpx;height:60rpx;margin-right: 20rpx;"></image>
+  <view>收货地址</view>
+  <image src="cloud://test-rvwwd.7465-test-rvwwd-1301656814/img/tubiao/jt.png" style="width:60rpx;height:60rpx;margin-left: 400rpx;"></image>
+</view>
+
+
+<view class="anniu">
+  <button wx:if="{{canIUse}}" open-type="getUserInfo" bindgetuserinfo="bindGetUserInfo" type="primary" plain='true' style="margin-top: 100rpx;width:300rpx">授权登录</button>
+  <view wx:else>请升级微信版本</view>
+</view>
