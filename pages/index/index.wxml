@@ -57,7 +57,7 @@
     <van-tab title="低碳行">
     <view class="go">
     <view>
-      <text class="header2">南京大学垃圾分类点</text>
+      <text class="header2">南京大学垃圾分类回收点</text>
     </view>
       <view>
         <image src="/images/NJU.jpg" class="recycle"></image>

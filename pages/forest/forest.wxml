@@ -1,5 +1,5 @@
 <!--pages/forest.wxml-->
-
+ 
 <view class="head"><van-image
   class="header"
   width="8rem"
@@ -42,7 +42,7 @@
 <image class="myTree" id="myTree20" src="/images/myTree3.png" wx:if="{{isShow[19]}}"></image>
 <image class="myTree" id="myTree21" src="/images/myTree2.png" wx:if="{{isShow[20]}}"></image>
 <image class="myTree" id="myTree22" src="/images/myTree1.png" wx:if="{{isShow[21]}}"></image>
-<image id="background" src="/images/myForest.png"></image>
+<image id="background" src="/images/myForest().png"></image>
 </view>
 
 <!-- 下面要对按钮进行布局 -->

@@ -1,15 +1,23 @@
 /* pages/forest.wxss */
+page{
+    overflow:hidden; 
+    position:fixed; 
+    background-image:url('https://z3.ax1x.com/2021/05/26/29kS5F.png'); 
+    margin: 0px; 
+    /*下面的是关键的设置100%显示*/ 
+    background-size: 100% 100%; 
+} 
 .head{
-  top: 500rpx;
+  /* top: 500rpx; */
   display: inline-flex;
   width: 96%;
   margin-left: 2%;
   height: 200rpx;
-  background-color: #FFFFFF;
+  background-color: #45E587;
   border-radius: 10rpx;
   box-shadow: 2px 2px 2px #cdcfcf;
   justify-content: center;
- 
+  
 }
 
 .position{
@@ -22,7 +30,7 @@
  .position #background { 
    z-index: 1;
   position: absolute;
-  width:700rpx;
+  width:96%;
   height:500rpx;
 }
 .position #myTree1{
