@@ -7,8 +7,8 @@ page{
     /*下面的是关键的设置100%显示*/ 
     background-size: 100% 100%; 
 } 
-.head{
-  /* top: 500rpx; */
+/* .head{
+  
   display: inline-flex;
   width: 96%;
   margin-left: 2%;
@@ -18,9 +18,10 @@ page{
   box-shadow: 2px 2px 2px #cdcfcf;
   justify-content: center;
   
-}
+} */
 
 .position{
+  top:150rpx;
   position: relative;
   display:flex;                    
   justify-content: center;
@@ -209,8 +210,9 @@ page{
   margin-left: 560rpx;
 }
 .nevigator{
+
   z-index: 1;
-  top: 500rpx;
+  top: 650rpx;
   position: relative;
   display: inline-flex;
   margin-top: 10rpx;
@@ -259,7 +261,7 @@ text{
 }
 
 .button{
-  top: 510rpx;
+  top: 660rpx;
   position: relative;
   display:flex;                    
   justify-content: center;

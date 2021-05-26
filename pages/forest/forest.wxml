@@ -1,6 +1,6 @@
 <!--pages/forest.wxml-->
  
-<view class="head"><van-image
+<!-- <view class="head"><van-image
   class="header"
   width="8rem"
   height="5.3rem"
@@ -15,7 +15,7 @@
   round
   src="https://th.bing.com/th/id/R2ca38265b07c6e8ee1909d7127ce3e16?rik=KWdrEzBbdHNVpg&riu=http%3a%2f%2fpic254.nipic.com%2ffile%2f20191121%2f10673188_172511422081_2.jpg&ehk=ugC8sJC2%2f5bwILfq8N1UwmQJDMxphj4AUiCveY4d9EI%3d&risl=&pid=ImgRaw"
 />
-</view>
+</view> -->
 
 
 <view class="position">
