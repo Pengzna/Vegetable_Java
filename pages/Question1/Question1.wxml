@@ -12,7 +12,8 @@
         4.还有最后一个弹出框我本来的想法是想要翔游戏里面一样弹出一个一堆积分的图片，下面标注着你获得了五积分，但是后面那个showtoast样式我不知道怎么改，就作罢了，你如果有想法的话试着改改看，没想法就只能这样的。
 
  -->
-
+<image class="background" src="/image/background().jpg"></image>
+<image class="background2" src="/image/background2.jpg"></image>
 <view class="head" >
     <text>{{count}}</text><text style="color:gray ">/{{total}}</text>
     <image src="../../image/传输_上传2.png" mode="widthFix"></image> 

@@ -17,22 +17,28 @@
 
  -->
 
+ <image src="/image/background.jpg" class="image"></image>
  <view class="container">
     
-    <view class="title">
-         <image mode="widthFix" src="../../image/降低碳排放量.png"></image>
-        <text>“借你一片绿，还我一片荫”</text>
-             <text>碳中和知识竞赛</text>
-   </view>
+    <!-- <view class="title"> -->
+         <image class="img" mode="widthFix" src="../../image/降低碳排放量.png"></image>
+<view class="header">
+<text class="first">“借你一片绿，还我一片荫”</text>
+          <text class="second">碳中和知识竞赛</text>
+</view>
+          
+
+   <!-- </view> -->
 
     <view class="rule">
          <text class="introduction"> 题目类型：<text>单选题 </text> </text> 
          <text class="introduction"> 题目数量：<text>5题 </text> </text> 
-         <text class="introduction"> 规则介绍：<text>答对积一分，答错不扣分，仅答对本题后才可进入下一题噢 \r\n</text> </text>
+         <text class="introduction" > 规则介绍：<text>答对积一分，答错不扣分，</text> </text>
+         <text class="introduction" id="line">仅答对后才可进入下一题噢~ \r\n</text>
     </view>
 
     <view class="begin">
-         <button bindtap="toNextPage">开始你的学习之路吧！</button>
+         <button class="getStart" bindtap="toNextPage">开始答题！</button>
     </view>
 
     
