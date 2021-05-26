@@ -1,58 +1,140 @@
+<wxs module="tools" src="/utils/filter.wxs"/>
+<wxs module="tools1" src="/utils/substring.wxs"/>
+
+<movable-area style="height:{{movehight}}px;width:720rpx;position:fixed;top:15rpx;left:15rpx;pointer-events: none;  "  >
+  <movable-view class="moveview" style="height: 90rpx;width: 90rpx;"  direction="all" x="500" y="{{movehight2}}"  >
+    <image src="/images/goTop.png" hidden='{{yincang}}' bindtap="goTop" class="goTop" mode="widthFix"  ></image>
+  </movable-view>
+</movable-area>
+
+
+<!-- <image src="/images/goTop.png" hidden='{{yincang}}' bindtap="goTop" class="goTop" mode="widthFix"  ></image> -->
+
+<!-- <image src="/images/shuaxin.png"  bindtap="shuaxin" class="shuaxin" mode="widthFix"  ></image> -->
+
+<!-- 主页 -->
 <view class="zhuye" >
-<view class="guanggao" >
-  <swiper class="guanggao1" indicator-dots="true" autoplay="true" interval="2000" circular="true">
-    <swiper-item wx:for="{{guanggaotu}}"  wx:key="index">
-      <navigator >
-        <image src="{{item}}"></image>
-      </navigator>
-    </swiper-item>
-  </swiper>
-</view>
 
-<view class="gonggao">
-  <view class="bt">
-    <view class="btnr">公告</view>
-    <text class="iconfont iconicon-test" style='margin-top:10rpx;color:#FD7B21;'></text>
+<!-- 广告轮播图 -->
+  <view class="guanggao" style="height:280rpx;" >
+    <swiper current="0" class="guanggao1"  autoplay="true" interval="2500" circular="true" style="height:280rpx" previous-margin="30rpx" next-margin="30rpx" >
+      <swiper-item wx:for="{{lunbotu}}"  wx:key="index" style="height:280rpx;" >
+        <navigator url="../plate2/plate2?id={{item.id}}&fenxiang=false&liuyan=true&love=" style="height:280rpx;display:flex;justify-content:center" >
+          <image src="{{item.image}}" mode="aspectFill" style="width:685rpx;height:270rpx;margin:0 8rpx;border-radius:20rpx;overflow:hidden;border:thin solid #4B7382;margin-top:6rpx;display:none" bindload="imageOnLoad" id="{{tools1.substring(item.image)}}" binderror="imageOnLoadError"  ></image>
+         
+
+          <image src="{{item.loaded?item.image:'/images/loading8.gif'}}"  mode="aspectFill" style="width:685rpx;height:270rpx;margin:0 8rpx;border-radius:20rpx;overflow:hidden;border:thin solid #4B7382;margin-top:6rpx" ></image>
+          <!-- 上面测试 -->
+
+        </navigator>
+      </swiper-item>
+    </swiper>
   </view>
+<!-- 板块3个 -->
+  <view class="bankuai">
+    <view bindtap="tiaozhuan" data-bankuai="0" class="bankuainr">
+      <image class="bankuaiimg" src="/images/bankuai/huxiangbangzhu.png" style="width:65rpx;height:65rpx;background-color:#F59952;" ></image>
+      <text class="bankuaiwenben" >日常交流</text>
+    </view>
+
+    <view bindtap="tiaozhuan" data-bankuai="1" class="bankuainr">
+      <image class="bankuaiimg" src="/images/bankuai/zhenxinhua.png" style="width:65rpx;height:65rpx;background-color:#60E3EF;" ></image>
+      <text class="bankuaiwenben" >吐槽挂人</text>
+    </view>
+
+    <view bindtap="tiaozhuan" data-bankuai="2" class="bankuainr">
+      <image class="bankuaiimg" src="/images/bankuai/shiwuzhaoling.png" style="width:65rpx;height:65rpx;background-color:#57A7FE;" ></image>
+      <text class="bankuaiwenben" >其他</text>
+    </view>
+  </view>
+
+  <Tabs bindchange="changetitle" ></Tabs>
   
-  <swiper class="ggnr" autoplay="true" vertical="true" interval="1000" circular="true" >
-   <block wx:for="{{gonggaonr}}" wx:key="index">
-     <swiper-item>
-      <view>{{item}}</view>
-     </swiper-item>
-   </block>
-  </swiper>
+<!-- 说说显示所有 -->
+  <view class="A">
+    <!-- 下面为数据空白时的图片 -->
+    <view class="kong1" style="display:flex;justify-content:center" >
+      <image wx:if="{{kong==true && ss_xx.length==0}}" class="kong2" 
+      src="/images/kong0.png" mode="widthFix" style="width:500rpx;margin-top:100rpx;height:auto" />
+    </view>
+    <!-- 下面为加载时的loading图片 -->
+    <view class="kong1" style="display:flex;justify-content:center" >
+      <image wx:if="{{kong==false && ss_xx.length==0}}" class="kong2" 
+      src="/images/loading2.gif" mode="widthFix" style="width:100rpx;margin-top:170rpx;height:auto" />
+    </view>
+<!-- 加个倒序 -->
+    <view class="daoxu" >
+      <view class="B" wx:for="{{ss_xx}}" wx:key="index" wx:for-item="item0" wx:for-index="index0"  bindtap="xiangqing" data-id="{{item0._id}}" data-love="{{item0.love}}" data-index="{{index0}}" >
+        <!-- B1为头像 -->
+        <view class="B1"bindtap="xiangqing" data-id="{{item0._id}}">
+          <image wx:if="{{item0.ss_xx.niming1!=true}}" 
+          class="photo" src="{{item0.ss_xx.userphoto}}" mode="widthFix" ></image>
+          <image wx:else class="photo" src="/images/user/niming.png" mode="widthFix" ></image>
+        </view>
+        <!-- B2为其他内容 -->
+        <view class="B2">
+          <!-- 第一部分 -->
+          <view class="B21" >
+            <view wx:if="{{item0.ss_xx.niming1!=true}}" class="name" 
+            style="font-size:100%;margin-top:5rpx;color:#175167" >
+              {{item0.ss_xx.username}}
+            </view>
+            <view wx:else class="name" 
+            style="font-size:100%;margin-top:5rpx;color:#175167" >
+              {{"匿名用户"}}
+            </view>
+            
+            <image src="/images/icon/tucao.png" wx:if="{{item0.ss_xx.bankuai==1}}" 
+            style="width:48rpx;height:48rpx;margin-right:10rpx"/>
+        
+            <image src="/images/icon/qita.png" wx:if="{{item0.ss_xx.bankuai==2}}" 
+            style="width:48rpx;height:48rpx;margin-right:10rpx"/>
 
-  <view bindtap="showgonggaoxiangqing" class="xq">详情</view>
-</view>
+            <image src="/images/icon/jiaoliu.png" wx:if="{{item0.ss_xx.bankuai==0}}" 
+            style="width:48rpx;height:48rpx;margin-right:10rpx"/>
 
-<view class="bankuai">
-  <view bindtap="tiaozhuan" class="bankuainr">
-    <text class="iconfont icontrust" style='color:#FD215D;margin: -60rpx;font-size: 360%;'></text>
-    <text>交友</text>
-  </view>
-  <view class="bankuainr">
-    <text class="iconfont icontool" style='color:#12403B;margin: -60rpx;font-size: 360%;'></text>
-    <text>兼职</text>
-  </view>
-  <view class="bankuainr">
-    <text class="iconfont iconCustomermanagement" style='color:#FD7B21;margin: -60rpx;font-size: 360%;'></text>
-    <text>互助</text>
+          </view>
+          <!-- 第二部分 -->
+          <view class="B22" >{{item0.ss_xx.nr}}</view>
+          <!-- 第三部分 -->
+          <view class="B23" > 
+            <!-- 第一种 -->
+            <view wx:if="{{item0.ss_xx.tp.length==1}}" class="img1" style="width: 100%;">
+              <image lazy-load="true" class="danzhang" src="{{item0.ss_xx.tp[0]}}" style="width: 400rpx;height:auto" mode="widthFix"  />
+            </view>
+            <!-- 第二种 -->
+            <view wx:if="{{item0.ss_xx.tp.length>1}}" class="img2" style="width: 100%;">
+              <view class="xunhuan" wx:for="{{item0.ss_xx.tp}}" wx:key="index" 
+              style="width: 193rpx;height:193rpx" wx:for-item="item1" >
+                <image lazy-load="true" class="duozhang" src="{{item1}}" style="width: 185rpx;height:185rpx;margin-right:8rpx;margin-bottom:8rpx" mode="aspectFill"/>
+            </view>
+            </view>
+          </view>
+          <!-- 第四部分 -->
+          <view class="B24"  >
+            <!-- 下面显示时间 -->
+            <view class="time" style="font-size:78%;color:#B0B0B0;font-weight:lighter">{{tools.timeChn(item0.ss_xx.firsttime)}}</view>
+
+            <view class="dzpl" style="margin-right:20rpx;display:flex;" >
+              <!-- 下面显示点赞， -->
+              <view class="love" style="display:flex" catchtap="dianzan" data-index="{{index0}}" data-id="{{item0._id}}" >
+                <image lazy-load="true" wx:if="{{!item0.love}}" src="/images/icon/zan1.png" style="width:40rpx;height:40rpx" />
+                <image lazy-load="true" wx:if="{{item0.love}}" src="/images/icon/zan2.png" style="width:40rpx;height:40rpx" />
+                <view class="dianzannb" style="font-size:78%;color:#656565;font-weight:lighter;margin-right:10rpx;">{{item0.ss_xx.dianzannb}}</view>
+              </view>
+              <!-- 下面显示回复， -->
+              <image lazy-load="true" src="/images/icon/pinglun.png" style="margin-left:10rpx;width:40rpx;height:40rpx" />
+              <view class="huifunb" style="font-size:78%;color:#656565;margin-left:10rpx;font-weight:lighter">{{item0.ss_xx.huifunb}}</view>
+
+              <!-- 下面显示浏览， -->
+              <image lazy-load="true" src="/images/icon/look.png" style="margin-left:10rpx;width:40rpx;height:40rpx" />
+              <view class="dianzannb" style="font-size:78%;color:#656565;font-weight:lighter">{{item0.ss_xx.look}}</view>
+
+            </view>
+          </view>
+        </view>
+      </view>
+    </view>
   </view>
 
-  <view class="bankuainr">
-    <text class="iconfont iconconsumption" style='color:#FDE921;margin: -60rpx;font-size: 360%;'></text>
-    <text>交易</text>
-  </view>
-
-  <view class="bankuainr">
-    <text class="iconfont iconatm-away" style='color:#BD53E0;margin: -60rpx;font-size: 360%;'></text>
-    <text>闲谈</text>
-  </view>
-
-  <view class="bankuainr">
-    <text class="iconfont iconlisting-content-fill" style='color:#2194FD;margin: -60rpx;font-size: 360%;'></text>
-    <text>游戏</text>
-  </view>
-</view>
 </view>

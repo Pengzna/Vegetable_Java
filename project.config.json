@@ -2,9 +2,9 @@
   "miniprogramRoot": "miniprogram/",
   "cloudfunctionRoot": "cloudfunctions/",
   "setting": {
-    "urlCheck": false,
+    "urlCheck": true,
     "es6": true,
-    "enhance": false,
+    "enhance": true,
     "postcss": true,
     "preloadBackgroundData": false,
     "minified": true,
@@ -27,6 +27,7 @@
       "disablePlugins": [],
       "outputPath": ""
     },
+    "enableEngineNative": false,
     "bundle": false,
     "useIsolateContext": true,
     "useCompilerModule": true,
@@ -36,9 +37,9 @@
     "packNpmRelationList": [],
     "minifyWXSS": true
   },
-  "appid": "wx116e9ce5a20357e4",
-  "projectname": "%E8%81%8A%E5%A4%A7%E7%A4%BE%E5%8C%BA",
-  "libVersion": "2.14.1",
+  "appid": "wx8e1aebd387bcb94a",
+  "projectname": "lvse shequ",
+  "libVersion": "2.15.0",
   "condition": {
     "plugin": {
       "list": []
@@ -58,15 +59,34 @@
           "query": ""
         },
         {
-          "name": "pages/my/wd-bianjixinxi/bianjiusername/bianjiusername",
-          "pathName": "pages/my/wd-bianjixinxi/bianjiusername/bianjiusername",
+          "name": "板块内",
+          "pathName": "pages\\plate1\\plate1",
           "query": "",
           "scene": null
         },
         {
-          "name": "发布",
+          "name": "pages/post/post",
           "pathName": "pages/post/post",
           "query": "",
+          "scene": null
+        },
+        
+        {
+          "name": "pages/message/xiaoxi/xiaoxi",
+          "pathName": "pages/message/xiaoxi/xiaoxi",
+          "query": "",
+          "scene": null
+        },
+        {
+          "name": "pages/message/shouquan/shouquan",
+          "pathName": "pages/message/shouquan/shouquan",
+          "query": "allow=false",
+          "scene": null
+        },
+        {
+          "name": "pages/message/shouquan/shouquan",
+          "pathName": "pages/message/shouquan/shouquan",
+          "query": "allow=true",
           "scene": null
         }
       ]

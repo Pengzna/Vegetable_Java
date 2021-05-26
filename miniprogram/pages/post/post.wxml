@@ -1,53 +1,52 @@
 <!--内容发布页面-->
 <form bindsubmit="tijiao">
-  <view class="post1">
-    <view class="post1-1">
-      
-        <view class="post-shezhi-fenlei-1">板块：</view>
-        <picker name="bankuai" bindchange="bankuaiPickerChange" value="{{index}}" range="{{range}}" style='border-bottom:1px solid #FD7B21;height:52rpx'>
-          <view class="picker">
-            {{range[index]}}
+  <view class="A" style="width: 710rpx;padding: 20rpx;"  >
+    <!-- 第一部分，板块+子类 -->
+    <view class="A1" style="display: flex;margin:20rpx;" >
+      <!-- 多列 -->
+      <view class="section" style="display: flex;" >
+        <view class="section__title">选择分类：</view>
+        <picker mode="multiSelector" name="fenlei" bindchange="xuanzewanbi" bindcolumnchange="kaishixuanze" value="{{zilei}}" range="{{heji}}">
+          <view class="picker" style="color:#FD5DC0" >
+            --{{heji[0][index[0]]}}--{{heji[1][index[1]]}}--
           </view>
         </picker>
-      
-        <view class="post-shezhi-fenlei-2" style="margin-left:40rpx">子类：</view>
-        <picker name="zilei" bindchange="zileiPickerChange" value="{{index2}}" range="{{zilei[index]}}" style='border-bottom:1px solid #FD7B21;height:52rpx'>
-          <view class="picker">
-            {{zilei[index][index2]}}
-          </view>
-        </picker>
-      </view>  
-
-    <view class="post1-2">
-      <view class="nimingshezhi">匿名：</view>
-      <switch bindchange="switchChange" name="niming-yn" style='zoom:.7'/>
-      <input wx:if="{{niming}}" style='margin-left:20rpx;border:1px solid #175167;'  name="niming-nr"  maxlength="10" placeholder="填写匿名（最长10位）" />
-    </view>
-  </view>
-
-  <view class="post2">
-    <textarea class="wb" name="wbnr" placeholder="在此处编辑内容（最大允许长度为400字）" style="width:680rpx;color:#080100;" maxlength="400"  />
-  </view>
-
-  <view class="post-img">
-    <view class="post-img-1">
-      <view class='pic' wx:for="{{imgs}}" wx:for-item="item" wx:key="*this">
-        <!-- 下面是图片框 --> 
-        <image class='img' src="{{item}}" data-index="{{index}}" 
-        mode="aspectFill" bindtap="previewImg" /> 
-        <!-- 下面是删除按钮 --> 
-        <text class="iconfont iconshanchu" data-index="{{index}}" bindtap="deleteImg" style="color:#FD2104;font-size: 100%;margin-left: -36rpx; margin-top: 4rpx;" />   
       </view>
-      <!-- 下面是添加图片的tap --> 
-      <view class="add" bindtap="chooseImg">
-        <text class="iconfont icontianjia2" style="height:96rpx;font-size:300%;color:#BABD8D" />
+      <!-- 多列 -->
+    </view>
+
+    <!-- 第二部分，编辑内容 -->
+    <view class="A2" style="padding:20rpx;" >
+      <textarea  name="wbnr" placeholder="来吧！尽情发挥..." bindinput="wbnr" value='{{wbnr}}' style="width:100%;color:#080100;" maxlength="299"  />
+      <view class="zs" style="display:flex;flex-direction:row-reverse;margin-right:15rpx" >
+        <text class="sy" style="font-size:85%;color:#656565" >{{sy}}</text>
+      </view>
+    </view>
+
+    <!-- 第四部分，添加图片 -->
+    <view class="A4" style="display:flex;flex-wrap:wrap;margin:20rpx" >
+      <view class="A41" wx:for="{{imgs}}" wx:for-item="item0" wx:for-index="index0" wx:key="index0" 
+      style="width:216rpx;height:216rpx;margin-right:10rpx;margin-bottom:10rpx;border-radius: 10rpx;overflow: hidden;position:relative">
+        <!-- 下面图片框 -->
+        <image src="{{item0}}"  mode="aspectFill" bindtap="previewImg" style="width:216rpx;height:216rpx" >
+        </image> 
+        <!-- 下面删除按钮 -->
+        <image src="/images/post/dlt.png" bindtap="deleteImg" style="width:46rpx;height:46rpx;position:absolute;right:0;top:0" data-index="{{index0}}" />  
+        
+      </view>
+      <!-- 下面是add -->
+      <view class="A42" style="background-color:#F5F7F9;width:216rpx;height:216rpx;border-radius: 10rpx;overflow: hidden;display:flex;justify-content:center;align-items:center" bindtap="chooseImg" wx:if="{{imgs.length<9}}" >
+        <image src="/images/post/tp.png" style="width:150rpx;height:150rpx;" ></image>
       </view>
 
     </view>
+    
+    <!-- 第六部分，提交按钮 -->
+    <view class="A6" style="width:200rpx;position:fixed;bottom:60rpx;display:flex;justify-conten:center;margin:0 255rpx" >
+      <button  form-type="submit" style="background-color:#175167;border-radius: 30rpx;overflow: hidden;color:#ffffff" size="mini" >立即发布</button>
+    </view>
   </view>
-  <!-- 下面是立即发布的tap --> 
-  <view class="btn">
-    <button class="fb_an" form-type="submit" type='primary' >立即发布</button>
-  </view>
-
 </form>
+
+<!-- 下面是用于图片压缩的画布 -->
+<canvas canvas-id='huabu' style='position: absolute;left:-4000px;top:-4000px;width: 4000px; height: 4000px;' ></canvas>

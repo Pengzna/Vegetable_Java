@@ -1,17 +1,17 @@
-.background{background-color: ghostwhite;}
+page{background-color: #EDEDED;}
 
+/* .background{background-color: ghostwhite;}
 .user-infor{width: 750rpx;height: 350rpx; display: flex;align-items: center;justify-content: space-between; flex-direction:column;background-color: #3C6D7F;}
-.user-infor image{margin-top: 25rpx; width: 200rpx;height: 200rpx;border-radius: 50%;overflow: hidden; }
-.denglu{margin-bottom: 25rpx;}
-.name{margin-bottom: 25rpx;font-size: 110%;}
+.user-infor image{margin-top: 25rpx; width: 200rpx;height: 200rpx;border-radius: 50%;overflow: hidden; } */
 
-.wd-list{margin-top: 50rpx;}
+.wd-list{margin-top: 20rpx;}
+
 .wdlist{
   display: flex;
   justify-content: space-between;
   flex-direction: row;
   align-items: center;
   height: 100rpx;
-  margin:0rpx 50rpx;
+  margin-left:50rpx;
   border-bottom: 1px solid #B0B2BF;
 }

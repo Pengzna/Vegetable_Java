@@ -1,4 +1,10 @@
 {
-  "usingComponents": {},
-  "navigationBarTitleText": "聊大社区"
+  "usingComponents": {
+    "Tabs":"../../zujian/Tabs/Tabs"
+  },
+  "navigationBarTitleText": "低碳社区",
+  "enablePullDownRefresh":true,
+  "backgroundColor":"#2A6C86",
+  "backgroundTextStyle":"dark"
+
 }

@@ -1,6 +1,0 @@
-.change1{display: flex;align-items: center;height: 180rpx;justify-content: space-between;margin:0rpx 20rpx;border-bottom: 1px solid #B0B2BF;}
-.change2{display: flex;align-items: center;height: 180rpx;justify-content: space-between;margin:0rpx 20rpx;border-bottom: 1px solid #B0B2BF;}
-.photo{width: 160rpx;height: 160rpx;}
-.yiqi{display: flex;align-items: center;justify-content: space-between;}
-.iconfont{color:#B0B2BF}
-

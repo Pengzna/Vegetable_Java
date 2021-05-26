@@ -1,5 +1,0 @@
-<view class="box1">
-  <input class="input" type="text" value="{{username}}" bindinput="shuju" maxlength="10" placeholder="填写签名（最长10位）"/>
-  <view class="tishi">好名字可以让大家更喜欢你</view>
-  <button class="anniu" bindtap="tijiao">保存</button>
-</view>

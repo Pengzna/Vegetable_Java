@@ -1,0 +1,102 @@
+{
+  "setting": {},
+  "condition": {
+    "plugin": {
+      "list": []
+    },
+    "game": {
+      "list": []
+    },
+    "gamePlugin": {
+      "list": []
+    },
+    "miniprogram": {
+      "list": [
+        {
+          "id": -1,
+          "name": "db guide",
+          "pathName": "pages/databaseGuide/databaseGuide",
+          "query": ""
+        },
+        {
+          "name": "板块内",
+          "pathName": "pages\\plate1\\plate1",
+          "query": "",
+          "scene": null
+        },
+        {
+          "name": "pages/tuijian/tuijian",
+          "pathName": "pages/tuijian/tuijian",
+          "query": "",
+          "scene": null
+        },
+        {
+          "name": "pages/post/post",
+          "pathName": "pages/post/post",
+          "query": "",
+          "scene": null
+        },
+        {
+          "name": "pages/tuijian/tuijian",
+          "pathName": "pages/tuijian/tuijian",
+          "query": "",
+          "scene": null
+        },
+        {
+          "name": "pages/tuijian/detail/detail",
+          "pathName": "pages/tuijian/detail/detail",
+          "query": "",
+          "scene": null
+        },
+        {
+          "name": "pages/tuijian/tuijian",
+          "pathName": "pages/tuijian/tuijian",
+          "query": "",
+          "scene": null
+        },
+        {
+          "name": "pages/message/xiaoxi/xiaoxi",
+          "pathName": "pages/message/xiaoxi/xiaoxi",
+          "query": "",
+          "scene": null
+        },
+        {
+          "name": "pages/message/shouquan/shouquan",
+          "pathName": "pages/message/shouquan/shouquan",
+          "query": "allow=false",
+          "scene": null
+        },
+        {
+          "name": "pages/message/shouquan/shouquan",
+          "pathName": "pages/message/shouquan/shouquan",
+          "query": "allow=true",
+          "scene": null
+        },
+        {
+          "name": "火箭发射",
+          "pathName": "pages/message/shouquan/shouquan",
+          "query": "allow=true",
+          "scene": null
+        },
+        {
+          "name": "设置",
+          "pathName": "pages/my/set/set",
+          "query": "",
+          "scene": null
+        },
+        {
+          "name": "入驻用户",
+          "pathName": "pages/my/tj_user/tj_user",
+          "query": "",
+          "scene": null
+        },
+        {
+          "name": "留言板",
+          "pathName": "pages/plate2/plate2",
+          "query": "id=20210316gao&fenxiang=true&liuyan=true",
+          "scene": null
+        }
+      ]
+    }
+  }
+}

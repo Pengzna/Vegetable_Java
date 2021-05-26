@@ -1,3 +1,0 @@
-/* miniprogram/pages/my/wd-bianjixinxi/bianjiusername/bianjiusername.wxss */
-.input{margin-top:50rpx;border-bottom: 1px solid #175167;margin-left: 50rpx;margin-right: 50rpx;}
-.tishi{font-size: 60%;color: #B0B2BF;margin-left: 50rpx;margin-top: 25rpx;}

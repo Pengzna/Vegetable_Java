@@ -1,5 +1,4 @@
 /**app.wxss**/
-@import"style/iconfont/iconfont.wxss";
 
 page{
   --zhutise:#175167;

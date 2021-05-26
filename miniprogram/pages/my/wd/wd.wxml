@@ -1,37 +1,50 @@
 <view class="user">
-  <view class="user-infor"> 
-    <image src="{{ userphoto }}" style="border:5 solid #ffffff"/>
-    <text class="name" wx:if="{{login==true}}">{{username}}</text>
-    <button class="denglu" wx:if="{{login==false}}" open-type="getUserInfo" bindgetuserinfo="GetUserInfo">
+
+  
+<view class="waii" style="position:relative;" >
+  <image class="bj" style="height:325rpx;width:750rpx;filter: blur(2px);" src="{{ userphoto }}" mode="aspectFill"  > </image>
+
+
+  <view class="quan" style="width:750rpx;height:325rpx;position:absolute;top:0;left:0;display:flex;flex-direction:column;align-items:center;justify-content:space-around;margin-top:15rpx" >
+    <image bindtap="chakantouxiang" src="{{ userphoto }}" style="border-radius:50%;overflow:hidden;margin-top:10rpx;width:170rpx;height:auto;border-style: solid;box-shadow:0px 2px 4px 2px #DDDDDD;border-width: 0rpx;" mode="widthFix" />
+    <text class="name" wx:if="{{login==true}}" 
+    style="font-size: 110%;color:#ffffff;margin-bottom:15rpx;background-color:#57A7FE;border-radius:10rpx;overflow:hidden;padding:6rpx" >{{username}}</text>
+    <button class="denglu" wx:if="{{login==false}}" open-type="getUserInfo" bindgetuserinfo="GetUserInfo" style="margin-bottom: 25rpx;" >
         微信登录
     </button>
   </view>
+</view>
   
   <view wx:if="{{login==true}}" class="wd-list">
-    <navigator url="../wd-bianjixinxi/wd-bianjixinxi" hover-class="navigator-hover">
-      <view class="wdlist">
-       <view class="wdlist-nr">编辑我的信息</view>
-       <text class="iconfont iconarrow-right"></text>
-    </view>
-    </navigator>
     
-    <navigator url="../wd-fabudeneirong/wd-fabudeneirong" hover-class="navigator-hover">
+    <navigator url="../../plate3/plate3?canshu=fabude" hover-class="none">
       <view class="wdlist">
-        <view class="wdlist-nr">我发布的内容</view>
-        <text class="iconfont iconarrow-right"></text>
+        <view class="wdlist-nr">我发布的帖子</view>
+        <image class="you" src="/images/icon/you.png" mode="widthFix" style="width:45rpx;margin-right:45rpx;height:auto" ></image>
       </view>
     </navigator>
 
-    <navigator url="../wd-fankui/wd-fankui" hover-class="navigator-hover">
+    <navigator url="../../plate3/plate3?canshu=pinglunde" hover-class="none">
       <view class="wdlist">
-        <view class="wdlist-nr">向客服反馈信息</view>
-        <text class="iconfont iconarrow-right"></text>
+        <view class="wdlist-nr">我评论的帖子</view>
+        <image class="you" src="/images/icon/you.png" mode="widthFix" style="width:45rpx;margin-right:45rpx;height:auto" ></image>
       </view>
     </navigator>
 
+    <navigator url="../about/about" hover-class="none">
+      <view class="wdlist">
+        <view class="wdlist-nr">关于小程序与帮助</view>
+        <image class="you" src="/images/icon/you.png" mode="widthFix" style="width:45rpx;margin-right:45rpx;height:auto" ></image>
+      </view>
+    </navigator>
+
+    <navigator url="../set/set" hover-class="none">
+      <view class="wdlist">
+        <view class="wdlist-nr">设置</view>
+        <image class="you" src="/images/icon/you.png" mode="widthFix" style="width:45rpx;margin-right:45rpx;height:auto" ></image>
+      </view>
+    </navigator>
 
 
   </view>
-
-
 </view>

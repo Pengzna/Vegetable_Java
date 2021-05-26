@@ -1,1 +1,11 @@
-/* miniprogram/pages/xiaoxi/xiaoxi.wxss */
+page{background-color: #EDEDED;}
+
+/* .shuaxin{
+  height: 90rpx;
+  width: 90rpx;
+  position: fixed;
+  bottom: 50rpx;
+  right: 38rpx;
+  border-radius: 50%;
+  opacity:0.6;
+} */
