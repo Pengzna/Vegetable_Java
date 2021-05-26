@@ -15,6 +15,6 @@ App({
   },
   globalData: {
     userInfo: null,
-    userCredict: 0,
+    userCredict: 5,
   }
 })
