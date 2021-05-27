@@ -1,98 +1,164 @@
-// index.js
-// 获取应用实例
-const app = getApp()
+const db = wx.cloud.database()
 
 Page({
   data: {
-
-
-    swiperList:
-    [{
-      goods_id:"0",
-      image_src:"https://z3.ax1x.com/2021/05/20/go190J.jpg",
-      goods_name:"瓶盖灯" ,
-      navigator_url: "/pages/goods_detail/index?goods_id={{item.goods_id}}"
-    },
-    {
-      goods_id:"1",
-      image_src:"https://z3.ax1x.com/2021/05/20/gouV4f.jpg",
-      goods_name:"手提袋",
-      navigator_url: "/pages/goods_detail/index?{{item.goods_id}}"
-    },
-    {
-      goods_id:"2",
-      image_src:"https://z3.ax1x.com/2021/05/20/goum8S.jpg",
-      goods_name:"线圈车",
-      navigator_url: "/pages/goods_detail/index?{{item.goods_id}}"
-    }
-  ],
-  catesList:[{
-    name:"二手电子设备",
-    image_src:"https://z3.ax1x.com/2021/05/20/gT8Fjf.png"
+    selected:0,
+    banner:[],
+    fenlei:[],
+    product:[],
+    search:[],
+    num:20,
+    ss:false,
+    _openid:""
   },
-  {name:"二手工艺品",
-  image_src:"https://z3.ax1x.com/2021/05/20/gT8igP.png"
-
+  // 分类跳转事件
+  fenlei:function(e){
+    console.log(e)
   },
-{
-  name:"二手衣物",
-  image_src:"https://z3.ax1x.com/2021/05/20/gT8P3t.png"
-}],
-
-
-
-
-
-
-floorList: [
-  {
-      "floor_title": {
-          "name": "时尚女装",
-          "image_src": "https://api-hmugo-web.itheima.net/pyg/pic_floor01_title.png"
+  // 搜索事件
+  search:function(e){
+    let that = this
+    db.collection('product').where({
+      name:e.detail.value  //把name与输入框输入的值进行比对
+    }).get({
+      success:function(res){
+        that.setData({
+          search:res.data
+        })
+        console.log('搜索成功',that.data.search)
+        if(that.data.search == ""){
+          wx.showToast({
+            title: '未找到商品',
+            icon:"none"
+          })
+        }
       },
-      "product_list": [
-          {
-              "name": "优质服饰",
-              "image_src": "https://z3.ax1x.com/2021/05/20/go190J.jpg",
-              "image_width": "232",
-              "open_type": "navigate",
-              "navigator_url": "/pages/goods_list/index?query=服饰"
-          },
-          
-      ]
-  },
-  {
-      "floor_title": {
-          "name": "户外活动",
-          "image_src": "https://api-hmugo-web.itheima.net/pyg/pic_floor02_title.png"
+      fail:function(res){
+        console.log('搜索失败',res)
       },
-      "product_list": [
-          {
-              "name": "勇往直前",
-              "image_src": "https://z3.ax1x.com/2021/05/20/go190J.jpg",
-              "image_width": "232",
-              "open_type": "navigate",
-              "navigator_url": "/pages/goods_list/index?query=户外"
-          },
-         
-      ]
+    })
   },
-  {
-      "floor_title": {
-          "name": "箱包配饰",
-          "image_src": "https://api-hmugo-web.itheima.net/pyg/pic_floor03_title.png"
+  onLoad: function() {
+    let that = this
+    db.collection('swiper').get({
+      success:function(res){
+        console.log('轮播图获取成功',res)
+        that.setData({
+          banner:res.data
+        })
       },
-      "product_list": [
-          {
-              "name": "清新气质",
-              "image_src": "https://z3.ax1x.com/2021/05/20/go190J.jpg",
-              "image_width": "232",
-              "open_type": "navigate",
-              "navigator_url": "/pages/goods_list?query=饰品"
-          },
-      ]
-  }
-]
-}
-}
-)
+      fail:function(res){
+        console.log('轮播图获取失败',res)
+      },
+    })
+    db.collection('fenlei').get({
+      success:function(res){
+        console.log('分类获取成功',res)
+        that.setData({
+          fenlei:res.data
+        })
+      },
+      fail:function(res){
+        console.log('分类获取失败',res)
+      },
+    })
+    db.collection('product').get({
+      success:function(res){
+        console.log('商品获取成功',res)
+        that.setData({
+          product:res.data
+        })
+      },
+      fail:function(res){
+        console.log('商品获取失败',res)
+      },
+    })
+    db.collection("user").doc("_openid").get({
+      //doc中写入id值可以查询特定的数据，不加doc全部获取
+      success:docRes=>{
+        this.setData({
+          _openid:docRes.data
+        })
+      }
+    })
+
+  },
+  onShow:function(e){
+    let that = this
+    db.collection('swiper').get({
+      success:function(res){
+        console.log('轮播图获取成功',res)
+        that.setData({
+          banner:res.data
+        })
+      },
+      fail:function(res){
+        console.log('轮播图获取失败',res)
+      },
+    })
+    db.collection('fnelei').get({
+      success:function(res){
+        console.log('分类获取成功',res)
+        that.setData({
+          fenlei:res.data
+        })
+      },
+      fail:function(res){
+        console.log('分类获取失败',res)
+      },
+    })
+    db.collection('product').get({
+      success:function(res){
+        console.log('商品获取成功',res)
+        that.setData({
+          product:res.data
+        })
+      },
+      fail:function(res){
+        console.log('商品获取失败',res)
+      },
+    })
+   /* db.collection("jifen").doc(0).update({
+      //该条记录为云数据库手动添加的记录
+        data:{
+          _openid:_openid
+        }
+      }).then(res=>{ 
+        console.log(res)
+      })*/
+  
+  },
+  /**
+   * 页面上拉触底事件的处理函数
+   */
+  onReachBottom: function () {
+    let that = this
+    wx.showLoading({
+      title: '刷新中！',
+      duration: 1000
+    })
+    let old_data = that.data.product
+    const db = wx.cloud.database()
+    db.collection('product').skip(that.data.num)
+      .get()
+      .then(res => {
+      // 利用concat函数连接新数据与旧数据
+      // 并更新emial_nums  
+        this.setData({
+          product: old_data.concat(res.data),
+          num:that.data.num+20
+        })
+        if(res.data==""){
+          wx.showToast({
+          icon: 'none',
+          title: '已经加载完毕'
+        })
+        }
+      })
+      .catch(err => {
+        console.error(err)
+      })
+    console.log('circle 下一页');
+  },
+
+})

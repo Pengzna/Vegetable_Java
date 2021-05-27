@@ -1,0 +1,37 @@
+<!-- 轮播图 -->
+<view class="banner" >
+  <swiper class="banner_1" autoplay="true" circular="true" interval="5000" indicator-dots="true">
+    <swiper-item  wx:for="{{product_src}}" wx:key="index">
+      <image src="{{item}}" style="width:750rpx;height:750rpx"></image>
+    </swiper-item>
+  </swiper>
+</view>
+
+
+<!-- 产品信息 -->
+<view class="product">
+  <view class="product_1">
+    <view>{{product_name}}:</view>
+    <view style="color:red">{{product_price}}元</view>
+  </view>
+  <view style="color:rgb(141, 141, 141)">{{product_detail}}</view>
+</view>
+<view class="line"></view>
+
+
+<!-- 商品详情 -->
+
+<view class="product_xq">
+  <view style="color:#ff6801" bindtap="xq">商品详情</view>
+</view>
+<image src="{{product_xq_src}}" mode="widthFix" style="width:750rpx"></image>
+<view style="align-self: center;height:150rpx">你已经看完了!快下单吧</view>
+
+
+<!-- 按钮 -->
+<view class="pay">
+  <view class="pay_1" bindtap="into_shopping_cart">
+    <image src="https://z3.ax1x.com/2021/05/25/2SKJqs.png" style="width:80rpx;height:80rpx"></image>
+  </view>
+  <view class="pay_2" bindtap="buy">立即购买</view>
+</view>

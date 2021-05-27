@@ -15,26 +15,24 @@ Component({
    */
   data: {
     selected:0,
-    "selectedColor": "red",
     "list": [
       {
-        "pagePath": "/miniprogram/shop/index/index",
-        "iconPath": "../../images/shop/home.png",
-        "selectedIconPath": "../../images/shop/home-o.png",
-        "text": "首页"
+        "pagePath": "../../shop/index/index",
+        "text": "首页",
+        "iconPath":"../../images/shop/sy_1.png",
+        "selectedIconPath":"../../images/shop/sy_2.png"
       },
       {
-        "pagePath": "../../shop/goodslist/index",
-        "iconPath": "../../images/shop/category.png",
-        "selectedIconPath": "../../images/shop/category-o.png",
-        "text": "商品详情"
+        "pagePath": "../../shop/shopping_cart/shopping_cart",
+        "text": "购物车",
+        "iconPath":"../../images/shop/sc_1.png",
+        "selectedIconPath":"../../images/shop/sc_2.png"
       },
- 
       {
-        "pagePath": "../../shop/user/index",
-        "iconPath": "../../images/shop/my.png",
-        "selectedIconPath": "../../images/shop/my-o.png",
-        "text": "我的"
+        "pagePath": "../../shop/my/my",
+        "text": "我的",
+        "iconPath":"../../images/shop/my_1.png",
+        "selectedIconPath":"../../images/shop/my_2.png"
       }
     ]
   },

@@ -1,33 +1,112 @@
-
-.index_swiper swiper {
-  width: 750rpx;
-  height: 340rpx;
+Page{
+  background-color:#F0F0F0;
 }
-.index_swiper swiper image {
+
+
+/* 轮播图 */
+.banner{
+  background-color: #FFFFFF;
+  /* display: flex;
+  flex-direction: row;
+  align-self: center; */
+  margin-top: 1%;
+  /* width: 100%;
+  height: 400rpx; */
+}
+.banner #img{
+  height: 85%;
+  border-radius: 50rpx;
+  width: 96%;
+  margin-left: 2%;
+}
+/* .banner_1{
   width: 100%;
-}
-
-
-.index_cate {
-  display: flex;
-}
-.index_cate navigator {
-  padding: 50rpx;
-  flex: 1;
-}
-.index_cate navigator image {
-  width: 100%;
-}
-
-
-
-.index_floor .floor_group .floor_title {
- padding: 10rpx;
-}
-.index_floor .floor_group .floor_title image {
-  width: 100%;
-}
-
-.index_floor .floor_group .floor_list {
+  height: 400rpx;
   overflow: hidden;
+} */
+
+/* 分类模块 */
+.fenlei{
+  display: inline-flex;
+  margin-top: 10rpx;
+  width: 96%;
+  margin-left: 2%;
+  height: 170rpx;
+  background-color: #FFFFFF;
+  border-radius: 10rpx;
+  box-shadow: 2px 2px 2px #cdcfcf;
+  justify-content: space-around;
+  
+}
+
+.fenlei_1{
+  margin-top: 30rpx;
+  height: 37%;
+   width: 70%;
+
+}
+.fenlei_3{
+  margin-left: 10rpx;
+}
+.fenlei_2{
+  display: flex;
+  flex-direction: column;
+}
+/* .line{
+  width: 100%;
+  height: 100rpx;
+  background-color: rgb(136, 135, 135);
+  margin-bottom: 30rpx;
+
+} */
+
+/* 商品 */
+.ProductBox{
+  flex-direction:column;
+  display: flex;
+  margin-top: 10rpx;
+  width: 46%;
+  margin-left: 2%;
+  height: 450rpx;
+  background-color: #FFFFFF;
+  border-radius: 20rpx;
+  box-shadow: 2px 2px 2px #cdcfcf;
+}
+.product{
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  align-self: center;
+  align-items: center; 
+  background-color: snow;
+}
+.product_1{
+  height: 100%;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+.img{
+  margin-top: 30rpx;
+  margin-left: 5%;
+  width: 86%;
+  height: 65%;
+  border-radius: 20rpx;
+}
+.product_2{
+  display: flex;
+  flex-direction: column;
+  height: 90rpx;
+  border: 1px solid silver;
+  width: 80%;
+  background-color: #B9CCDB;
+  border-radius: 10rpx;
+  align-items: center;
+  justify-content: space-between;
+  padding-left: 10rpx;
+  padding-right: 10rpx;
+  margin-top: 20rpx;
+  margin-bottom: 20rpx;
 }
