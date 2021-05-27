@@ -20,24 +20,47 @@ Page({
   onClick: function(){
     var isPlanted = 0
     var count = this.data.count
-    while(isPlanted == 0 && count<=21)
+    var app = getApp()
+    var credit = this.data.userCredict
+    console.log("this.data.userCredict is " + this.data.userCredict)
+    if(this.data.userCredict > 0)
     {
-      var randomTree = parseInt(22 * Math.random())
-      if(this.data.isShow[randomTree] == 0)
+      while(isPlanted == 0 && count<=21)
       {
-        this.setData({
-        [`isShow[${randomTree}]`]:1,
-        })
-        isPlanted=1
+        var randomTree = parseInt(22 * Math.random())
+        if(this.data.isShow[randomTree] == 0)
+        {
+          this.setData({
+          [`isShow[${randomTree}]`]:1,
+          })
+          isPlanted=1
+        }
       }
+    count++
+    credit--
+    this.setData(
+      {
+        count:count,
+        "userCredict":credit
+
+      }
+    )
+    
+    app.globalData.userCredict--
+    console.log("after this.data.userCredict is " + this.data.userCredict)
+    console.log("app.globalData.userCredict is " + app.globalData.userCredict)
     }
-      count++
-      this.setData({
-        count:count
+    else
+    {
+      wx.showToast({
+        title: '您的积分不足',
+        icon:'error'
+
       })
-    console.log("this date count is " + count)
-    if(count > 30)
-      console.log("there is some errors")
+      
+    }
+
+    
     this.onLoad
   },
   /**
@@ -57,9 +80,12 @@ Page({
   /**
    * 生命周期函数--监听页面显示
    */
-  // onShow: function () {
-
-  // },
+  onShow: function () {
+    var app = getApp()
+    this.setData({
+      userCredict:app.globalData.userCredict
+    })
+  },
 
   // /**
   //  * 生命周期函数--监听页面隐藏

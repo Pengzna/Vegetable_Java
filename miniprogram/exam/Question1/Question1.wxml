@@ -13,7 +13,7 @@
 
  -->
 <image class="background" src="../../images/exam/background().jpg"></image>
-<image class="background2" src="../../image/exam/background2.jpg"></image>
+<image class="background2" src="../../images/exam/background2.jpg"></image>
 <view class="head" >
     <text>{{count}}</text><text style="color:gray ">/{{total}}</text>
     <image src="../../images/exam/传输_上传2.png" mode="widthFix"></image> 

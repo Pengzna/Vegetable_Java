@@ -27,28 +27,28 @@ Page({
     // canIUseGetUserProfile: false,
     // canIUseOpenData: wx.canIUse('open-data.type.userAvatarUrl') && wx.canIUse('open-data.type.userNickName') // 如需尝试获取用户信息可改为false
   },
-  onClickSociety(){
+  onClickSociety:function(){
     wx.navigateTo({
-      url:'../../shequ/index/index'
-    }),
+      url: '../../shequ/index/index',
+    })
     console.log("execute!")
   },
-  onClickShop(){
+  onClickShop:function(){
     wx.navigateTo({
-      url:'../../shop/index/index'
-    }),
+      url: '../../shop/index/index',
+    })
     console.log("execute!")
   },
-  onClickForest(){
+  onClickForest:function(){
     wx.navigateTo({
       url: '../forest/forest',
-    }),
+    })
     console.log("execute!")
   },
-  onClickContest(){
+  onClickContest:function(){
     wx.navigateTo({
       url: '../../exam/index/index',
-    }),
+    })
     console.log("execute!")
   },
   onChange(event) {

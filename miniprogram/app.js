@@ -1,6 +1,7 @@
 //app.js
 
 App({
+
   onLaunch: function () {
     //云开发环境初始化
       wx.cloud.init({
@@ -17,7 +18,7 @@ App({
     this.fxssid=""
     this.glid="9999"
     this.message=[]
-    this.globalData = {}
+    
     this.systeminfo=""
     this.loveinfo=""
     this.ssinfo={
@@ -72,5 +73,9 @@ App({
         }
       })
     }
-  }
+  },
+  globalData : {
+    userInfo:null,
+    userCredict:5,
+}
 })
