@@ -13,7 +13,7 @@
 <view class="nevigator">
   <view class="box1">
     <image class="socialClub" bindtap="onClickSociety" src="/images/society.png"></image> 
-    <text class="font1">聊天社区</text>
+    <text class="font1">低碳社区</text>
   </view>
   
   <view class="box1">
