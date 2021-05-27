@@ -1,4 +1,4 @@
-// components/shoping-tabbar/index.js
+// components/tabbar/index.js
 Component({
   /**
    * 组件的属性列表
@@ -26,7 +26,7 @@ Component({
       {
         "pagePath": "/shequ/post/post",
         "text": "发布",
-        "iconPath": "/images/shequ/tabBar/add0.png",
+        "iconPath": "../../images/shequ/tabBar/add0.png",
         "selectedIconPath": "/images/shequ/tabBar/add1.png"
       },
       {

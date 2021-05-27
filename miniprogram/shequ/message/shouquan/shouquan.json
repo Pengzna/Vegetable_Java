@@ -1,5 +1,7 @@
 {
-  "usingComponents": {},
+  "usingComponents": {
+    "nav-tabar": "../../../components/shequ-tabbar/index"
+  },
   "navigationBarTitleText": "通知授权",
   "disableScroll":true
 }

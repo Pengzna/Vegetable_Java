@@ -1,6 +1,6 @@
 {
   "usingComponents": {
-    "nav-tabar": "../../components/shequ-tabbar/index"
+    "nav-tabar": "../../../components/shequ-tabbar/index"
   },
   "navigationBarTitleText": "消息中心",
   "enablePullDownRefresh":true,

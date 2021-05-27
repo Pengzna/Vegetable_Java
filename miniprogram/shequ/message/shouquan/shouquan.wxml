@@ -37,4 +37,4 @@
   </view>
   <button class="mini-btn" type="primary" style="width:140rpx;margin-right:0rpx;font-size:90%" size="mini" bindtap="allowup" data-index="1" >订阅+1</button>
 </view>
-
+<nav-tabar selected="{{selected}}"></nav-tabar>

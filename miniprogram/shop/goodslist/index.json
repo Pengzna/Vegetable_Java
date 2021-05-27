@@ -1,4 +1,5 @@
 {
   "usingComponents": {
+    "nav-tabar": "../../components/shop-tabbar/index"
   }
   }

@@ -18,5 +18,7 @@
           </navigator>
     </view>
 
+    <nav-tabar selected="{{selected}}"></nav-tabar> 
+
 
 

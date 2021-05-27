@@ -2,7 +2,7 @@
 
 <movable-area style="height:{{movehight}}px;width:720rpx;position:fixed;top:15rpx;left:15rpx;pointer-events: none;  "  >
   <movable-view class="moveview" style="height: 90rpx;width: 90rpx;"  direction="all" x="500" y="{{movehight2}}" >
-    <image src="/images/goTop.png" hidden='{{yincang}}' bindtap="goTop" class="goTop" mode="widthFix"  ></image>
+    <image src="../../images/shequ/goTop.png" hidden='{{yincang}}' bindtap="goTop" class="goTop" mode="widthFix"  ></image>
   </movable-view>
 </movable-area>
 
@@ -15,19 +15,19 @@
   <!-- 下面为数据空白时的图片 -->
   <view class="kong1" style="display:flex;justify-content:center" >
     <image wx:if="{{kong==true && ss_xx.length==0}}" class="kong2" 
-    src="/images/kong0.png" mode="widthFix" style="width:500rpx;margin-top:200rpx;height:auto" />
+    src="../../images/shequ/kong0.png" mode="widthFix" style="width:500rpx;margin-top:200rpx;height:auto" />
   </view>
   <!-- 下面为加载时的loading图片 -->
   <view class="kong1" style="display:flex;justify-content:center" >
     <image wx:if="{{kong==false}}" class="kong2" 
-    src="/images/loading2.gif" mode="widthFix" style="width:100rpx;margin-top:170rpx;height:auto" />
+    src="../../images/shequ/loading2.gif" mode="widthFix" style="width:100rpx;margin-top:170rpx;height:auto" />
   </view>
   <view class="B" wx:for="{{ss_xx}}" wx:key="index0" wx:for-item="item0" wx:for-index="index0"   bindtap="xiangqing" data-id="{{item0._id}}" data-love="{{item0.love}}" data-index="{{index0}}"  >
     <!-- B1为头像 -->
     <view class="B1">
       <image wx:if="{{item0.ss_xx.niming1!=true}}" 
       class="photo" src="{{item0.ss_xx.userphoto}}" mode="widthFix" ></image>
-      <image wx:else class="photo" src="/images/user/niming.png" mode="widthFix" ></image>
+      <image wx:else class="photo" src="../../images/shequ/user/niming.png" mode="widthFix" ></image>
     </view>
     <!-- B2为其他内容 -->
     <view class="B2">
@@ -42,19 +42,19 @@
           {{"匿名用户"}}
         </view>
         
-        <image src="/images/icon/tucao.png" wx:if="{{item0.ss_xx.bankuai==1&&item0.ss_xx.zilei==0}}" 
+        <image src="../../images/shequ/icon/tucao.png" wx:if="{{item0.ss_xx.bankuai==1&&item0.ss_xx.zilei==0}}" 
         style="width:48rpx;height:48rpx;margin-right:10rpx"/>
 
-        <image src="/images/icon/tucao.png" wx:if="{{item0.ss_xx.bankuai==1&&item0.ss_xx.zilei==1}}" 
+        <image src="../../images/shequ/icon/tucao.png" wx:if="{{item0.ss_xx.bankuai==1&&item0.ss_xx.zilei==1}}" 
         style="width:48rpx;height:48rpx;margin-right:10rpx"/>
 
-        <image src="/images/icon/qita.png" wx:if="{{item0.ss_xx.bankuai==2&&item0.ss_xx.zilei==0}}" 
+        <image src="../../images/shequ/icon/qita.png" wx:if="{{item0.ss_xx.bankuai==2&&item0.ss_xx.zilei==0}}" 
         style="width:48rpx;height:48rpx;margin-right:10rpx"/>
 
-        <image src="/images/icon/qita.png" wx:if="{{item0.ss_xx.bankuai==2&&item0.ss_xx.zilei==1}}" 
+        <image src="../../images/shequ/icon/qita.png" wx:if="{{item0.ss_xx.bankuai==2&&item0.ss_xx.zilei==1}}" 
         style="width:48rpx;height:48rpx;margin-right:10rpx"/>
 
-        <image src="/images/icon/jiaoliu.png" wx:if="{{item0.ss_xx.bankuai==0&&item0.ss_xx.zilei==0}}" 
+        <image src="../../images/shequ/icon/jiaoliu.png" wx:if="{{item0.ss_xx.bankuai==0&&item0.ss_xx.zilei==0}}" 
         style="width:48rpx;height:48rpx;margin-right:10rpx"/>
 
       </view>
@@ -82,17 +82,17 @@
         <view class="dzpl" style="margin-right:20rpx;display:flex;" >
           <!-- 下面显示点赞， -->
           <view class="love" style="display:flex" catchtap="dianzan" data-index="{{index0}}" data-id="{{item0._id}}" >
-            <image lazy-load="true" wx:if="{{!item0.love}}" src="/images/icon/zan1.png" style="width:40rpx;height:40rpx" />
-            <image lazy-load="true" wx:if="{{item0.love}}" src="/images/icon/zan2.png" style="width:40rpx;height:40rpx" />
+            <image lazy-load="true" wx:if="{{!item0.love}}" src="../../images/shequ/icon/zan1.png" style="width:40rpx;height:40rpx" />
+            <image lazy-load="true" wx:if="{{item0.love}}" src="../../images/shequ/icon/zan2.png" style="width:40rpx;height:40rpx" />
             <view class="dianzannb" style="font-size:78%;color:#656565;font-weight:lighter;margin-right:10rpx;">{{item0.ss_xx.dianzannb}}</view>
           </view>
 
           <!-- 下面显示回复， -->
-          <image lazy-load="true" src="/images/icon/pinglun.png" style="margin-left:10rpx;width:40rpx;height:40rpx" />
+          <image lazy-load="true" src="../../images/shequ/icon/pinglun.png" style="margin-left:10rpx;width:40rpx;height:40rpx" />
           <view class="huifunb" style="font-size:78%;color:#656565;margin-left:10rpx;font-weight:lighter">{{item0.ss_xx.huifunb}}</view>
 
           <!-- 下面显示浏览， -->
-          <image lazy-load="true" src="/images/icon/look.png" style="margin-left:10rpx;width:40rpx;height:40rpx" />
+          <image lazy-load="true" src="../../images/shequ/icon/look.png" style="margin-left:10rpx;width:40rpx;height:40rpx" />
           <view class="dianzannb" style="font-size:78%;color:#656565;font-weight:lighter">{{item0.ss_xx.look}}</view>
 
           
