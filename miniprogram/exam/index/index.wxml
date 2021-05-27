@@ -17,11 +17,11 @@
 
  -->
 
- <image src="../../images/exam/background.jpg" class="image"></image>
+ <image src="cloud://cloud1-2gm89gcbba9c155c.636c-cloud1-2gm89gcbba9c155c-1305562989/exam/exam/background.jpg" class="image"></image>
  <view class="container-exam">
     
     <!-- <view class="title"> -->
-         <image class="img" mode="widthFix" src="../../images/exam/降低碳排放量.png"></image>
+         <image class="img" mode="widthFix" src="cloud://cloud1-2gm89gcbba9c155c.636c-cloud1-2gm89gcbba9c155c-1305562989/exam/exam/降低碳排放量.png"></image>
 <view class="header">
 <text class="first">“借你一片绿，还我一片荫”</text>
 <text class="second">碳中和知识竞赛</text>

@@ -9,20 +9,37 @@ Page({
   data: {
       userCredict : App.globalData.userCredict,
       icon:[
-        "/images/myTree1.png",
-        "/images/myTree2.png",
-        "/images/myTree3.png"
+        "cloud://cloud1-2gm89gcbba9c155c.636c-cloud1-2gm89gcbba9c155c-1305562989/forest/myTree1.png",
+        "cloud://cloud1-2gm89gcbba9c155c.636c-cloud1-2gm89gcbba9c155c-1305562989/forest/myTree2.png",
+        "cloud://cloud1-2gm89gcbba9c155c.636c-cloud1-2gm89gcbba9c155c-1305562989/forest/myTree3.png"
       ],  
       isShow:[0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,],       
       count:0,
       // check:false
   },
   onClick: function(){
+    
     var isPlanted = 0
     var count = this.data.count
     var app = getApp()
     var credit = this.data.userCredict
     console.log("this.data.userCredict is " + this.data.userCredict)
+
+    //如果时第一次进入，docId == “” ，则进行获取docid
+    if(app.globalData.docId == "")
+    {
+      const db = wx.cloud.database()
+      var getapp = getApp()
+      db.collection("users").where({openId:getapp.globalData.openId
+      }).get().then(
+        res=>{
+          console.log(res)
+          getapp.globalData.docId = res.data[0]._id
+          console.log("the docId is " + getapp.globalData.docId)
+        }
+      )   
+    }
+    //实现消耗积分种树
     if(this.data.userCredict > 0)
     {
       while(isPlanted == 0 && count<=21)
@@ -42,10 +59,8 @@ Page({
       {
         count:count,
         "userCredict":credit
-
       }
     )
-    
     app.globalData.userCredict--
     console.log("after this.data.userCredict is " + this.data.userCredict)
     console.log("app.globalData.userCredict is " + app.globalData.userCredict)
@@ -59,15 +74,35 @@ Page({
       })
       
     }
-
+    //进行数据更新
+    var db2 = wx.cloud.database()
+            db2.collection("users").doc(app.globalData.docId).update(
+                {
+                    data:{
+                        credit:app.globalData.userCredict,
+                        isForestShow:this.data.isShow
+                    }
+                }
+            )
+            console.log("成功更新")
     
     this.onLoad
   },
   /**
    * 生命周期函数--监听页面加载
    */
+  //onLoad中将数据库中树的种植情况的数组赋给本地的data
   onLoad: function (options) {
-    
+    const db = wx.cloud.database()
+    var getapp = getApp()
+    db.collection("users").where({openId:getapp.globalData.openId
+    }).get().then(
+      res=>{
+        this.setData({
+            isShow : res.data[0].isForestShow          
+        })
+      }
+    )   
   },
 
   /**

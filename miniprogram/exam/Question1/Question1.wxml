@@ -12,12 +12,12 @@
         4.还有最后一个弹出框我本来的想法是想要翔游戏里面一样弹出一个一堆积分的图片，下面标注着你获得了五积分，但是后面那个showtoast样式我不知道怎么改，就作罢了，你如果有想法的话试着改改看，没想法就只能这样的。
 
  -->
-<image class="background" src="../../images/exam/background().jpg"></image>
-<image class="background2" src="../../images/exam/background2.jpg"></image>
+ <image class="background" src="cloud://cloud1-2gm89gcbba9c155c.636c-cloud1-2gm89gcbba9c155c-1305562989/exam/exam/background().jpg"></image>
+<image class="background2" src="cloud://cloud1-2gm89gcbba9c155c.636c-cloud1-2gm89gcbba9c155c-1305562989/exam/exam/background2.jpg"></image>
 <view class="head" >
     <text>{{count}}</text><text style="color:gray ">/{{total}}</text>
-    <image src="../../images/exam/传输_上传2.png" mode="widthFix"></image> 
-    <navigator url="../index/index" open-type="redirect">
+    <image src="cloud://cloud1-2gm89gcbba9c155c.636c-cloud1-2gm89gcbba9c155c-1305562989/exam/exam/传输_上传2.png" mode="widthFix"></image> 
+    <navigator url="../index/index" open-type="redirect" bindtap="navTap">
         立即交卷
     </navigator>
     <progress style="margin:30rpx 30rpx 40rpx 30rpx " percent="{{20 * count}}" activeColor="deepskyblue" ></progress>

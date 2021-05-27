@@ -35,7 +35,7 @@ Page({
         ],
         correctOfUserChoice : 2,
         numOfSelection: "" ,
-        count : 0,
+        count : 1,
         total : 5,
         textOfBtn : "下一题"
     },
@@ -60,9 +60,21 @@ Page({
    
     /**
      * 生命周期函数--监听页面加载
+     * 在onload中实现获取id
      */
     onLoad: function (options) {
-       
+        var getapp = getApp()
+        if(getapp.globalData.docId == "")
+        {const db = wx.cloud.database()
+        db.collection("users").where({openId:getapp.globalData.openId
+        }).get().then(
+          res=>{
+            console.log(res)
+            getapp.globalData.docId = res.data[0]._id
+            console.log("the docId is " + getapp.globalData.docId)
+    
+          }
+        )}
     },
 
     /**
@@ -93,20 +105,34 @@ Page({
     btnTap:function(){
         var getapp = getApp()
         var count = getapp.globalData.countOfQue
-        getapp.globalData.credit++
-        console.log("now the global credit is" + getapp.globalData.credit)
+        getapp.globalData.userCredict++
+        console.log("now the global credit is " + getapp.globalData.userCredict)
         count+=1
         getapp.globalData.countOfQue = count
         if(count<=5)
         {   
-
+            
             wx.redirectTo({
                 url: '../../exam/Question1/Question1',
               })
         }
 
         else
-        {
+        {   
+            var db = wx.cloud.database()
+            db.collection("users").doc(getapp.globalData.docId).update(
+                {
+                    data:{
+                        credit:getapp.globalData.userCredict
+                    }
+                }
+            )
+            console.log("成功更新")
+            // db.collection("users").doc(getapp.globalData.docId).get().then(
+            //     res=>{
+            //         console.log(res)  //这边data不是数组
+            //     }
+            // )
             wx.showToast({
               title: '恭喜你完成了本次答题，希望你能继续学习碳中和相关知识，做一个环保战士哦',
             })
@@ -116,11 +142,22 @@ Page({
         }
         
     
-        console.log("this count is "+this.data.count)
+    
         
     },
 
-
+    navTap:function(){
+        var getapp = getApp()
+        var db = wx.cloud.database()
+            db.collection("users").doc(getapp.globalData.docId).update(
+                {
+                    data:{
+                        credit:getapp.globalData.userCredict
+                    }
+                }
+            )
+            console.log("成功更新")
+    },
     /**
      * 生命周期函数--监听页面显示
      * 是在页面显示之后执行，那么我想要从上个页面传过来的数据可以先存到global数据里面，再在onshow
@@ -140,7 +177,7 @@ Page({
         this.setData({
             count:count
         })
-        console.log("the date count is "+this.data.count)
+        // console.log("the date count is "+this.data.count)
     },
 
     /**

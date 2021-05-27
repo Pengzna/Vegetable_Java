@@ -8,9 +8,9 @@ Page({
   },
   data: {
     imgSources: [
-      '/images/SwiperXi.png',
-      '/images/Swiper3().jpg',
-      '/images/SwiperRun().jpg'
+      'cloud://cloud1-2gm89gcbba9c155c.636c-cloud1-2gm89gcbba9c155c-1305562989/forest/SwiperXi.png',
+      'cloud://cloud1-2gm89gcbba9c155c.636c-cloud1-2gm89gcbba9c155c-1305562989/forest/Swiper3().jpg',
+      'cloud://cloud1-2gm89gcbba9c155c.636c-cloud1-2gm89gcbba9c155c-1305562989/forest/SwiperRun().jpg'
     ],
     indicatorDots: true,  //是否显示面板指示点
     autoplay: true,      //是否自动切换

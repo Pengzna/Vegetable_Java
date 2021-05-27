@@ -1,8 +1,5 @@
 
 
-
-
-
 <!-- 轮播图 -->
 <view class="banner" >
   <swiper class="banner_1" indicator-active-color="#54BB9E" indicator-color="#F0F0F0" autoplay="true" circular="true" interval="5000" indicator-dots="true">
