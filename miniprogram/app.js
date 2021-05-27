@@ -1,9 +1,9 @@
 //app.js
-
+var that=this
 App({
 
   onLaunch: function () {
-    
+    that = this
     //云开发环境初始化
       wx.cloud.init({
         // env 参数说明：
@@ -13,6 +13,8 @@ App({
          env: 'cloud1-2gm89gcbba9c155c',
         traceUser: true,
       })
+      that.getOpenId()
+      
     const db = wx.cloud.database()
     this.shuaxin=false
     this.fenxiang="false"
@@ -47,7 +49,8 @@ App({
       
     }
     //初始化用户数据库，没有则加（初始变量有openId和credit），有则读取（将credit读到全局变量中）
-    db.collection("users").where({openId:this.globalData.openId
+    var openId = wx.getStorageSync('openid')
+    db.collection("users").where({openId:openId
     }).get().then(
       res=>{
         if(res.data.length == 0)
@@ -57,7 +60,7 @@ App({
             {
               data:{
                 name:"这是一个积分初始为0的家伙",
-                openId:this.globalData.openId,
+                openId:openId,
                 credit:0 ,
                 isForestShow:[0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0]
                 
@@ -78,7 +81,17 @@ App({
       }
     )
   },
-
+  getOpenId() {
+    var that=this
+    wx.cloud.callFunction({
+      name: 'login',
+      success: function(res) {
+        // App.globalData.openId = res.result.openid;
+        wx.setStorageSync('openid', res.result.openid)
+        // wx.setStorageSync('openid', App.globalData.openId)
+      }
+    })
+  },
   //进入小程序就上线
   onShow(){
     //wx.cloud.init({env: cloud.DYNAMIC_CURRENT_ENV})
@@ -115,7 +128,7 @@ App({
   globalData : {
     userInfo:null,
     userCredict:0,
-    openId : "openid16",
+    openId : "openid17",
     countOfQue: 1 ,
     docId:""
 }

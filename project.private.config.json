@@ -27,6 +27,13 @@
         {
           "name": "shequ/index/index",
           "pathName": "shequ/index/index",
+          "query": "",
+          "scene": null
+        },
+        {
+          "name": "shop/index/index",
+          "pathName": "shop/index/index",
+          "query": "",
           "scene": null
         }
       ]

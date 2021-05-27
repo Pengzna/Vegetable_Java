@@ -37,7 +37,8 @@ Page({
         numOfSelection: "" ,
         count : 1,
         total : 5,
-        textOfBtn : "下一题"
+        textOfBtn : "下一题",
+        openId:wx.getStorageSync('openid')
     },
 
 
@@ -66,7 +67,7 @@ Page({
         var getapp = getApp()
         if(getapp.globalData.docId == "")
         {const db = wx.cloud.database()
-        db.collection("users").where({openId:getapp.globalData.openId
+        db.collection("users").where({openId:this.data.openId
         }).get().then(
           res=>{
             console.log(res)

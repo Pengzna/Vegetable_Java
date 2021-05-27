@@ -15,6 +15,7 @@ Page({
       ],  
       isShow:[0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,],       
       count:0,
+      openId:wx.getStorageSync('openid')
       // check:false
   },
   onClick: function(){
@@ -30,7 +31,7 @@ Page({
     {
       const db = wx.cloud.database()
       var getapp = getApp()
-      db.collection("users").where({openId:getapp.globalData.openId
+      db.collection("users").where({openId:this.data.openId
       }).get().then(
         res=>{
           console.log(res)
@@ -95,7 +96,8 @@ Page({
   onLoad: function (options) {
     const db = wx.cloud.database()
     var getapp = getApp()
-    db.collection("users").where({openId:getapp.globalData.openId
+    console.log(this.data.openid)
+    db.collection("users").where({openId:this.data.openId
     }).get().then(
       res=>{
         this.setData({

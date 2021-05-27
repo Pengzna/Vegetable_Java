@@ -3,7 +3,7 @@
 const app = getApp()
 
 Page({
-  nLoad: function (options) {
+  onLoad: function (options) {
     
   },
   data: {
@@ -18,6 +18,7 @@ Page({
     duration: 1000,       //滑动动画时长
     inputShowed: false,
     active: 1,
+    openid:wx.getStorageSync('openid')
     
     // inputVal: ""
     // motto: 'Hello World',

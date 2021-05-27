@@ -10,11 +10,14 @@ Page{
   flex-direction: row;
   align-self: center; */
   margin-top: 1%;
-  /* width: 100%;
-  height: 400rpx; */
+  /* width: 100%; */
+  /* height: 360rpx; */
+}
+.banner_1{
+  height: 420rpx;
 }
 .banner #img{
-  height: 85%;
+  height: 90%;
   border-radius: 50rpx;
   width: 96%;
   margin-left: 2%;
