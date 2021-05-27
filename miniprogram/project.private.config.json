@@ -1,0 +1,29 @@
+{
+    "setting": {},
+    "condition": {
+        "plugin": {
+            "list": []
+        },
+        "game": {
+            "list": []
+        },
+        "gamePlugin": {
+            "list": []
+        },
+        "miniprogram": {
+            "list": [
+                {
+                    "name": "pages/forest/forest",
+                    "pathName": "pages/forest/forest",
+                    "query": "",
+                    "scene": null
+                },
+                {
+                    "name": "pages/forest/forest",
+                    "pathName": "pages/index/index",
+                    "scene": null
+                }
+            ]
+        }
+    }
+}

@@ -1,0 +1,40 @@
+
+
+<view class="top" style="display:flex;justify-content:space-between;align-items:center;margin:0 20rpx;padding:20rpx 0;border-bottom:thin solid #D0D0D0" >
+  <view class="kk">
+    <view class="bt">开启订阅消息功能</view>
+    <view class="ts" style="font-size:80%;color:#656565;margin-top:15rpx" >向您发送小程序订阅消息</view>
+  </view>
+  <switch checked="{{allow}}" bindchange="bindchange" ></switch>
+</view>
+
+<view class="top" style="display:flex;justify-content:space-between;align-items:center;margin:0 20rpx;padding:20rpx 0;border-bottom:thin solid #D0D0D0;" >
+
+  <view class="kk">
+    <view class="bt">订阅消息说明</view>
+    <view class="ts" style="font-size:80%;color:#656565;margin-top:15rpx" >仅需点击一下即可订阅，不需要任何条件</view>
+    <view class="ts" style="font-size:80%;color:#656565;margin-top:15rpx" >订阅数为0时无法在小程序外接收到评论与回复</view>
+    <view class="ts" style="font-size:80%;color:#656565;margin-top:15rpx" >每接收一次消息，消耗一次相应的订阅次数</view>
+    <view class="ts" style="font-size:80%;color:#656565;margin-top:15rpx" >只有当用户离线状态才会收到小程序外的订阅消息</view>
+    <view class="ts" style="font-size:80%;color:#656565;margin-top:15rpx" >只要在小程序中，即为在线，离开小程序将更新为离线</view>
+    <view class="ts" style="font-size:80%;color:#656565;margin-top:15rpx" >退出时建议点右上角关闭，直接关闭后台可能造成无法更新到离线状态，收不到消息</view>
+  </view>
+  
+</view>
+
+<view class="top" style="display:flex;justify-content:space-between;align-items:center;margin:0 20rpx;padding:20rpx 0;border-bottom:thin solid #D0D0D0" >
+  <view class="kk">
+    <view class="bt">帖子被评论</view>
+    <view class="ts" style="font-size:80%;color:#656565;margin-top:15rpx" >已订阅 {{msgnb[0]}} 次</view>
+  </view>
+  <button class="mini-btn" type="primary" style="width:140rpx;margin-right:0rpx;font-size:90%" size="mini" bindtap="allowup" data-index="0" >订阅+1</button>
+</view>
+
+<view class="top" style="display:flex;justify-content:space-between;align-items:center;margin:0 20rpx;padding:20rpx 0;border-bottom:thin solid #D0D0D0" >
+  <view class="kk">
+    <view class="bt">被他人回复</view>
+    <view class="ts" style="font-size:80%;color:#656565;margin-top:15rpx" >已订阅 {{msgnb[1]}} 次</view>
+  </view>
+  <button class="mini-btn" type="primary" style="width:140rpx;margin-right:0rpx;font-size:90%" size="mini" bindtap="allowup" data-index="1" >订阅+1</button>
+</view>
+

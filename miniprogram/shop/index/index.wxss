@@ -1,0 +1,33 @@
+
+.index_swiper swiper {
+  width: 750rpx;
+  height: 340rpx;
+}
+.index_swiper swiper image {
+  width: 100%;
+}
+
+
+.index_cate {
+  display: flex;
+}
+.index_cate navigator {
+  padding: 50rpx;
+  flex: 1;
+}
+.index_cate navigator image {
+  width: 100%;
+}
+
+
+
+.index_floor .floor_group .floor_title {
+ padding: 10rpx;
+}
+.index_floor .floor_group .floor_title image {
+  width: 100%;
+}
+
+.index_floor .floor_group .floor_list {
+  overflow: hidden;
+}

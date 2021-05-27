@@ -1,0 +1,10 @@
+{
+  "usingComponents": {
+    "Tabs":"../../zujian/Tabs/Tabs"
+  },
+  "navigationBarTitleText": "板块内容",
+  "enablePullDownRefresh":true,
+  "backgroundColor":"#ffffff",
+  "backgroundTextStyle":"dark",
+  "onReachBottomDistance":50
+}

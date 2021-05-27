@@ -1,0 +1,97 @@
+<!--index.wxml-->
+<view class="Swiper">
+  <swiper class="swiper" indicator-active-color="#54BB9E" indicator-color="#F0F0F0" indicator-dots="{{indicatorDots}}" autoplay="{{autoplay}}" interval="{{interval}}" duration="{{duration}}">
+      <block wx:for="{{imgSources}}">
+        <swiper-item>
+          <image src="{{item}}" class="slide-image" />
+        </swiper-item>
+      </block>
+    </swiper>
+</view >
+  
+
+<view class="nevigator">
+  <view class="box1">
+    <image class="socialClub" bindtap="onClickSociety" src="/images/society.png"></image> 
+    <text class="font1">聊天社区</text>
+  </view>
+  
+  <view class="box1">
+    <image class="shop"  bindtap="onClickShop" src="/images/shop.png"></image> 
+    <text class="font2">积分商城</text>
+  </view>
+ 
+  <view class="box1">
+      <image class="forest" bindtap="onClickForest" src="/images/_Forest.png"></image>
+      <text class="font3">种植森林</text>
+  </view>
+
+  <view class="box1">
+      <image class="contest" bindtap="onClickContest" src="/images/contest.png"></image> 
+      <text class="font4">知识竞赛</text>
+  </view>
+</view> 
+
+<view class="tag">
+  <van-tabs active="{{ active }}" bind:change="onChange">
+    <van-tab title="低碳说">
+    <view class="talk">
+      <view>
+          <image class="img" src="/images/TouXiang.png"></image>
+          <text class="title">碳中和carbon neutrality</text>
+      </view>
+        <view><text class="body">  是指团体或个人在一定时间内产生的温室气体排放总量，通过植树造林、节能减排等形式，抵消自身产生的二氧化碳排放，实现“零排放”。 </text>
+        </view>
+        
+    </view>
+    <view class="talk">
+        <view>
+          <image class="img" src="/images/TouXiang2.png"></image>
+          <text class="title2">碳中和in our country</text>
+        </view>
+        <view><text class="body2">中国政府提出：“中国将提高国家自主贡献力度，采取更加有力的政策和措施，二氧化碳排放力争于2030年前达到峰值，努力争取2060年前实现碳中和。” </text>
+        </view>
+      </view>
+    </van-tab>
+    
+    <van-tab title="低碳行">
+    <view class="go">
+    <view>
+      <text class="header2">南京大学垃圾分类回收点</text>
+    </view>
+      <view>
+        <image src="/images/NJU.jpg" class="recycle"></image>
+      </view>
+    </view>
+    </van-tab>
+  </van-tabs>
+</view>
+
+
+
+
+
+
+
+<!-- <view class="container">
+  <view class="userinfo">
+    <block wx:if="{{canIUseOpenData}}" calss="userinfo-opendata">
+      <view class="userinfo-avatar" bindtap="bindViewTap">
+        <open-data type="userAvatarUrl"></open-data>
+      </view>
+      <open-data type="userNickName"></open-data>
+    </block>
+    <block wx:elif="{{!hasUserInfo}}">
+      <button wx:if="{{canIUseGetUserProfile}}" bindtap="getUserProfile"> 获取头像昵称 </button>
+      <button wx:elif="{{canIUse}}" open-type="getUserInfo" bindgetuserinfo="getUserInfo"> 获取头像昵称 </button>
+      <view wx:else> 请使用1.4.4及以上版本基础库 </view>
+    </block>
+    <block wx:else>
+      <image bindtap="bindViewTap" class="userinfo-avatar" src="{{userInfo.avatarUrl}}" mode="cover"></image>
+      <text class="userinfo-nickname">{{userInfo.nickName}}</text>
+    </block>
+  </view>
+  <view class="usermotto">
+    <text class="user-motto">{{motto}}</text>
+  </view>
+</view> -->

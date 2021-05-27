@@ -1,0 +1,11 @@
+{
+  "usingComponents": {
+    "Tabs":"../../zujian/Tabs/Tabs",
+    "nav-tabar": "../../components/shequ-tabbar/index"
+  },
+  "navigationBarTitleText": "低碳社区",
+  "enablePullDownRefresh":true,
+  "backgroundColor":"#54BB9E",
+  "backgroundTextStyle":"dark"
+
+}

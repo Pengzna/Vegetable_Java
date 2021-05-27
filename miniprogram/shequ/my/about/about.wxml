@@ -1,0 +1,44 @@
+<view class="background" style="width:750rpx;height:100vh;background-color:#175167" >
+  <view class="shang" 
+  style="display:flex;flex-direction:column;justify-content:space-around;align-items:center;height:260rpx;"  >
+    <image class="tubiao" src="/images/tubiao.png" style="width:150rpx;height:150rpx;border-radius:50%;overflow: hidden;" ></image>
+    <view class="wb1" style="color:#FFFFFF;font-size:120%;margin-top:10rpx" >{{nm}}</view>
+  </view>
+
+  <view class="jieshao" style="margin-top:100rpx" >
+    <view class="yitiao" style="display:flex;justify-content:space-between;margin:30rpx" bindtap="fuzhi" data-item="{{youxiang}}" >
+      <view class="zuo" style="display:flex;flex-direction:column" >
+        <view class="biaoti" style="color:#ffffff" >联系邮箱</view>
+        <view class="neirong" style="font-size:80%;color:#B6B9BA" >{{youxiang}}</view>
+      </view>
+      <view class="you" style="display:flex;align-items:center" >
+        <view class="biaoti" style="font-size:80%;color:#B6B9BA" >点击复制</view>
+        <image class="youbian" src="/images/icon/you.png" style="width:50rpx;height:50rpx" ></image>
+      </view>
+    </view>
+
+    <view class="yitiao" style="display:flex;justify-content:space-between;margin:30rpx" bindtap="fuzhi" data-item="{{weixin}}" >
+      <view class="zuo" style="display:flex;flex-direction:column" >
+        <view class="biaoti" style="color:#ffffff" >联系QQ</view>
+        <view class="neirong" style="font-size:80%;color:#B6B9BA" >{{weixin}}</view>
+      </view>
+      <view class="you" style="display:flex;align-items:center" >
+        <view class="biaoti" style="font-size:80%;color:#B6B9BA" >点击复制</view>
+        <image class="youbian" src="/images/icon/you.png" style="width:50rpx;height:50rpx" ></image>
+      </view>
+    </view>
+
+    <view class="yitiao" style="display:flex;justify-content:space-between;margin:30rpx" bindtap="fuzhi" data-item="{{ID}}" >
+      <view class="zuo" style="display:flex;flex-direction:column" >
+        <view class="biaoti" style="color:#ffffff" >我的ID</view>
+        <view class="neirong" style="font-size:80%;color:#B6B9BA" >{{ID}}</view>
+      </view>
+      <view class="you" style="display:flex;align-items:center" >
+        <view class="biaoti" style="font-size:80%;color:#B6B9BA" >点击复制</view>
+        <image class="youbian" src="/images/icon/you.png" style="width:50rpx;height:50rpx" ></image>
+      </view>
+    </view>
+    
+  </view>
+
+</view>

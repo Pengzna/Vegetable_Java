@@ -1,0 +1,19 @@
+<view class="background" style="width:750rpx;height:100vh;background-color:#175167;position:relative" >
+
+<view class="xx" style="display:flex;flex-direction:column;align-items:center" >
+  <image class="tx" src="{{tx}}" mode="widthFix" style="width:150rpx;height:auto;margin:20rpx" ></image>
+  <view class="nm" style="margin-bottom:20rpx;color:#ffffff" >{{nm}}</view>
+</view>
+
+
+<view style="margin-top:50rpx">
+  <view class="wdlist">
+    <button class="denglu" open-type="getUserInfo" bindgetuserinfo="GetUserInfo" style="" size="mini" type="primary" >
+      同步微信头像与昵称
+    </button>
+  </view>
+</view>
+
+<view class="tishi" style="position:absolute;top:800rpx;left:0;size:50%;color:#7A8387;padding:35rpx" >提示：不支持小程序内自定义修改，您可点击右上角“胶囊”中的三个点，在设置中使用自定义头像与昵称，然后回到这个页面进行同步。</view>
+
+</view>
