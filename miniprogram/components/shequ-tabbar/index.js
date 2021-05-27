@@ -18,28 +18,28 @@ Component({
     "list": [
       {
         "pagePath": "/shequ/index/index",
-        "iconPath": "/images/shequ/tabBar/zhuye0.png",
-        "selectedIconPath": "/images/shequ/tabBar/zhuye1.png",
+        "iconPath": "cloud://cloud1-2gm89gcbba9c155c.636c-cloud1-2gm89gcbba9c155c-1305562989/shequ/tabBar/zhuye0.png",
+        "selectedIconPath": "cloud://cloud1-2gm89gcbba9c155c.636c-cloud1-2gm89gcbba9c155c-1305562989/shequ/tabBar/zhuye1.png",
         "text": "主页"
       },
       
       {
         "pagePath": "/shequ/post/post",
         "text": "发布",
-        "iconPath": "../../images/shequ/tabBar/add0.png",
-        "selectedIconPath": "/images/shequ/tabBar/add1.png"
+        "iconPath": "cloud://cloud1-2gm89gcbba9c155c.636c-cloud1-2gm89gcbba9c155c-1305562989/shequ/tabBar/add0.png",
+        "selectedIconPath": "cloud://cloud1-2gm89gcbba9c155c.636c-cloud1-2gm89gcbba9c155c-1305562989/shequ/tabBar/add1.png"
       },
       {
         "pagePath": "/shequ/message/xiaoxi/xiaoxi",
         "text": "消息",
-        "iconPath": "/images/shequ/tabBar/xiaoxi0.png",
-        "selectedIconPath": "/images/shequ/tabBar/xiaoxi1.png"
+        "iconPath": "cloud://cloud1-2gm89gcbba9c155c.636c-cloud1-2gm89gcbba9c155c-1305562989/shequ/tabBar/xiaoxi0.png",
+        "selectedIconPath": "cloud://cloud1-2gm89gcbba9c155c.636c-cloud1-2gm89gcbba9c155c-1305562989/shequ/tabBar/xiaoxi1.png"
       },
       {
         "pagePath": "/shequ/my/wd/wd",
         "text": "我的",
-        "iconPath": "/images/shequ/tabBar/wode0.png",
-        "selectedIconPath": "/images/shequ/tabBar/wode1.png"
+        "iconPath": "cloud://cloud1-2gm89gcbba9c155c.636c-cloud1-2gm89gcbba9c155c-1305562989/shequ/tabBar/wode0.png",
+        "selectedIconPath": "cloud://cloud1-2gm89gcbba9c155c.636c-cloud1-2gm89gcbba9c155c-1305562989/shequ/tabBar/wode1.png"
       }
     ]
   },

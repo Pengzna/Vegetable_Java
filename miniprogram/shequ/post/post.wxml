@@ -31,12 +31,12 @@
         <image src="{{item0}}"  mode="aspectFill" bindtap="previewImg" style="width:216rpx;height:216rpx" >
         </image> 
         <!-- 下面删除按钮 -->
-        <image src="../../images/shequ/post/dlt.png" bindtap="deleteImg" style="width:46rpx;height:46rpx;position:absolute;right:0;top:0" data-index="{{index0}}" />  
+        <image src="cloud://cloud1-2gm89gcbba9c155c.636c-cloud1-2gm89gcbba9c155c-1305562989/shequ/post/dlt.png" bindtap="deleteImg" style="width:46rpx;height:46rpx;position:absolute;right:0;top:0" data-index="{{index0}}" />  
         
       </view>
       <!-- 下面是add -->
       <view class="A42" style="background-color:#F5F7F9;width:216rpx;height:216rpx;border-radius: 10rpx;overflow: hidden;display:flex;justify-content:center;align-items:center" bindtap="chooseImg" wx:if="{{imgs.length<9}}" >
-        <image src="../../images/shequ/post/tp.png" style="width:150rpx;height:150rpx;" ></image>
+        <image src="cloud://cloud1-2gm89gcbba9c155c.636c-cloud1-2gm89gcbba9c155c-1305562989/shequ/post/tp.png" style="width:150rpx;height:150rpx;" ></image>
       </view>
 
     </view>

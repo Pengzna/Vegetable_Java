@@ -7,12 +7,12 @@
       <view class="q" style="margin-left:30rpx" >回复推送剩余：{{msgnb[1]}}</view>
     </view>
     <!-- <view class="power" style="" >评论推送剩余：{{msgnb[0]}}   回复推送剩余：{{msgnb[1]}}</view> -->
-    <image src="../../../images/shequ/icon/up.png" style="width:70rpx;background-color:#7B90DF;border-radius:50%;overflow:hidden;height:auto" animation="{{animationData}}" bindtap="shouquan" mode="widthFix" ></image>
+    <image src="cloud://cloud1-2gm89gcbba9c155c.636c-cloud1-2gm89gcbba9c155c-1305562989/shequ/icon/up.png" style="width:70rpx;background-color:#7B90DF;border-radius:50%;overflow:hidden;height:auto" animation="{{animationData}}" bindtap="shouquan" mode="widthFix" ></image>
   </view>
 
   <view class="dingyue" style="display:flex;padding:10rpx;justify-content:space-between;align-items:center;background-color:#9BE1D1" wx:if="{{!allow}}" bindtap="shouquan" >
     <view class="tixing">开启授权，在小程序外随时接收评论与回复！</view>
-    <image src="../../../images/shequ/icon/you.png" style="width:50rpx;height:auto" mode="widthFix" ></image>
+    <image src="cloud://cloud1-2gm89gcbba9c155c.636c-cloud1-2gm89gcbba9c155c-1305562989/shequ/icon/you.png" style="width:50rpx;height:auto" mode="widthFix" ></image>
   </view>
 </view>
 <view class="message">
@@ -29,7 +29,7 @@
         <image  class="pl" wx:if="{{item0.type!='jubao'}}" src="{{item0.photo}}" 
         style="width:80rpx;height:80rpx;border-radius: 10rpx;overflow: hidden;"/>
         <!-- 举报特殊图标 -->
-        <image class="pl" wx:if="{{item0.type=='jubao'}}" src="../../../images/shequ/icon/feng.png" 
+        <image class="pl" wx:if="{{item0.type=='jubao'}}" src="cloud://cloud1-2gm89gcbba9c155c.636c-cloud1-2gm89gcbba9c155c-1305562989/shequ/icon/feng.png" 
         style="width:80rpx;height:80rpx;border-radius: 10rpx;overflow: hidden;"/>
       </view>
       <!-- 第二部分,回复及对应ss -->
@@ -57,7 +57,7 @@
   </view>
 
   <view wx:if="{{message.length==0}}" style="display:flex;align-items:center;" >
-    <image  src="../../../images/shequ/chatu/konglong.png" style="margin:180rpx 100rpx;width:100%;height:auto" mode="widthFix"  ></image>
+    <image  src="cloud://cloud1-2gm89gcbba9c155c.636c-cloud1-2gm89gcbba9c155c-1305562989/shequ/chatu/konglong.png" style="margin:180rpx 100rpx;width:100%;height:auto" mode="widthFix"  ></image>
   </view>
 </view>
 <nav-tabar selected="{{selected}}"></nav-tabar>

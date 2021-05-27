@@ -20,28 +20,28 @@
     <navigator url="../../plate3/plate3?canshu=fabude" hover-class="none">
       <view class="wdlist">
         <view class="wdlist-nr">我发布的帖子</view>
-        <image class="you" src="../../../images/shequ/icon/you.png" mode="widthFix" style="width:45rpx;margin-right:45rpx;height:auto" ></image>
+        <image class="you" src="cloud://cloud1-2gm89gcbba9c155c.636c-cloud1-2gm89gcbba9c155c-1305562989/shequ/icon/you.png" mode="widthFix" style="width:45rpx;margin-right:45rpx;height:auto" ></image>
       </view>
     </navigator>
 
     <navigator url="../../plate3/plate3?canshu=pinglunde" hover-class="none">
       <view class="wdlist">
         <view class="wdlist-nr">我评论的帖子</view>
-        <image class="you" src="../../../images/shequ/icon/you.png" mode="widthFix" style="width:45rpx;margin-right:45rpx;height:auto" ></image>
+        <image class="you" src="cloud://cloud1-2gm89gcbba9c155c.636c-cloud1-2gm89gcbba9c155c-1305562989/shequ/icon/you.png" mode="widthFix" style="width:45rpx;margin-right:45rpx;height:auto" ></image>
       </view>
     </navigator>
 
     <navigator url="../about/about" hover-class="none">
       <view class="wdlist">
         <view class="wdlist-nr">关于小程序与帮助</view>
-        <image class="you" src="../../../images/shequ/icon/you.png" mode="widthFix" style="width:45rpx;margin-right:45rpx;height:auto" ></image>
+        <image class="you" src="cloud://cloud1-2gm89gcbba9c155c.636c-cloud1-2gm89gcbba9c155c-1305562989/shequ/icon/you.png" mode="widthFix" style="width:45rpx;margin-right:45rpx;height:auto" ></image>
       </view>
     </navigator>
 
     <navigator url="../set/set" hover-class="none">
       <view class="wdlist">
         <view class="wdlist-nr">设置</view>
-        <image class="you" src="../../../images/shequ/icon/you.png" mode="widthFix" style="width:45rpx;margin-right:45rpx;height:auto" ></image>
+        <image class="you" src="cloud://cloud1-2gm89gcbba9c155c.636c-cloud1-2gm89gcbba9c155c-1305562989/shequ/icon/you.png" mode="widthFix" style="width:45rpx;margin-right:45rpx;height:auto" ></image>
       </view>
     </navigator>
 

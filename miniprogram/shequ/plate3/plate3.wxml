@@ -3,7 +3,7 @@
 <view class="zs" style="font-size:110%;color:#175167;padding:20rpx;border-bottom:thin solid #175167;border-left:8rpx solid #1BBAA9" >总数:{{wenzhang.length}}</view>
 
 <view class="img" wx:if="{{wenzhang.length==0}}" style="display:flex;justify-content:center;padding-top:200rpx" >
-  <image class="kong" src="/images/kong1.png" mode="widthFix" style="width:500rpx;height:auto" ></image>
+  <image class="kong" src="cloud://cloud1-2gm89gcbba9c155c.636c-cloud1-2gm89gcbba9c155c-1305562989/shequ/kong1.png" mode="widthFix" style="width:500rpx;height:auto" ></image>
 </view>
 
 <view class="wd-fb-hf">
@@ -15,13 +15,13 @@
           <view class="yc" style="display:flex;width:720rpx;height:140rpx;padding:15rpx" >
             <!-- 第一部分图片 -->
             <view class="A"  style="display:flex;align-items:center" >
-              <image wx:if="{{canshu==true&&item0.weigui!=true}}" class="pl" src="/images/user/fabude.png" 
+              <image wx:if="{{canshu==true&&item0.weigui!=true}}" class="pl" src="cloud://cloud1-2gm89gcbba9c155c.636c-cloud1-2gm89gcbba9c155c-1305562989/shequ/user/fabude.png" 
               style="width:80rpx;height:80rpx;border-radius: 50%;overflow: hidden;"/>
-              <image wx:if="{{canshu==true&&item0.weigui==true}}" class="pl" src="/images/icon/feng.png" 
+              <image wx:if="{{canshu==true&&item0.weigui==true}}" class="pl" src="cloud://cloud1-2gm89gcbba9c155c.636c-cloud1-2gm89gcbba9c155c-1305562989/shequ/icon/feng.png" 
               style="width:80rpx;height:80rpx;border-radius: 50%;overflow: hidden;"/>
-              <image wx:if="{{canshu==false&&item0.weigui!=true}}" class="pl" src="/images/user/pinglunde.png" 
+              <image wx:if="{{canshu==false&&item0.weigui!=true}}" class="pl" src="cloud://cloud1-2gm89gcbba9c155c.636c-cloud1-2gm89gcbba9c155c-1305562989/shequ/user/pinglunde.png" 
               style="width:80rpx;height:80rpx;border-radius: 50%;overflow: hidden;"/>
-              <image wx:if="{{canshu==false&&item0.weigui==true}}" class="pl" src="/images/icon/feng.png" 
+              <image wx:if="{{canshu==false&&item0.weigui==true}}" class="pl" src="cloud://cloud1-2gm89gcbba9c155c.636c-cloud1-2gm89gcbba9c155c-1305562989/shequ/icon/feng.png" 
               style="width:80rpx;height:80rpx;border-radius: 50%;overflow: hidden;"/>
             </view>
             <!-- 第二部分,类别及对应ss -->

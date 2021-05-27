@@ -1,7 +1,7 @@
 <view class="background" style="width:750rpx;height:100vh;background-color:#175167" >
   <view class="shang" 
   style="display:flex;flex-direction:column;justify-content:space-around;align-items:center;height:260rpx;"  >
-    <image class="tubiao" src="/images/tubiao.png" style="width:150rpx;height:150rpx;border-radius:50%;overflow: hidden;" ></image>
+    <image class="tubiao" src="cloud://cloud1-2gm89gcbba9c155c.636c-cloud1-2gm89gcbba9c155c-1305562989/shequ/tubiao.png" style="width:150rpx;height:150rpx;border-radius:50%;overflow: hidden;" ></image>
     <view class="wb1" style="color:#FFFFFF;font-size:120%;margin-top:10rpx" >{{nm}}</view>
   </view>
 
@@ -13,7 +13,7 @@
       </view>
       <view class="you" style="display:flex;align-items:center" >
         <view class="biaoti" style="font-size:80%;color:#B6B9BA" >点击复制</view>
-        <image class="youbian" src="/images/icon/you.png" style="width:50rpx;height:50rpx" ></image>
+        <image class="youbian" src="cloud://cloud1-2gm89gcbba9c155c.636c-cloud1-2gm89gcbba9c155c-1305562989/shequ/icon/you.png" style="width:50rpx;height:50rpx" ></image>
       </view>
     </view>
 
@@ -24,7 +24,7 @@
       </view>
       <view class="you" style="display:flex;align-items:center" >
         <view class="biaoti" style="font-size:80%;color:#B6B9BA" >点击复制</view>
-        <image class="youbian" src="/images/icon/you.png" style="width:50rpx;height:50rpx" ></image>
+        <image class="youbian" src="cloud://cloud1-2gm89gcbba9c155c.636c-cloud1-2gm89gcbba9c155c-1305562989/shequ/icon/you.png" style="width:50rpx;height:50rpx" ></image>
       </view>
     </view>
 
@@ -35,7 +35,7 @@
       </view>
       <view class="you" style="display:flex;align-items:center" >
         <view class="biaoti" style="font-size:80%;color:#B6B9BA" >点击复制</view>
-        <image class="youbian" src="/images/icon/you.png" style="width:50rpx;height:50rpx" ></image>
+        <image class="youbian" src="cloud://cloud1-2gm89gcbba9c155c.636c-cloud1-2gm89gcbba9c155c-1305562989/shequ/icon/you.png" style="width:50rpx;height:50rpx" ></image>
       </view>
     </view>
     
