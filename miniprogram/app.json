@@ -1,0 +1,42 @@
+{
+  "pages": [
+    "pages/index/index",
+    "pages/forest/forest",
+    "shequ/index/index",
+    "shequ/my/wd/wd",
+    "shequ/message/xiaoxi/xiaoxi",
+    "shequ/post/post",
+    "shequ/plate1/plate1",
+    "shequ/plate2/plate2",
+    "shequ/plate3/plate3",
+    "shequ/my/about/about",
+    "shequ/message/shouquan/shouquan",
+    "shequ/my/set/set",
+    "shop/index/index",
+    "shop/fenlei/fenlei", 
+    "shop/my/my", 
+    "shop/pay/pay",
+    "shop/product_detail/product_detail",
+    "shop/shopping_cart/shopping_cart",
+    "exam/index/index",
+    "exam/Question1/Question1",
+    "components/shequ-tabbar/index",
+    "components/shop-tabbar/index"
+  ],
+  "window": {
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#54BB9E",
+    "navigationBarTitleText": "南碳宝",
+    "navigationBarTextStyle": "white"
+  },
+  
+  "sitemapLocation": "sitemap.json",
+  "usingComponents": {
+    "van-button": "@vant/weapp/button/index",
+    "van-grid": "@vant/weapp/grid/index",
+    "van-grid-item": "@vant/weapp/grid-item/index",
+    "van-tab": "@vant/weapp/tab/index",
+    "van-tabs": "@vant/weapp/tabs/index",
+    "van-image": "@vant/weapp/image/index"
+  }
+}

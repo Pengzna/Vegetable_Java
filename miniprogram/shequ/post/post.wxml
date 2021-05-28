@@ -1,0 +1,53 @@
+<!--内容发布页面-->
+<form bindsubmit="tijiao">
+  <view class="A" style="width: 710rpx;padding: 20rpx;"  >
+    <!-- 第一部分，板块+子类 -->
+    <view class="A1" style="display: flex;margin:20rpx;" >
+      <!-- 多列 -->
+      <view class="section" style="display: flex;" >
+        <view class="section__title">选择分类：</view>
+        <picker mode="multiSelector" name="fenlei" bindchange="xuanzewanbi" bindcolumnchange="kaishixuanze" value="{{zilei}}" range="{{heji}}">
+          <view class="picker" style="color:#FD5DC0" >
+            --{{heji[0][index[0]]}}--{{heji[1][index[1]]}}--
+          </view>
+        </picker>
+      </view>
+      <!-- 多列 -->
+    </view>
+
+    <!-- 第二部分，编辑内容 -->
+    <view class="A2" style="padding:20rpx;" >
+      <textarea  name="wbnr" placeholder="来吧！尽情发挥..." bindinput="wbnr" value='{{wbnr}}' style="width:100%;color:#080100;" maxlength="299"  />
+      <view class="zs" style="display:flex;flex-direction:row-reverse;margin-right:15rpx" >
+        <text class="sy" style="font-size:85%;color:#656565" >{{sy}}</text>
+      </view>
+    </view>
+
+    <!-- 第四部分，添加图片 -->
+    <view class="A4" style="display:flex;flex-wrap:wrap;margin:20rpx" >
+      <view class="A41" wx:for="{{imgs}}" wx:for-item="item0" wx:for-index="index0" wx:key="index0" 
+      style="width:216rpx;height:216rpx;margin-right:10rpx;margin-bottom:10rpx;border-radius: 10rpx;overflow: hidden;position:relative">
+        <!-- 下面图片框 -->
+        <image src="{{item0}}"  mode="aspectFill" bindtap="previewImg" style="width:216rpx;height:216rpx" >
+        </image> 
+        <!-- 下面删除按钮 -->
+        <image src="cloud://cloud1-2gm89gcbba9c155c.636c-cloud1-2gm89gcbba9c155c-1305562989/shequ/post/dlt.png" bindtap="deleteImg" style="width:46rpx;height:46rpx;position:absolute;right:0;top:0" data-index="{{index0}}" />  
+        
+      </view>
+      <!-- 下面是add -->
+      <view class="A42" style="background-color:#F5F7F9;width:216rpx;height:216rpx;border-radius: 10rpx;overflow: hidden;display:flex;justify-content:center;align-items:center" bindtap="chooseImg" wx:if="{{imgs.length<9}}" >
+        <image src="cloud://cloud1-2gm89gcbba9c155c.636c-cloud1-2gm89gcbba9c155c-1305562989/shequ/post/tp.png" style="width:150rpx;height:150rpx;" ></image>
+      </view>
+
+    </view>
+    
+    <!-- 第六部分，提交按钮 -->
+    <view class="A6" style="width:150rpx;position:fixed;bottom:60rpx;display:flex;justify-conten:center;margin:0 285rpx" >
+      <button  form-type="submit" style="background-color:#175167;border-radius: 30rpx;overflow: hidden;color:#ffffff" size="mini" >发布立即</button>
+    </view>
+  </view>
+</form>
+
+<!-- 下面是用于图片压缩的画布 -->
+<canvas canvas-id='huabu' style='position: absolute;left:-4000px;top:-4000px;width: 4000px; height: 4000px;' ></canvas>
+<nav-tabar selected="{{selected}}"></nav-tabar>

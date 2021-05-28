@@ -1,0 +1,259 @@
+<wxs module="tools" src="/utils/filter1.wxs"/>
+<wxs module="tools1" src="/utils/filter.wxs"/>
+
+<!-- 下面是整个页面，不失效则展示 -->
+<view class="shixiao" wx:if="{{ss_xx!=0}}" >
+
+  <!-- 下面为整个说说及评论区 -->
+  <view class="A">
+
+  <!-- 下面写个留言板的上方信息 -->
+  <view class="daoxuq" wx:if="{{liuyan==true}}" style="display:flex;flex-direction:column-reverse" >
+    <view class="waiq" 
+    style="width:720rpx;padding:15rpx;display:flex;flex-direction:column-reverse" >
+      <view class="Aq" style="border-radius:15rpx;overflow:hidden;background-color:#ffffff;width:720rpx;margin-top:8rpx;border-style: solid;box-shadow:0px 2px 4px 2px #DDDDDD;border-width: 0rpx;" data-address="{{ss_xx.address}}" bindtap="tiaozhuan" data-id="{{ss_xx._id}}" >
+        <!-- 中 -->
+        <image class="tpq" style="width:720rpx;height:297rpx; " mode="aspectFill" src="{{ss_xx.image}}" ></image>
+        <!-- 下 -->
+        <view class="wbnrq" style="width:700rpx;padding:15rpx;" >{{ss_xx.title}}</view>
+        <view class="xiaxiaq" style="display:flex;justify-content:space-between;margin-bottom:5rpx;" >
+          <!-- 下 下 -->
+          <view class="wbnrq" style="margin-left:15rpx;color:#C0C0C0;font-size:90%" >{{ss_xx.look}}次浏览</view>
+          <!-- 时间 -->
+          <view class="timeq" 
+            style="color:#C0C0C0;font-size:90%;margin-right:15rpx" >{{tools.getDateTime(ss_xx.time)}}
+          </view>
+        </view>
+      </view>
+    </view>  
+  </view>
+  <!-- 上面写个留言板的上方信息 -->
+
+    <!-- 下面为说说主体 -->
+    <view class="B" wx:if="{{liuyan==false}}" >
+      <!-- B1为头像 -->
+      <view class="B1">
+        <image wx:if="{{ss_xx.ss_xx.niming1!=true}}" 
+        class="photo" src="{{ss_xx.ss_xx.userphoto}}" mode="widthFix" ></image>
+        <image wx:else class="photo" src="cloud://cloud1-2gm89gcbba9c155c.636c-cloud1-2gm89gcbba9c155c-1305562989/shequ/user/niming.png" mode="widthFix" ></image>
+      </view>
+      <!-- B2为其他内容 -->
+      <view class="B2">
+        <!-- 第一部分 -->
+        <view class="B21">
+          <view class="qian">
+            <view wx:if="{{ss_xx.ss_xx.niming1!=true}}" class="name" 
+            style="font-size:100%;margin-top:5rpx;color:#175167" >
+              {{ss_xx.ss_xx.username}}
+            </view>
+            <view wx:if="{{ss_xx.ss_xx.niming1==true}}" class="name" 
+            style="font-size:100%;margin-top:5rpx;color:#175167" >
+              {{"匿名用户"}}
+            </view>
+            <!-- 下面显示时间 -->
+            <view class="time" 
+            style="font-size:85%;color:#B0B0B0;font-weight:lighter">{{tools.getDateTime(ss_xx.time)}}</view>
+          </view>
+          
+          <!-- tucao -->
+          <image src="cloud://cloud1-2gm89gcbba9c155c.636c-cloud1-2gm89gcbba9c155c-1305562989/shequ/icon/tucao.png" wx:if="{{ss_xx.ss_xx.bankuai==1&&ss_xx.ss_xx.zilei==0}}" 
+          style="width:48rpx;height:48rpx;margin-right:10rpx"/>
+
+          <!-- qita -->
+          <image src="cloud://cloud1-2gm89gcbba9c155c.636c-cloud1-2gm89gcbba9c155c-1305562989/shequ/icon/qita.png" wx:if="{{ss_xx.ss_xx.bankuai==2&&ss_xx.ss_xx.zilei==0}}" 
+          style="width:48rpx;height:48rpx;margin-right:10rpx"/>
+
+          <!-- jiaoliu -->
+          <image src="cloud://cloud1-2gm89gcbba9c155c.636c-cloud1-2gm89gcbba9c155c-1305562989/shequ/icon/jiaoliu.png" wx:if="{{ss_xx.ss_xx.bankuai==0&&ss_xx.ss_xx.zilei==0}}" 
+          style="width:48rpx;height:48rpx;margin-right:10rpx"/>
+
+        </view>
+        <!-- 第二部分 -->
+        <view class="B22" >{{ss_xx.ss_xx.nr}}</view>
+        <!-- 第三部分 -->
+        <view class="B23">
+          <!-- 第一种 -->
+          <!-- <view wx:if="{{ss_xx.ss_xx.tp.length==1}}" class="img1" style="width: 100%;">
+            <image class="danzhang" src="{{ss_xx.ss_xx.tp[0]}}" bindtap="previewImg"
+            data-tp="{{[index,ss_xx.ss_xx.tp]}}" style="width: 400rpx;height:auto" mode="widthFix"  />
+          </view> -->
+          <!-- 第二种 -->
+          <view wx:if="{{ss_xx.ss_xx.tp.length>0}}" class="img2" style="width: 100%;">
+            <view class="xunhuan" wx:for="{{ss_xx.ss_xx.tp}}" wx:key="index" 
+            style="width: 580rpx;height:auto" wx:for-item="item1" >
+              <image class="duozhang" src="{{item1}}" style="width: 580rpx;height:auto;margin-bottom:8rpx" mode="widthFix"  data-tp="{{[index,ss_xx.ss_xx.tp]}}"  bindtap="previewImg"  />
+          </view>
+          </view>
+        </view>
+        <view class="B24"  >
+          
+          <view class="dzpl" style="margin-right:20rpx" >
+            <!-- 下面显示点赞 -->
+            <!-- <image src="/images/icon/zan1.png" style="width:40rpx;height:40rpx"/> -->
+            <view class="dianzannb" style="font-size:78%;color:#B0B0B0;font-weight:lighter">点赞 {{ss_xx.ss_xx.dianzannb}}</view>
+
+            <!-- 下面显示回复， -->
+            <!-- <image src="/images/icon/huifu.png" style="margin-left:10rpx;width:40rpx;height:40rpx" /> -->
+            <view class="huifunb" style="font-size:78%;color:#B0B0B0;margin-left:10rpx;margin-right:10rpx;font-weight:lighter">评论 {{ss_xx.ss_xx.huifunb}}</view>
+
+            <!-- 下面显示浏览， -->
+            <view class="dianzannb" style="font-size:78%;color:#B0B0B0;font-weight:lighter">浏览 {{ss_xx.ss_xx.look}}</view>
+          </view>  
+          <!-- 下面显示举报，点击可举报 -->
+          <view class="jubao" style="display:flex" bindtap="jubao" data-id="{{ss_xx._id}}" data-jubao="{{ss_xx.ss_xx.jubao}}">
+            <image src="cloud://cloud1-2gm89gcbba9c155c.636c-cloud1-2gm89gcbba9c155c-1305562989/shequ/icon/jubao.png" style="margin-left:10rpx;width:40rpx;height:40rpx" />
+            <view class="huifunb" style="font-size:78%;color:#B0B0B0;font-weight:lighter">举报{{ss_xx.ss_xx.jubao[1]}}</view>
+          </view>
+
+          
+        </view>
+      </view>
+    </view>
+    <!-- 上面为说说主体 -->
+
+    <!-- B的附属展示点赞与转发 -->
+    <view class="Bfs" style="display:flex;height:70rpx" >
+
+      <button wx:if="{{liuyan==false}}" class="dianzan" style="flex:1;background-color:#ffffff;display:flex;justify-content:center;align-items:center;" bindtap="dianzan" data-id="{{ss_xx._id}}" data-dianzanid="{{ss_xx.ss_xx.dianzanid}}" >
+        <view class="wz" wx:if="{{dianzan}}" style="color:#d81e06" >点赞</view>
+        <view class="wz" wx:if="{{!dianzan}}" style="color:#656565" >点赞</view>
+        <image class="tp" wx:if="{{dianzan}}" src="cloud://cloud1-2gm89gcbba9c155c.636c-cloud1-2gm89gcbba9c155c-1305562989/shequ/icon/zan2.png" style="width:40rpx;height:40rpx" ></image>
+        <image class="tp" wx:if="{{!dianzan}}" src="cloud://cloud1-2gm89gcbba9c155c.636c-cloud1-2gm89gcbba9c155c-1305562989/shequ/icon/zan1.png" style="width:40rpx;height:40rpx" ></image>
+
+      </button>
+      
+      <button class="dianzan" style="flex:1;background-color:#ffffff;display:flex;justify-content:center;align-items:center;" open-type="share" >
+        <view class="wz" style="color:#656565" >转发</view>
+        <image class="tp" src="cloud://cloud1-2gm89gcbba9c155c.636c-cloud1-2gm89gcbba9c155c-1305562989/shequ/icon/zhuanfa.png" style="width:40rpx;height:40rpx" ></image>
+      </button>
+    </view>
+    <!-- 上面B的附属展示点赞与转发 -->
+
+    <!-- 下面说啊说评论区 -->
+    <view class="C"  >
+      <!-- 第一部分,“最新评论”四个字 -->
+      <view class="C1" style="font-size:120%;margin:10rpx" >最新评论</view>
+      <!-- 下面为评论数据空白时的图片 -->
+      <view class="kong1" style="display:flex;justify-content:center" >
+        <image wx:if="{{ss_xx.ss_xx.huifunr.length==0}}" class="kong2" 
+        src="cloud://cloud1-2gm89gcbba9c155c.636c-cloud1-2gm89gcbba9c155c-1305562989/shequ/kong.png" mode="widthFix" style="width:400rpx;margin-top:80rpx;height:auto;margin-bottom:30rpx" />
+      </view>
+
+      <!-- 额外加个倒序 -->
+      <view class="daoxu" style="display:flex;flex-direction:column-reverse" >
+        <!-- 第二部分,遍历所有评论 -->
+        <view class="C2" style="display:flex;" 
+        wx:for="{{ss_xx.ss_xx.huifunr}}" 
+        wx:key="index" 
+        wx:for-item="item0"
+        wx:for-index="index0"
+        bindlongpress="changanshanchu"
+        data-id0="{{item0.plrid}}" data-index="{{index0}}" data-time="{{item0.time}}" data-huifunb="{{item0.huifunb}}" >
+          <!-- 头像部分 -->
+          <view class="C21" style="flex:1;margin:15rpx">
+            <image wx:if="{{item0.niming!=true}}" class="photo" src="{{item0.photo}}" mode="widthFix" style="border-radius:50%;overflow: hidden;" ></image>
+            <image wx:else class="photo" src="cloud://cloud1-2gm89gcbba9c155c.636c-cloud1-2gm89gcbba9c155c-1305562989/shequ/user/niming.png" mode="widthFix" style="border-radius:50%;overflow: hidden;" ></image>
+          </view>
+          <!-- 头像右边所有 -->
+          <view class="C22" style="flex:8;display:flex;flex-direction:column;margin:15rpx" >
+            <!-- name及楼主标识-->
+            <view class="C221" style="display:flex;align-items:center" >
+              <!-- name及 -->
+              <view class="name" wx:if="{{item0.niming!=true}}" style="font-size:95%;color:#656565;white-space: pre-line;word-break: break-all;word-wrap: break-word;font-weight:bold;" >{{item0.name}}</view>
+              <view class="name" wx:else style="font-size:95%;color:#656565;font-weight:bold;" >匿名用户</view>
+              <!-- 楼主标识 -->
+              <!-- <view class="louzhu" wx:if="{{item0.louzhu==true}}"  style="font-size:85%;background-color:#175167;border-radius: 10rpx;overflow: hidden;margin-left:15rpx;color:#ffffff" >楼主</view> -->
+              <image class="lz" src="cloud://cloud1-2gm89gcbba9c155c.636c-cloud1-2gm89gcbba9c155c-1305562989/shequ/icon/lz.png" wx:if="{{item0.louzhu==true}}" style="width:55rpx;height:auto;border-radius: 5rpx;overflow: hidden;margin-left:10rpx;" mode="widthFix" />
+              <!-- 管理员！！标识 -->
+              <!-- <view class="louzhu" wx:if="{{item0.openid==glopenid}}"  style="font-size:85%;background-color:#FCF005;border-radius: 10rpx;overflow: hidden;margin-left:15rpx" >管理员</view> -->
+            </view>
+            <!-- 发布内容 -->
+            <view class="C222" style="margin:8rpx 0;white-space:pre-line;word-break:break-all;word-wrap:break-word;margin-right:20rpx" >{{item0.wbnr}}</view>
+            <!-- 发布时间及回复 -->
+            <view class="wai" style="display:flex" >
+              <view class="C223" style="font-size:80%;color:#B0B0B0" >{{tools1.timeChn(item0.time)}}</view>
+              <text class="hf" catchtap="huifu" data-xx="{{item0}}" data-index="{{index0}}" style="margin-left:20rpx;font-weight:bold;font-size:85%;color:#656565" >回复</text>
+            </view>
+
+
+            <!-- 评论的评论展开 -->
+            <view class="wai" wx:if="{{item0.huifu.length>0}}" style="margin-top:10rpx;border-radius: 8rpx;overflow: hidden;" bindtap="zhankai" data-index="{{index0}}" hidden="{{item0.zhankai}}" >
+              <view class="wb"  style="font-size:70%;color:#757575;" >{{item0.huifu.length}}条回复▶</view>
+            </view>
+            <view class="pinglun" 
+            wx:for="{{item0.huifu}}" 
+            wx:key="index1"
+            wx:for-index="index1"
+            wx:for-item="item1"
+            style="display:flex" 
+            wx:if="{{item0.zhankai}}"
+            catchlongpress="changanshanchu"
+            data-id0="{{item0.plrid}}" data-index="{{index0}}" data-time="{{item0.time}}" data-index1="{{index1}}" data-id1="{{item1.plrid}}" data-time1="{{item1.time}}" 
+            >
+              <view class="zuo" style="flex:1;margin:10rpx" >
+                <image wx:if="{{item1.niming!=true}}" class="photo" src="{{item1.photo}}" mode="widthFix" style="border-radius:50%;overflow: hidden;" ></image>
+                <image wx:else class="photo" src="cloud://cloud1-2gm89gcbba9c155c.636c-cloud1-2gm89gcbba9c155c-1305562989/shequ/user/niming.png" mode="widthFix" style="border-radius:50%;overflow: hidden;" ></image>
+              </view>
+              <view class="you" style="flex:11;display:flex;flex-direction:column;margin:15rpx" >
+                <!-- 头像右边所有 -->
+                <!-- name及楼主标识-->
+                <view class="C221" style="display:flex;align-items:center" >
+                  <!-- name及 -->
+                  <view class="name" style="font-size:95%;color:#656565;white-space: pre-line;word-break: break-all;word-wrap: break-word;font-weight:bold;" >{{item1.name}}</view>
+                  <!-- 楼主标识 -->
+                  <!-- <view class="louzhu" wx:if="{{item1.louzhu==true}}"  style="font-size:85%;background-color:#F7B2F8;border-radius: 10rpx;overflow: hidden;margin-left:15rpx" >楼主</view> -->
+                  <image class="lz" src="cloud://cloud1-2gm89gcbba9c155c.636c-cloud1-2gm89gcbba9c155c-1305562989/shequ/icon/lz.png" wx:if="{{item1.louzhu==true}}" style="width:55rpx;height:auto;border-radius: 5rpx;overflow: hidden;margin-left:10rpx;" mode="widthFix" />
+                  <!-- 管理员！！标识 -->
+                  <!-- <view class="louzhu" wx:if="{{item1.openid==glopenid}}"  style="font-size:85%;background-color:#FCF005;border-radius: 10rpx;overflow: hidden;margin-left:15rpx" >管理员</view> -->
+                </view>
+                <!-- 发布内容 -->
+                <view class="C222" style="margin:8rpx 0;white-space:pre-line;word-break:break-all;word-wrap:break-word;" >{{item1.wbnr}}</view>
+
+                <!-- 发布时间及回复 -->
+                <view class="wai" style="display:flex" >
+                  <view class="C223" style="font-size:80%;color:#B0B0B0" >{{tools1.timeChn(item1.time)}}</view>
+
+                  <text class="hf" catchtap="huifu" data-xx="{{item0}}" data-xx1="{{item1}}" data-index="{{index0}}" data-index1="{{index1}}" style="margin-left:20rpx;font-weight:bold;font-size:85%;color:#656565" >回复</text>
+
+                  <view class="wai" style="margin-left:20rpx;font-size:80%;color:#757575;" bindtap="shouqi" data-index="{{index0}}" hidden="{{!item0.zhankai}}" >--收起▲</view>
+                </view>
+
+                
+    
+              </view>
+            </view>
+
+
+          </view>
+        </view>
+      </view>
+    </view>
+    <!-- 上面说啊说评论区 -->
+
+  </view>
+  <!-- 上面为整个说说及评论区 -->
+
+  <view class="kongbai" style="height:100rpx"/><!-- 空白站位标签 -->
+    
+  <!-- 下面是评论框 -->
+  <form bindsubmit="fasong">
+    <view class="pinglun" style="position:fixed;bottom:0rpx;width:750rpx;background-color:#ffffff;border-top:thin solid #D5D5D5;">
+      <view class="bg" style="display:flex;border-radius: 50rpx;overflow: hidden;background-color:#e6e6e6;width:720rpx;margin:10rpx 15rpx">
+        <input type="text" bindinput="wbnr" placeholder="{{input}}" focus="{{focus}}" value='{{wbnr}}' placeholder-style="color:#656565;"  bindblur="shijiao" 
+        style="width:100%;margin:10rpx 30rpx;" maxlength="150"  ></input>
+        <view bindtap="fasong" 
+        style="width:130rpx;margin:10rpx 0;margin-right:20rpx;color:#F76260" >| 发送</view>
+      </view>
+    </view>
+  </form>
+  <!-- 上面是评论框 -->
+
+</view>
+<!-- 上面是整个页面，不失效则展示 -->
+
+<!-- 下面为失效状态 -->
+<view class="shixiao" style="display:flex;flex-direction:column;justify-content：center" wx:if="{{ss_xx==0}}" >
+  <image src="cloud://cloud1-2gm89gcbba9c155c.636c-cloud1-2gm89gcbba9c155c-1305562989/shequ/shixiao.png" mode="widthFix" style="width:100%;height:auto" ></image>
+  <text style="color:#656565;text-align:center;width:100%">这条动态消失了~~</text>
+</view>
+<!-- 上面为失效状态 -->

@@ -1,0 +1,95 @@
+.moveview{
+  border-radius: 50%;
+  position:relative;
+  pointer-events: auto;
+  
+}
+.goTop{
+  height: 90rpx;
+  width: 90rpx;
+  /* position: fixed;
+  bottom: 145rpx;
+  right: 38rpx; */
+  border-radius: 50%;
+  opacity:0.6;
+}
+
+.bankuai{/*整个板块的样式*/
+  display:flex;
+  justify-content: space-around;
+  margin: 10rpx;
+  margin-top: 20rpx;
+}
+.bankuainr{/*单个板块的样式*/
+  display:flex;
+  flex-direction:column;
+  align-items: center;
+
+}
+.bankuaiimg{
+  padding:15rpx;
+  border-radius: 50%;
+}
+.bankuaiwenben{
+  /* color:#656565; */
+  margin-top: 15rpx;
+}
+/*  */
+.B{
+  width: 720rpx;
+  padding: 30rpx 20rpx;
+  background-color: #FFFFFF;
+  display: flex;
+  border-bottom: 0.1px solid #D5D5D5;
+}
+.B1{
+  width: 80rpx;
+  background-color: #FFFFFF;
+  height: 104rpx;
+  margin-right: 10rpx;
+}
+.photo{
+  width:100%;
+  border-radius: 10rpx;
+  overflow: hidden;
+  height:auto
+}
+.B2{
+  width: 600rpx;
+  /* 630向左30rpx */
+  background-color: #FFFFFF;
+  display: flex;
+  flex-direction: column;
+}
+.B21{
+  display: flex;
+  justify-content: space-between;
+  margin: 0 10rpx;
+  width:580rpx
+}
+.B23{
+  padding: 10rpx ;
+}
+.B24{
+  display: flex;
+  justify-content: space-between;
+  padding:0 10rpx;
+  width:580rpx;
+  margin-top:10rpx
+}
+.dzpl{
+  display: flex;
+}
+.img2{
+  display: flex;
+  flex-wrap: wrap;
+}
+.B22{
+  /* 文本内容 */
+  width: 100%;
+  width:580rpx;
+  margin:10rpx;
+  white-space: pre-line;
+  word-break: break-all;
+  word-wrap: break-word;
+}
