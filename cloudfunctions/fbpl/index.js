@@ -71,7 +71,7 @@ exports.main = async (event, context) => {
       //判断是否回复的自己
       if(event.pinglunnr.bhfid!=plrid){
         //不是回复的自己
-        cloud.database().collection('users').doc(event.pinglunnr.bhfid).update({
+        cloud.database().collection('user').doc(event.pinglunnr.bhfid).update({
           data: {
             message:_.push(newmessage)
           }
@@ -79,7 +79,7 @@ exports.main = async (event, context) => {
           //console.log("!!!!",res)
           if(pd[0]!=true && liuyan==false){
             //首次评论家记录
-            cloud.database().collection('users').doc(plrid).update({
+            cloud.database().collection('user').doc(plrid).update({
               data:{
                 pinglunguode:_.push(pinglunguode)
               }
@@ -91,7 +91,7 @@ exports.main = async (event, context) => {
           console.log("开始检测进行回复")
 /////////////////////////////////////////////////////////////
               //1.获取待操作用户的信息
-              cloud.database().collection('users').doc(event.pinglunnr.bhfid).get().then((res)=>{
+              cloud.database().collection('user').doc(event.pinglunnr.bhfid).get().then((res)=>{
                 //2.取到用户数据进行判断在线状态
                 console.log("取到用户数据进行判断在线状态:",res.data.online)
                 console.log("取到用户数据进行判断授权状态:",res.data.allow)
@@ -135,7 +135,7 @@ exports.main = async (event, context) => {
 
                       cloud.openapi.subscribeMessage.send({
                         touser: openid,
-                        page: 'pages/index/index',
+                        page: '/shequ/index/index',
                         lang: 'zh_CN',
                         
                         data: {
@@ -158,13 +158,13 @@ exports.main = async (event, context) => {
                         },
                         templateId: '9kAS4BdEjH46glaAr-wuo_qZndRNkp5Zqe3vWZbAab4',
                         //miniprogramState: 'developer'//开发板
-                        //miniprogramState:'trial',//体验版
-                        miniprogramState:'formal',//正式版
+                        miniprogramState:'formal',//体验版
+                        //miniprogramState:'formal',//正式版
                       }).then((res)=>{
                         console.log("发送被回复订阅：",res)
                         //还没加结果判断处理
                         //1.扣除剩余次数
-                        cloud.database().collection('users').doc(event.pinglunnr.bhfid).update({
+                        cloud.database().collection('user').doc(event.pinglunnr.bhfid).update({
                           data:{
                             'msgnb.1':cloud.database().command.inc(-1)
                             //减去一次
@@ -175,7 +175,7 @@ exports.main = async (event, context) => {
                         var first=JSON.stringify(res).includes('43101')
                         if(first){
                           //1.剩余次数直接清零
-                          cloud.database().collection('users').doc(event.pinglunnr.bhfid).update({
+                          cloud.database().collection('user').doc(event.pinglunnr.bhfid).update({
                             data:{
                               'msgnb.1':0
                               //直接清零
@@ -234,14 +234,14 @@ exports.main = async (event, context) => {
       //给帖子主发消息(自己不是帖子主)
       if(lzid!=plrid){
         console.log("这是给楼主发消息：",lzid)
-        cloud.database().collection('users').doc(lzid).update({
+        cloud.database().collection('user').doc(lzid).update({
           data: {
             message:_.push(newmessage)           
           }
         }).then((res)=>{
           //console.log("!!!!",res)
           if(pd[0]!=true && liuyan==false){
-            cloud.database().collection('users').doc(plrid).update({
+            cloud.database().collection('user').doc(plrid).update({
               data:{
                 pinglunguode:_.push(pinglunguode)
               }
@@ -253,7 +253,7 @@ exports.main = async (event, context) => {
           console.log("开始检测进行评论")
 /////////////////////////////////////////////////////////////
               //1.获取待操作用户的信息
-              cloud.database().collection('users').doc(lzid).get().then((res)=>{
+              cloud.database().collection('user').doc(lzid).get().then((res)=>{
                 //2.取到用户数据进行判断在线状态
                 console.log("取到用户数据进行判断在线状态:",res.data.online)
                 console.log("取到用户数据进行判断授权状态:",res.data.allow)
@@ -288,7 +288,7 @@ exports.main = async (event, context) => {
                       console.log("推送评论消息")
                       cloud.openapi.subscribeMessage.send({
                         touser: openid,
-                        page: 'pages/index/index',
+                        page: '/shequ/index/index',
                         lang: 'zh_CN',
                         data: {
                           thing2: {
@@ -316,7 +316,7 @@ exports.main = async (event, context) => {
                         console.log("发送被评论订阅：",res)
                         //还没加结果判断处理
                         //1.扣除剩余次数
-                        cloud.database().collection('users').doc(lzid).update({
+                        cloud.database().collection('user').doc(lzid).update({
                           data:{
                             'msgnb.0':cloud.database().command.inc(-1)
                             //减去一次
@@ -328,7 +328,7 @@ exports.main = async (event, context) => {
                         var first=JSON.stringify(res).includes('43101')
                         if(first){
                           //1.剩余次数直接清零
-                          cloud.database().collection('users').doc(lzid).update({
+                          cloud.database().collection('user').doc(lzid).update({
                             data:{
                               'msgnb.0':0
                               //直接清零

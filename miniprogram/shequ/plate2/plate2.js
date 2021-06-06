@@ -59,7 +59,7 @@ Page({
         data:{}
       }).then((res)=>{
       //console.log(res)
-        db.collection("users").where({
+        db.collection("user").where({
           _openid:res.result.openid
         }).get().then((res)=>{
           //console.log(res.data[0]);
@@ -303,7 +303,7 @@ Page({
         var haiyou=JSON.stringify(ss_xx.huifunr).includes(app.userInfo._id)
         //没了就删掉自己评论过的记录
         if(haiyou==false){
-          db.collection('users').doc(app.userInfo._id).update({
+          db.collection('user').doc(app.userInfo._id).update({
             data: {
               pinglunguode:_.pull({
                 id:_.eq(that.data.id)
@@ -508,7 +508,7 @@ Page({
   //发送前刷新内容
   async fasongqian(e){
     //console.log(e)
-    return db.collection('users').doc(e).get().then((res)=>{
+    return db.collection('user').doc(e).get().then((res)=>{
       //console.log(res)
       app.userInfo=res.data
       //console.log("获取评论过的",res.data)
@@ -784,10 +784,9 @@ Page({
   },
   //用户转发
   onShareAppMessage: function () {
-    console.log("path:/pages/plate2/plate2?id="+this.data.id)
     return{
       title:"刚刚在低碳社区看到个帖子，真是绝了！",
-      path:"/pages/index/index?id="+this.data.id+"&fenxiang=true&liuyan="+this.data.liuyan
+      path:"/shequ/index/index?id="+this.data.id+"&fenxiang=true&liuyan="+this.data.liuyan
     }
   },
   //点赞帖子

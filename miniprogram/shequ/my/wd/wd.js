@@ -4,7 +4,7 @@ const db = wx.cloud.database()
 Page({
   data: {
     selected:3,
-    userphoto:"../../../images/shequ/user/user.png",
+    userphoto:"cloud://cloud1-2gm89gcbba9c155c.636c-cloud1-2gm89gcbba9c155c-1305562989/shequ/user/user.png",
     username:"ly",
     anonymous:"ss",
     login:"未知",
@@ -21,7 +21,7 @@ Page({
       wx.showLoading({
         title: '登陆中',
       })
-      db.collection('users').add({
+      db.collection('user').add({
         data:{
           allow:true,
           ban:false,
@@ -41,7 +41,7 @@ Page({
           
         }
       }).then((res)=>{
-        db.collection('users').doc(res._id).get().then((res)=>{
+        db.collection('user').doc(res._id).get().then((res)=>{
           app.userInfo=Object.assign(app.userInfo,res.data);
           //console.log(res.data);
           wx.hideLoading()
@@ -81,7 +81,7 @@ Page({
         data:{}
       }).then((res)=>{
         //console.log(res.result.openid)
-        db.collection("users").where({_openid:app.userInfo._openid}).get().then((res)=>{
+        db.collection("user").where({_openid:app.userInfo._openid}).get().then((res)=>{
           //console.log(res);
           app.userInfo=Object.assign(app.userInfo,res.data[0]);
           if(app.userInfo.userinfo.login==true){
@@ -99,7 +99,7 @@ Page({
             if(app.fenxiang=="true"){
               app.fenxiang=="false"
               wx.navigateTo({
-                url:"/pages/plate2/plate2?id="+app.fxssid+"&fenxiang=false"
+                url:"/shequ/plate2/plate2?id="+app.fxssid+"&fenxiang=false"
               })
             }
           }else{
@@ -147,7 +147,7 @@ Page({
   onPullDownRefresh: function () {
 
     var _id=app.userInfo._id
-    db.collection('users').doc(_id).get().then((res)=>{
+    db.collection('user').doc(_id).get().then((res)=>{
       console.log("取到信息",res.data)
       this.setData({
         userphoto:res.data.userinfo.userphoto,

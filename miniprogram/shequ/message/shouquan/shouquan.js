@@ -74,7 +74,7 @@ Page({
         allow:'true',
         msgnb:msgnb
       })
-      db.collection('users').doc(app.userInfo._id).update({
+      db.collection('user').doc(app.userInfo._id).update({
         data:{
           allow:true,
           msgnb:msgnb
@@ -175,7 +175,7 @@ Page({
     console.log("加到数据库")
     var msgnb=this.data.msgnb
     var allow=app.userInfo.allow
-    db.collection('users').doc(app.userInfo._id).update({
+    db.collection('user').doc(app.userInfo._id).update({
       data:{
         msgnb:msgnb,
         allow:allow

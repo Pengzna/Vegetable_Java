@@ -43,7 +43,7 @@ Page({
     })
     
     //删除消息记录
-    db.collection("users").doc(app.userInfo._id)
+    db.collection("user").doc(app.userInfo._id)
     .update({
       data:{
         message:db.command.pull({
@@ -194,7 +194,7 @@ Page({
     //删除消息记录
     var message=this.data.message
 
-    db.collection("users").doc(app.userInfo._id)
+    db.collection("user").doc(app.userInfo._id)
     .update({
       data:{
         message:db.command.pull({

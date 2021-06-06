@@ -11,7 +11,7 @@ Page({
     let userInfo = xx.detail.userInfo;
     app.userInfo.userinfo.name=userInfo.avatarUrl
     app.userInfo.userinfo.photo=userInfo.nickName
-    db.collection('users').doc(app.userInfo._id).update({
+    db.collection('user').doc(app.userInfo._id).update({
       data:{
         'userinfo.userphoto':userInfo.avatarUrl,
         'userinfo.username':userInfo.nickName,

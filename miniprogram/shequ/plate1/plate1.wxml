@@ -1,4 +1,4 @@
-<wxs module="tools" src="/utils/filter.wxs"/>
+<wxs module="tools" src="../../utils/filter.wxs"/>
 
 <movable-area style="height:{{movehight}}px;width:720rpx;position:fixed;top:15rpx;left:15rpx;pointer-events: none;  "  >
   <movable-view class="moveview" style="height: 90rpx;width: 90rpx;"  direction="all" x="500" y="{{movehight2}}" >

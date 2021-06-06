@@ -37,13 +37,13 @@ exports.main = async (event, context) => {
           'ss_xx.huifunb':0
         }
       })
-      db.collection('users').doc(lzid).get().then((res)=>{
+      db.collection('user').doc(lzid).get().then((res)=>{
         var weiguinb=res.data.weiguinb
         console.log("weiguinb:",weiguinb)
         //发消息被举报了
         if(weiguinb>5){
           //违规超过5次封号
-          db.collection('users').where({
+          db.collection('user').where({
             '_id':lzid,
             'wenzhang.id':event.id
           }).update({
@@ -66,7 +66,7 @@ exports.main = async (event, context) => {
           })
           return
         }else{
-          db.collection('users').where({
+          db.collection('user').where({
             '_id':lzid,
             'wenzhang.id':event.id
           }).update({

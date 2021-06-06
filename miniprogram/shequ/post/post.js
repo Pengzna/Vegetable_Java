@@ -158,7 +158,7 @@ Page({
     //若未登录，直接到登录页面
     if(app.userInfo.userinfo.login==false){
       wx.switchTab({
-        url: '/pages/my/wd/wd'
+        url: '/shequ/my/wd/wd'
       })
       return
     }
@@ -431,7 +431,7 @@ Page({
       app.shuaxin=true
       wx.hideLoading({})//发布成功隐藏
       //app跳转到首页
-      wx.switchTab({url:'/pages/index/index'})
+      wx.switchTab({url:'../../shequ/index/index'})
       var id=res._id
       var jl={
         "time":ss_xx.firsttime,
@@ -445,12 +445,12 @@ Page({
       
       var wenzhang=[]
       //获取之前的文章加到wenzhang
-      db.collection("users").doc(app.userInfo._id).get().then((res)=>{
+      db.collection("user").doc(app.userInfo._id).get().then((res)=>{
         wenzhang=res.data.wenzhang
         //console.log("取回的",wenzhang)
         wenzhang.push(jl)
-        //记录到自己users里
-        db.collection("users").doc(app.userInfo._id).update({
+        //记录到自己user里
+        db.collection("user").doc(app.userInfo._id).update({
           data:{
             wenzhang:wenzhang
           }

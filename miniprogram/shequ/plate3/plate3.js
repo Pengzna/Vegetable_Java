@@ -86,7 +86,7 @@ Page({
           }
           
 
-          db.collection('users').where({
+          db.collection('user').where({
             _id:app.userInfo._id
           }).update({
             data: {
@@ -139,7 +139,7 @@ Page({
           title: '删除成功',
           icon:"none"
         })
-        db.collection('users').where({
+        db.collection('user').where({
           _id:app.userInfo._id
         }).update({
           data: {

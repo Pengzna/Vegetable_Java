@@ -39,7 +39,7 @@ Page({
       data:{}
     }).then((res)=>{
       //console.log("获取到openid:",res.result.openid);
-      db.collection("users").where({
+      db.collection("user").where({
         _openid:res.result.openid
       }).get().then((res)=>{
         //console.log("首页登录取到的对应openid的信息：",res.data[0]);
@@ -468,7 +468,7 @@ async love(e){
     console.log("已经登录，开启监听user")
     var _id=app.userInfo._id
     var that=this
-    this.watcher = db.collection('users').doc(_id).watch({
+    this.watcher = db.collection('user').doc(_id).watch({
       onChange: function(e) {
         console.log('监听user数据变化：', e.docs[0])
         app.userInfo=e.docs[0]
