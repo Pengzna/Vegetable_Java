@@ -17,7 +17,10 @@
 </view>
 
 
-
+<view class="box1">
+    <image class="socialClub" bindtap="onClickSociety" src="cloud://cloud1-2gm89gcbba9c155c.636c-cloud1-2gm89gcbba9c155c-1305562989/forest/Credit.png"></image> 
+    <text class="font1">您的积分:{{userCredict}}</text>
+</view>
 
 <!-- 收货地址 -->
 

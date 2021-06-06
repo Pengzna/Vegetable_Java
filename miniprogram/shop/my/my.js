@@ -43,7 +43,7 @@ Page({
   submit:function(e){
     console.log(e)
     let that=this
-    db.collection('user').add({
+    db.collection('users').add({
       data:{
         name:e.detail.value.name,
         age:e.detail.value.age
