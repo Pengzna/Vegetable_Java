@@ -1,0 +1,60 @@
+<wxs module="tools" src="/utils/filter1.wxs"/>
+
+<view class="zs" style="font-size:110%;color:#175167;padding:20rpx;border-bottom:thin solid #175167;border-left:8rpx solid #1BBAA9" >总数:{{wenzhang.length}}</view>
+
+<view class="img" wx:if="{{wenzhang.length==0}}" style="display:flex;justify-content:center;padding-top:200rpx" >
+  <image class="kong" src="cloud://cloud1-2gm89gcbba9c155c.636c-cloud1-2gm89gcbba9c155c-1305562989/shequ/kong1.png" mode="widthFix" style="width:500rpx;height:auto" ></image>
+</view>
+
+<view class="wd-fb-hf">
+  <view class="daoxu" style="display:flex;flex-direction:column-reverse" >
+    <view class="xunhuan" wx:for="{{wenzhang}}" wx:key="idex" wx:for-item="item0" wx:for-index="index0" >
+      <movable-area class="yc" bindtap="chakan" data-ssid="{{item0.id}}" style="display:flex;width:750rpx;height:170rpx"  >
+        <movable-view style="display:flex;width:900rpx;height:170rpx" direction="horizontal" animation="true" x="{{x[index0]}}" bindchange="change" data-index="{{index0}}" bindtouchend="change1" damping="100" out-of-bounds="true" >
+<!-- 左边！！！！！！！！！ -->
+          <view class="yc" style="display:flex;width:720rpx;height:140rpx;padding:15rpx" >
+            <!-- 第一部分图片 -->
+            <view class="A"  style="display:flex;align-items:center" >
+              <image wx:if="{{canshu==true&&item0.weigui!=true}}" class="pl" src="cloud://cloud1-2gm89gcbba9c155c.636c-cloud1-2gm89gcbba9c155c-1305562989/shequ/user/fabude.png" 
+              style="width:80rpx;height:80rpx;border-radius: 50%;overflow: hidden;"/>
+              <image wx:if="{{canshu==true&&item0.weigui==true}}" class="pl" src="cloud://cloud1-2gm89gcbba9c155c.636c-cloud1-2gm89gcbba9c155c-1305562989/shequ/icon/feng.png" 
+              style="width:80rpx;height:80rpx;border-radius: 50%;overflow: hidden;"/>
+              <image wx:if="{{canshu==false&&item0.weigui!=true}}" class="pl" src="cloud://cloud1-2gm89gcbba9c155c.636c-cloud1-2gm89gcbba9c155c-1305562989/shequ/user/pinglunde.png" 
+              style="width:80rpx;height:80rpx;border-radius: 50%;overflow: hidden;"/>
+              <image wx:if="{{canshu==false&&item0.weigui==true}}" class="pl" src="cloud://cloud1-2gm89gcbba9c155c.636c-cloud1-2gm89gcbba9c155c-1305562989/shequ/icon/feng.png" 
+              style="width:80rpx;height:80rpx;border-radius: 50%;overflow: hidden;"/>
+            </view>
+            <!-- 第二部分,类别及对应ss -->
+            <view class="B" style="display:flex;flex-direction:column;margin-left:20rpx;justify-content:space-around" >
+              <view class="weigui" style="display:flex;" >
+                <view wx:if="{{canshu==true}}" class="wodetiezi" style="color:#656565;font-size:100%;" >我的帖子：</view>
+                <view wx:if="{{canshu==false}}" class="wodetiezi" style="color:#656565;font-size:100%;" >我评论过：</view>
+                <view class="weiguibiaozhi" wx:if="{{item0.weigui==true}}" style="background-color:red;border-radius:15rpx;" >被举报封帖</view>
+              </view>
+
+              <view class="wbnr" style="white-space: nowrap; overflow: hidden; text-overflow: ellipsis;width:560rpx;" >{{item0.nr}}</view>
+              
+              <view class="time" style="color:#C0C0C0;font-size:80%;" >{{tools.getDateTime(item0.time)}}</view>
+            </view>
+
+          </view>
+
+<!-- 右边！！！！！！！！！ -->
+          <!-- 主动删除发表的文章 -->
+          <view class="fu"style="display:flex;align-items: center;justify-content: center;width:150rpx;height:170rpx;background-color:red;" catchtap="delete" wx:if="{{canshu==true}}" data-ssid="{{item0.id}}" data-index="{{index0}}" >
+            <text class="delete" style="color:#ffffff;font-size:120%"  >删除</text>
+          </view>
+          <!-- 主动删除评论过的记录 -->
+          <view class="fu"style="display:flex;align-items: center;justify-content: center;width:150rpx;height:170rpx;background-color:red;" catchtap="delete1" wx:if="{{canshu==false}}" data-ssid="{{item0.id}}" data-index="{{index0}}" >
+            <text class="delete" style="color:#ffffff;font-size:120%"  >删除</text>
+          </view>
+
+        </movable-view>
+      </movable-area>
+    </view>
+  </view>
+</view>
+<!-- 空白 -->
+<!-- <view class="dd" style="display:flex;justify-content:center;margin-top:20rpx" >
+  <view class="tishi"  >««««左滑删除««««</view>
+</view> -->

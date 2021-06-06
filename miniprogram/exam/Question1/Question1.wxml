@@ -1,0 +1,102 @@
+<!--pages/page1/page1.wxml-->
+<!-- 问题的描述 -->
+<!-- 
+    美化需求：
+
+        1.问题描述框，选项区域，解释区域做出点层次感（原谅我词汇贫瘠只想得到这个词了）（描述框的背景可去可改）
+
+        2.选项：再加一个类似于hover的颜色变化的效果(手机端好像没有这个就算了) 原来的“A：” 把它变成圆形的圈圈里面套了一个A的样子。点击选项之后选项（包括A：和内容）颜色会改变，（正确答案和错误答案颜色改变方式不一样），选项大小可以整大一点，我发现这个高度不是很好点。如果有其他想法也可以加上去。
+
+        3.解析部分和进入下一题的按钮看着改吧，我也没啥想法了
+        
+        4.还有最后一个弹出框我本来的想法是想要翔游戏里面一样弹出一个一堆积分的图片，下面标注着你获得了五积分，但是后面那个showtoast样式我不知道怎么改，就作罢了，你如果有想法的话试着改改看，没想法就只能这样的。
+
+ -->
+ <image class="background" src="cloud://cloud1-2gm89gcbba9c155c.636c-cloud1-2gm89gcbba9c155c-1305562989/exam/exam/background().jpg"></image>
+<image class="background2" src="cloud://cloud1-2gm89gcbba9c155c.636c-cloud1-2gm89gcbba9c155c-1305562989/exam/exam/background2.jpg"></image>
+<view class="head" >
+    <text>{{count}}</text><text style="color:gray ">/{{total}}</text>
+    <image src="cloud://cloud1-2gm89gcbba9c155c.636c-cloud1-2gm89gcbba9c155c-1305562989/exam/exam/传输_上传2.png" mode="widthFix"></image> 
+    <navigator url="../index/index" open-type="redirect" bindtap="navTap">
+        立即交卷
+    </navigator>
+    <progress style="margin:30rpx 30rpx 40rpx 30rpx; width:100% " percent="{{20 * count}}" activeColor="deepskyblue" ></progress>
+</view>
+
+<view class="description">
+    {{questionDecArr[numOfQuestion]}}
+</view>
+
+<!-- 4个答题模板 -->
+<view class="answer" wx:if="{{modelType == 1}}">
+    
+   
+    <view id="A" data-isTrue="1" bindtap="myTap">
+        <view class="selIcon"> A: </view> {{questionAnsArr[startOfAnswer+0]}}</view>
+        
+    <view id="B" data-isTrue="0" bindtap="myTap">
+        <view class="selIcon"> B: </view>{{questionAnsArr[startOfAnswer+1]}}</view>
+    
+    <view id="C" data-isTrue="0" bindtap="myTap">
+        <view class="selIcon"> C: </view>{{questionAnsArr[startOfAnswer+2]}}</view>
+    
+    <view id="D" data-isTrue="0" bindtap="myTap">
+        <view class="selIcon"> D: </view>{{questionAnsArr[startOfAnswer+3]}}</view>
+</view>
+<view class="answer" wx:elif="{{modelType == 2}}">
+    <view id="B" data-isTrue="0" bindtap="myTap">
+         <view class="selIcon"> A: </view>{{questionAnsArr[startOfAnswer+1]}}</view>
+    
+    <view id="A" data-isTrue="1" bindtap="myTap">
+        <view class="selIcon"> B: </view>{{questionAnsArr[startOfAnswer+0]}}</view>
+    
+    <view id="C" data-isTrue="0" bindtap="myTap">
+        <view class="selIcon"> C: </view>{{questionAnsArr[startOfAnswer+2]}}</view>
+    
+    <view id="D" data-isTrue="0" bindtap="myTap">
+        <view class="selIcon"> D: </view>{{questionAnsArr[startOfAnswer+3]}}</view>
+</view>
+<view class="answer" wx:elif="{{modelType == 3}}">
+    <view id="C" data-isTrue="0" bindtap="myTap">
+        <view class="selIcon"> A: </view>{{questionAnsArr[startOfAnswer+2]}}</view>
+    
+    <view id="B" data-isTrue="0" bindtap="myTap">
+        <view class="selIcon"> B: </view>{{questionAnsArr[startOfAnswer+1]}}</view>
+    
+    <view id="A" data-isTrue="1" bindtap="myTap">
+        <view class="selIcon"> C: </view>{{questionAnsArr[startOfAnswer+0]}}</view>
+    
+    <view id="D" data-isTrue="0" bindtap="myTap">
+        <view class="selIcon"> D: </view>{{questionAnsArr[startOfAnswer+3]}}</view>
+</view>
+<view class="answer" wx:elif="{{modelType == 4}}">
+    <view id="D" data-isTrue="0" bindtap="myTap">
+        <view class="selIcon"> A: </view>{{questionAnsArr[startOfAnswer+3]}}</view>
+    
+    <view id="B" data-isTrue="0" bindtap="myTap">
+        <view class="selIcon"> B: </view>{{questionAnsArr[startOfAnswer+1]}}</view>
+    
+    <view id="C" data-isTrue="0" bindtap="myTap">
+        <view class="selIcon"> C: </view>{{questionAnsArr[startOfAnswer+2]}}</view>
+    
+    <view id="A" data-isTrue="1" bindtap="myTap">
+        <view class="selIcon"> D: </view>{{questionAnsArr[startOfAnswer+0]}}</view>
+</view>
+
+<!-- 2个答题解析 -->
+<block wx:if="{{correctOfUserChoice == 1}}"> 
+    <view class="right" >
+        {{questionExpArr[4*numOfQuestion + numOfSelection]}}
+    </view>
+    <button id="next" bindtap="btnTap" type="primary"  plain="true" >{{textOfBtn}}</button>
+</block>
+
+<block wx:elif="{{correctOfUserChoice == 0}}">
+    <view class="wrong" >
+        这是错误答案噢 <text>\r\n</text>
+        解析：{{questionExpArr[4*numOfQuestion + numOfSelection]}}
+    </view>
+</block>
+
+
+

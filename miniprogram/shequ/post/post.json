@@ -1,0 +1,8 @@
+{
+  "usingComponents": {
+    "nav-tabar": "../../components/shequ-tabbar/index"
+  },
+  "navigationBarTitleText": "发布内容",
+  "backgroundColor":"#2A6C86"
+
+}

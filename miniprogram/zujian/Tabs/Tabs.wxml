@@ -1,0 +1,10 @@
+
+<view class="wai" style="display:flex" >
+  <view class="title {{item.isactive?'active':''}}"
+  wx:for="{{Tabs}}"
+  wx:key="id"
+  style="flex:1;display:flex;justify-content:center;padding:10rpx;margin:0 20rpx"
+  bindtap="changetitle"
+  data-title="{{item.id}}"
+  >{{item.value}}</view>
+</view>

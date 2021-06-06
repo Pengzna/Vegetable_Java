@@ -1,0 +1,64 @@
+<wxs module="tools" src="/utils/filter1.wxs"/>
+
+<view class="top" bindtouchstart="huitan" >
+  <view class="dingyue" style="display:flex;padding:10rpx;justify-content:space-between;align-items:center;background-color:#9BE1D1" wx:if="{{allow}}" >
+    <view class="zuo" style="display:flex;" >
+      <view class="q">评论推送剩余：{{msgnb[0]}}</view>
+      <view class="q" style="margin-left:30rpx" >回复推送剩余：{{msgnb[1]}}</view>
+    </view>
+    <!-- <view class="power" style="" >评论推送剩余：{{msgnb[0]}}   回复推送剩余：{{msgnb[1]}}</view> -->
+    <image src="cloud://cloud1-2gm89gcbba9c155c.636c-cloud1-2gm89gcbba9c155c-1305562989/shequ/icon/up.png" style="width:70rpx;background-color:#7B90DF;border-radius:50%;overflow:hidden;height:auto" animation="{{animationData}}" bindtap="shouquan" mode="widthFix" ></image>
+  </view>
+
+  <view class="dingyue" style="display:flex;padding:10rpx;justify-content:space-between;align-items:center;background-color:#9BE1D1" wx:if="{{!allow}}" bindtap="shouquan" >
+    <view class="tixing">开启授权，在小程序外随时接收评论与回复！</view>
+    <image src="cloud://cloud1-2gm89gcbba9c155c.636c-cloud1-2gm89gcbba9c155c-1305562989/shequ/icon/you.png" style="width:50rpx;height:auto" mode="widthFix" ></image>
+  </view>
+</view>
+<view class="message">
+  <view class="xunhuan" wx:for="{{message}}" wx:key="idex" wx:for-item="item0" wx:for-index="index0" >
+    <movable-area class="yc" bindtap="chakan" data-ssid="{{item0.ssid}}" data-id="{{item0.id}}" data-liuyan="{{item0.liuyan}}" style="display:flex;width:750rpx;height:170rpx"  >
+        <movable-view style="display:flex;width:900rpx;height:170rpx" direction="horizontal" animation="true" x="{{x[index0]}}" bindchange="change" data-index="{{index0}}" bindtouchend="change1" damping="100" out-of-bounds="true" >
+    
+    <!-- <view class="yc" bindtap="chakan" data-ssid="{{item0.ssid}}" data-id="{{item0.id}}"
+    style="display:flex;padding:20rpx;border-bottom:1px solid #B0B2BF" > -->
+
+    <view class="left" style="display:flex;width:720rpx;padding:15rpx;height:140rpx" >
+      <!-- 第一部分图片 -->
+      <view class="A" style="display:flex;" >
+        <image  class="pl" wx:if="{{item0.type!='jubao'}}" src="{{item0.photo}}" 
+        style="width:80rpx;height:80rpx;border-radius: 10rpx;overflow: hidden;"/>
+        <!-- 举报特殊图标 -->
+        <image class="pl" wx:if="{{item0.type=='jubao'}}" src="cloud://cloud1-2gm89gcbba9c155c.636c-cloud1-2gm89gcbba9c155c-1305562989/shequ/icon/feng.png" 
+        style="width:80rpx;height:80rpx;border-radius: 10rpx;overflow: hidden;"/>
+      </view>
+      <!-- 第二部分,回复及对应ss -->
+      <view class="B" style="margin-left:20rpx;display:flex;flex-direction:column" >
+        <view class="huifuren" style="font-size:100%" >{{item0.name}}</view>
+        <view class="tishi" style="font-size:100%;margin-bottom:10rpx;width:600rpx;white-space: nowrap; overflow: hidden; text-overflow: ellipsis;" >{{item0.plnr}}</view>
+
+        <view class="di" style="display:flex" >
+          <view class="wbnr" wx:if="{{item0.type==='pinglun'}}" style="white-space: nowrap; overflow: hidden; text-overflow: ellipsis;font-size:78%;color:#656565" >评论了你的帖子</view>
+          <view class="wbnr" wx:if="{{item0.type==='huifu'}}" style="white-space: nowrap; overflow: hidden; text-overflow: ellipsis;font-size:78%;color:#656565" >回复了你的评论</view>
+          <view class="wbnr" wx:if="{{item0.type==='jubao'}}" style="white-space: nowrap; overflow: hidden; text-overflow: ellipsis;font-size:78%;color:#656565" >帖子被举报封禁</view>
+
+          <view class="time" style="white-space: nowrap; overflow: hidden; text-overflow: ellipsis;font-size:78%;color:#656565;margin-left:15rpx" >{{tools.getDateTime(item0.time)}}</view>
+        </view>
+      </view>
+    </view><!-- left -->
+  <!-- 右边！！！！！！！！！ -->
+      <!-- 主动删除xiaoxi -->
+      <view class="fu"style="display:flex;align-items: center;justify-content: center;width:150rpx;height:170rpx;background-color:red;" catchtap="delete" data-ssid="{{item0.ssid}}" data-id="{{item0.id}}" data-index="{{index0}}" >
+        <text class="delete" style="color:#ffffff;font-size:120%" >删除</text>
+      </view>
+    <!-- </view> -->
+      </movable-view>
+    </movable-area>
+  </view>
+
+  <view wx:if="{{message.length==0}}" style="display:flex;align-items:center;" >
+    <image  src="cloud://cloud1-2gm89gcbba9c155c.636c-cloud1-2gm89gcbba9c155c-1305562989/shequ/chatu/konglong.png" style="margin:180rpx 100rpx;width:100%;height:auto" mode="widthFix"  ></image>
+  </view>
+</view>
+<nav-tabar selected="{{selected}}"></nav-tabar>
+<!-- <image src="/images/shuaxin.png"  bindtap="shuaxin1" class="shuaxin" mode="widthFix"  ></image> -->

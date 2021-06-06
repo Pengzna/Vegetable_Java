@@ -1,0 +1,60 @@
+{
+  "setting": {},
+  "condition": {
+    "plugin": {
+      "list": []
+    },
+    "game": {
+      "list": []
+    },
+    "gamePlugin": {
+      "list": []
+    },
+    "miniprogram": {
+      "list": [
+        {
+          "id": -1,
+          "name": "db guide",
+          "pathName": "pages/databaseGuide/databaseGuide",
+          "query": ""
+        },
+        {
+          "name": "shequ/post/post",
+          "pathName": "shequ/post/post",
+          "query": "",
+          "scene": null
+        },
+        {
+          "name": "shequ/index/index",
+          "pathName": "shequ/index/index",
+          "query": "",
+          "scene": null
+        },
+        {
+          "name": "shop/index/index",
+          "pathName": "shop/index/index",
+          "query": "",
+          "scene": null
+        },
+        {
+          "name": "exam/Question1/Question1",
+          "pathName": "exam/Question1/Question1",
+          "query": "",
+          "scene": null
+        },
+        {
+          "name": "pages/forest/forest",
+          "pathName": "pages/forest/forest",
+          "query": "",
+          "scene": null
+        },
+        {
+          "name": "shop/my/my",
+          "pathName": "shop/my/my",
+          "query": "",
+          "scene": null
+        }
+      ]
+    }
+  }
+}
